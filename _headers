@@ -1,0 +1,7 @@
+/* 
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://*.netlify.app; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com
