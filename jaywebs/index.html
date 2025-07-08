@@ -1,13 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JayWebs</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>JayWebs | Futuristic Web Design South Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Futuristic web design services in South Africa. Elegant black and gold designs with modern HTML, CSS and JavaScript." />
+  <meta name="keywords" content="web design South Africa, futuristic website, Cape Town web developer, Johannesburg website design" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style-css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Welcome to JayWebs</h1>
-    <script src="main.js"></script>
+
+  <!-- Loader -->
+  <div class="loader"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Jay<span>Webs</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Client Feedback</a></li>
+        <li><a href="#pricing">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>WHERE VISION MEETS WEB PRECISION</h1>
+    <p>Elegant designs with modern HTML, CSS, and JavaScript for your business.</p>
+    <button class="btn">Get Started</button>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About JayWebs</h2>
+    <p>We specialize in futuristic websites that stand out in the world market. From small businesses to professionals, we deliver sleek, mobile-ready sites.</p>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-card" data-aos="fade-up">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <h3>Project Title 1</h3>
+        <p>Brief description of Project 1.</p>
+      </div>
+      <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/project2.jpg" alt="Project 2" />
+        <h3>Project Title 2</h3>
+        <p>Brief description of Project 2.</p>
+      </div>
+      <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/project3.jpg" alt="Project 3" />
+        <h3>Project Title 3</h3>
+        <p>Brief description of Project 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonial" data-aos="fade-left">
+      “JayWebs built my business site fast and beautiful. Highly recommended!”
+      <div class="testimonial-author">– Mr. James B</div>
+    </div>
+    <div class="testimonial" data-aos="fade-right" data-aos-delay="150">
+      “Professional and affordable. My sales increased within a month.”
+      <div class="testimonial-author">– Mpho D., Cape Town</div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="pricing-box">
+      <h3>Basic Plan</h3>
+      <p>R2,100</p>
+      <p>1 Page Design</p>
+      <p>Responsive Layout</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Standard Plan</h3>
+      <p>R3,999</p>
+      <p>3 Pages</p>
+      <p>Contact Form & SEO</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Premium Plan</h3>
+      <p>R5,999</p>
+      <p>Full Website + Blog</p>
+      <p>Ongoing Support</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:jaywebs10@gmail.com">jaywebs10@gmail.com</a></p>
+    <p>Phone/WhatsApp: <a href="https://wa.me/27760944650" target="_blank">+27 76 094 4650</a></p>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JayWebs. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="main-js/main.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
 </body>
 </html>
