@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JayWebs | Futuristic Web Design South Africa</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
+  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
+  <meta name="author" content="JayWebs" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="JayWebs " />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Client Feedback</a></li>
+        <li><a href="#pricing">Services</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote-calculator">Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode" class="dark-mode-btn">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Futuristic Web Design South Africa</h1>
+    <p>Fuel Your Brand. Power Your Presence.</p>
+    <button class="btn" onclick="document.getElementById('quote-calculator').scrollIntoView({behavior:'smooth'})">Get Started</button>
+  </section>
+
+  <!-- NEW ABOUT SECTION START -->
+  <section class="about section-padding" id="about" data-aos="fade-up">
+    <div class="container">
+      <h2>About JayWebs</h2>
+      <p>
+        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.  
+        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.  
+        We believe in innovation, attention to detail, and delivering beyond expectations.
+      </p>
+
+      <div class="owner-card">
+        <h3>Meet the Owner</h3>
+        <h4>Jaden Nkuna.</h4>
+        <p>
+          Jaden is the visionary behind JayWebs, with years of experience in web design, branding, and digital marketing.  
+          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- NEW ABOUT SECTION END -->
+
+  <section id="portfolio" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-left">Portfolio</h2>
+    <div class="swiper portfolio-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide portfolio-card">
+          <img src="images/project1.jpg" alt="Project 1" />
+          <h3>Project Title 1</h3>
+          <p>Brief description of Project 1.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="images/project2.jpg" alt="Project 2" />
+          <h3>Project Title 2</h3>
+          <p>Brief description of Project 2.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="images/project3.jpg" alt="Project 3" />
+          <h3>Project Title 3</h3>
+          <p>Brief description of Project 3.</p>
+        </div>
+      </div>
+      <div class="portfolio-prev swiper-button-prev"></div>
+      <div class="portfolio-next swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section class="testimonials section-padding" id="testimonials" style="background: #111;">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Client Feedback</h2>
+    <div class="swiper testimonials-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial">
+          <img src="images/client1.jpg" alt="Mr. Ndlovu" class="testimonial-photo"/>
+          <blockquote>“JayWebs built my business site fast and beautiful. Highly recommended!”</blockquote>
+          <cite>– Mr. Ndlovu</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="images/client2.jpg" alt="Mpho D." class="testimonial-photo"/>
+          <blockquote>“Professional and affordable. My sales increased within a month.”</blockquote>
+          <cite>– Mpho D.</cite>
+        </div>
+      </div>
+      <div class="testimonials-pagination swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section-padding">
+    <div class="pricing-box">
+      <h3>Basic Plan</h3>
+      <p>R2,099</p>
+      <p>1 Page Design</p>
+      <p>Responsive Layout</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Standard Plan</h3>
+      <p>R3,499</p>
+      <p>3 Pages</p>
+      <p>Contact Form & SEO</p>
+    </div>
+    <div class="pricing-box">
+      <h3>Premium Plan</h3>
+      <p>R6,999</p>
+      <p>Full Website + Blog</p>
+      <p>Ongoing Support</p>
+    </div>
+  </section>
+
+  <section id="stats" class="section-padding" data-aos="fade-up">
+    <h2 class="section-title gradient-text">Our Impact</h2>
+    <div class="stats-container">
+      <div class="stat">
+        <div class="stat-number" data-target="120">0</div>
+        <div class="stat-label">Websites Built</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="75">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="99">0</div>
+        <div class="stat-label">Satisfaction %</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-padding" data-aos="fade-up">
+    <h2 class="section-title gradient-text">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">How long does a website build take?</button>
+        <div class="faq-answer">
+          Typically, between 2-4 weeks depending on complexity and features.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you offer support after launch?</button>
+        <div class="faq-answer">
+          Yes, ongoing support packages are available for maintenance and updates.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I update my website content myself?</button>
+        <div class="faq-answer">
+          Absolutely, we provide a simple CMS for content updates if needed.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote-calculator" class="calculator-container section-padding">
+    <h2>Instant Quote Calculator</h2>
+
+    <form id="quote-form" onsubmit="return false;">
+      <label for="type">Website Type</label>
+      <select id="type" name="type">
+        <option value="basic">Basic Website (R2,099)</option>
+        <option value="business">Business Website (R3,499)</option>
+        <option value="ecommerce">E-Commerce Website (R6,999)</option>
+      </select>
+
+      <label for="features">Additional Features</label>
+      <div class="features" id="features">
+        <label><input type="checkbox" value="seo" /> SEO Optimization (+R500)</label>
+        <label><input type="checkbox" value="chat" /> Live Chat (+R200)</label>
+        <label><input type="checkbox" value="blog" /> Blog Setup (+R400)</label>
+        <label><input type="checkbox" value="booking" /> Booking System (+R700)</label>
+      </div>
+
+      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
+
+      <div class="result" id="result">Estimated Quote: R0</div>
+    </form>
+  </section>
+
+  <section id="contact" class="section-padding">
+    <h2>Contact Us</h2>
+    <div class="social-icons">
+      <a href="https://facebook.com/https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="#quote-calculator" class="sticky-contact-btn" aria-label="Get a Quote">
+    <i class="fas fa-comments"></i> Get a Quote
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/your_tawk_id/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+
+</body>
+</html>
