@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +12,21 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark-mode header {
+  background: #222;
+  border-bottom-color: #ffd700;
+}
+
+body.dark-mode a {
+  color: #ffd700;
 }
 
 a {
@@ -198,74 +213,74 @@ nav ul li a.active {
   border-radius: 12px;
   overflow: hidden;
   color: #f0d47a;
-  box-shadow: 0 0 10px #f0d47a88;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-card:hover {
-  transform: scale(1.05);
+  padding: 1rem;
+  box-shadow: 0 0 12px #f0d47a88;
 }
 
 .portfolio-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .portfolio-card h3 {
-  margin: 1rem 0 0.5rem;
-  font-family: 'Orbitron', sans-serif;
-  color: #ffd700;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .portfolio-card p {
-  padding: 0 1rem 1rem;
-  font-weight: 400;
   font-size: 1rem;
+  font-weight: 400;
+  color: #e6d690;
 }
 
-/* Testimonials Section */
+/* Swiper buttons */
+.swiper-button-prev, .swiper-button-next {
+  color: #f0d47a;
+}
+
+/* Testimonials */
 .testimonials {
   color: #f0d47a;
-  text-align: center;
-  padding: 4rem 0;
 }
 
 .testimonial {
   background: #222;
+  border-radius: 12px;
   padding: 2rem;
-  border-radius: 15px;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  box-shadow: 0 0 15px #f0d47a99;
-  transition: background-color 0.3s ease;
-}
-
-.testimonial:hover {
-  background-color: #333;
+  text-align: center;
+  box-shadow: 0 0 15px #f0d47a88;
 }
 
 .testimonial-photo {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin-bottom: 1rem;
   border: 2px solid #ffd700;
   object-fit: cover;
 }
 
-blockquote {
+.testimonial blockquote {
   font-style: italic;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  line-height: 1.5;
-  color: #ffeb99;
+  color: #ffd700cc;
 }
 
-cite {
-  font-weight: 600;
-  color: #ffd700;
+.testimonial cite {
+  font-weight: 700;
+  color: #f0d47a;
+}
+
+.testimonials-pagination .swiper-pagination-bullet {
+  background: #f0d47a;
+  opacity: 0.7;
+}
+
+.testimonials-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 /* Pricing Section */
@@ -277,18 +292,20 @@ cite {
 }
 
 .pricing-box {
-  background: #1a1a1a;
+  background: #111;
   border: 2px solid #f0d47a;
   border-radius: 12px;
   padding: 2rem;
   width: 250px;
   text-align: center;
-  box-shadow: 0 0 15px #f0d47aaa;
+  box-shadow: 0 0 12px #f0d47a88;
+  color: #f0d47a;
   transition: transform 0.3s ease;
 }
 
 .pricing-box:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  border-color: #ffd700;
 }
 
 .pricing-box h3 {
@@ -300,9 +317,8 @@ cite {
 
 .pricing-box p {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   font-weight: 600;
-  color: #fff4c1;
 }
 
 /* Stats Section */
@@ -310,7 +326,8 @@ cite {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .stat {
@@ -320,135 +337,131 @@ cite {
 .stat-number {
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
+  font-weight: 900;
   color: #ffd700;
-  margin-bottom: 0.3rem;
 }
 
 .stat-label {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
   color: #f0d47a;
 }
 
 /* FAQ Section */
 .faq-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .faq-item {
-  background: #1a1a1a;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  border: 2px solid #f0d47a;
-  box-shadow: 0 0 10px #f0d47a88;
 }
 
 .faq-question {
   width: 100%;
-  background: transparent;
-  border: none;
-  padding: 1rem 1.5rem;
-  color: #ffd700;
-  font-size: 1.2rem;
   text-align: left;
+  background: #111;
+  border: 2px solid #f0d47a;
+  color: #f0d47a;
+  font-weight: 600;
+  padding: 1rem 1.2rem;
   cursor: pointer;
-  font-weight: 700;
+  border-radius: 8px;
   transition: background-color 0.3s ease;
-}
-
-.faq-question:hover {
-  background-color: #2c2c2c;
-}
-
-.faq-answer {
-  padding: 0 1.5rem 1rem;
-  color: #fff4c1;
-  display: none;
   font-size: 1.1rem;
 }
 
-/* Show answer when faq-question active */
-.faq-question.active + .faq-answer {
-  display: block;
+.faq-question.active,
+.faq-question:hover {
+  background-color: #ffd700;
+  color: #111;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0.8rem 1.2rem;
+  background: #222;
+  color: #ffd700;
+  border-radius: 0 0 8px 8px;
+  font-size: 1rem;
 }
 
 /* Quote Calculator */
 .calculator-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #1a1a1a;
+  max-width: 450px;
+  background: #111;
   border: 2px solid #f0d47a;
-  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 15px #f0d47aaa;
-  color: #fff4c1;
+  padding: 2rem;
+  margin: 0 auto;
+  box-shadow: 0 0 15px #f0d47a88;
+  color: #f0d47a;
+  text-align: center;
 }
 
-.calculator-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-family: 'Orbitron', sans-serif;
-  color: #ffd700;
+.calculator-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .calculator-container label {
-  display: block;
-  margin: 1rem 0 0.5rem;
   font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
 }
 
 .calculator-container select,
 .calculator-container input[type="checkbox"] {
-  margin-right: 0.5rem;
   cursor: pointer;
 }
 
 .features label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
 }
 
-button#downloadQuote {
-  margin-top: 1.5rem;
+#downloadQuote {
   background-color: #f0d47a;
-  color: #111;
   border: none;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem;
   font-size: 1.1rem;
   font-weight: 700;
   border-radius: 30px;
   cursor: pointer;
-  display: block;
-  width: 100%;
   transition: background-color 0.3s ease;
 }
 
-button#downloadQuote:hover {
+#downloadQuote:hover {
   background-color: #ffd700;
 }
 
 .result {
-  margin-top: 1.2rem;
-  font-size: 1.3rem;
-  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #ffd700;
 }
 
 /* Contact Section */
+#contact {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
 .social-icons {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
 }
 
 .social-icons a {
+  font-size: 2rem;
   color: #f0d47a;
-  font-size: 1.8rem;
   transition: color 0.3s ease;
 }
 
@@ -456,89 +469,63 @@ button#downloadQuote:hover {
   color: #ffd700;
 }
 
-/* WhatsApp Float Button */
+/* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #25d366;
-  color: #fff;
+  bottom: 100px;
+  right: 20px;
+  background: #25d366;
+  color: white;
   border-radius: 50%;
-  padding: 15px;
-  font-size: 2rem;
-  box-shadow: 0 0 15px #25d366aa;
+  padding: 15px 18px;
+  font-size: 28px;
+  box-shadow: 0 2px 8px #222;
   z-index: 10000;
   transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .whatsapp-float:hover {
-  background-color: #1ebe57;
+  background-color: #128c3e;
 }
 
-/* Sticky Get a Quote Button */
+/* Sticky Contact Button */
 .sticky-contact-btn {
   position: fixed;
-  bottom: 90px;
-  right: 25px;
-  background-color: #f0d47a;
+  bottom: 30px;
+  right: 20px;
+  background: #f0d47a;
   color: #111;
+  padding: 12px 18px;
   border-radius: 30px;
-  padding: 12px 20px;
   font-weight: 700;
   font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #222;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 0 15px #f0d47aaa;
-  cursor: pointer;
-  text-decoration: none;
+  z-index: 9999;
   transition: background-color 0.3s ease;
-  z-index: 10000;
+}
+
+.sticky-contact-btn i {
+  font-size: 1.2rem;
 }
 
 .sticky-contact-btn:hover {
   background-color: #ffd700;
 }
 
-/* Footer */
-footer.footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background-color: #111;
-  border-top: 2px solid #f0d47a;
-  color: #f0d47a;
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-top: 4rem;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
     gap: 1rem;
-    background: #111;
-    padding: 1rem;
-    position: absolute;
-    top: 70px;
-    right: 1rem;
-    border-radius: 8px;
-    display: none;
   }
-
-  nav ul.show {
-    display: flex;
-  }
-
   .pricing-box {
     width: 100%;
   }
-
   .stats-container {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
 }
