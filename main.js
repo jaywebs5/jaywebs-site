@@ -1,16 +1,21 @@
-// Dark Mode Toggle (assuming you have this from before)
+// Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
-// Initialize Swiper instances (if you use them)
+// Initialize Swiper instances
 const portfolioSwiper = new Swiper('.portfolio-swiper', {
   navigation: {
     nextEl: '.portfolio-next',
     prevEl: '.portfolio-prev',
   },
   loop: true,
+  autoplay: {
+    delay: 2500,             // Auto scroll every 2.5 seconds
+    disableOnInteraction: false,
+  },
+  speed: 800,
 });
 
 const testimonialsSwiper = new Swiper('.testimonials-swiper', {
@@ -34,7 +39,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
   });
 });
 
-// Stats counter animation (optional)
+// Stats counter animation
 const stats = document.querySelectorAll('.stat-number');
 const speed = 200; // lower is faster
 
