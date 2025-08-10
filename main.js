@@ -24,11 +24,6 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
     clickable: true,
   },
   loop: true,
-  autoplay: {
-    delay: 3000,             // Auto scroll every 3 seconds
-    disableOnInteraction: false,
-  },
-  speed: 600,
 });
 
 // FAQ Toggle
