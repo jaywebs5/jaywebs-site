@@ -155,4 +155,3 @@ document.getElementById('downloadQuote').addEventListener('click', function() {
   // Save the PDF
   doc.save('JayWebs_Quote.pdf');
 });
-
