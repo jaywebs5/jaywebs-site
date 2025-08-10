@@ -6,12 +6,29 @@ darkModeToggle.addEventListener('click', () => {
 
 // Initialize Swiper instances
 const portfolioSwiper = new Swiper('.portfolio-swiper', {
-  navigation: { nextEl: '.portfolio-next', prevEl: '.portfolio-prev' },
+  navigation: {
+    nextEl: '.portfolio-next',
+    prevEl: '.portfolio-prev',
+  },
   loop: true,
+  autoplay: {
+    delay: 2500,             // Auto scroll every 2.5 seconds
+    disableOnInteraction: false,
+  },
+  speed: 800,
 });
+
 const testimonialsSwiper = new Swiper('.testimonials-swiper', {
-  pagination: { el: '.testimonials-pagination', clickable: true },
+  pagination: {
+    el: '.testimonials-pagination',
+    clickable: true,
+  },
   loop: true,
+  autoplay: {
+    delay: 3000,             // Auto scroll every 3 seconds
+    disableOnInteraction: false,
+  },
+  speed: 600,
 });
 
 // FAQ Toggle
@@ -19,26 +36,30 @@ document.querySelectorAll('.faq-question').forEach(question => {
   question.addEventListener('click', () => {
     question.classList.toggle('active');
     const answer = question.nextElementSibling;
-    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    if (answer.style.display === 'block') {
+      answer.style.display = 'none';
+    } else {
+      answer.style.display = 'block';
+    }
   });
 });
 
 // Stats counter animation
 const stats = document.querySelectorAll('.stat-number');
-const speed = 200;
+const speed = 200; // lower is faster
+
 stats.forEach(stat => {
-  let target = +stat.getAttribute('data-target');
-  let count = 0;
-  const increment = target / speed;
-  function updateCount() {
-    count += increment;
+  const updateCount = () => {
+    const target = +stat.getAttribute('data-target');
+    let count = +stat.innerText;
+
     if (count < target) {
-      stat.innerText = Math.ceil(count);
+      stat.innerText = (count + target / speed).toFixed(2);
       setTimeout(updateCount, 20);
     } else {
       stat.innerText = target;
     }
-  }
+  };
   updateCount();
 });
 
@@ -46,7 +67,7 @@ stats.forEach(stat => {
 function updateQuote() {
   const typeSelect = document.getElementById('type');
   let price = 0;
-  switch (typeSelect.value) {
+  switch(typeSelect.value) {
     case 'basic': price = 2099; break;
     case 'business': price = 3499; break;
     case 'ecommerce': price = 6999; break;
@@ -66,10 +87,13 @@ function updateQuote() {
   const totalCost = price + featuresCost;
   document.getElementById('result').textContent = `Estimated Quote: R${totalCost}`;
 }
+
 document.getElementById('type').addEventListener('change', updateQuote);
 document.querySelectorAll('#features input[type="checkbox"]').forEach(cb => {
   cb.addEventListener('change', updateQuote);
 });
+
+// Initialize on load
 updateQuote();
 
 // PDF Generation and Download
@@ -77,9 +101,11 @@ document.getElementById('downloadQuote').addEventListener('click', function() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
+  // Get selected website type text
   const typeSelect = document.getElementById('type');
   const typeText = typeSelect.options[typeSelect.selectedIndex].text;
 
+  // Calculate base price
   let price = 0;
   switch(typeSelect.value) {
     case 'basic': price = 2099; break;
@@ -87,6 +113,7 @@ document.getElementById('downloadQuote').addEventListener('click', function() {
     case 'ecommerce': price = 6999; break;
   }
 
+  // Get checked features
   const features = document.querySelectorAll('#features input[type="checkbox"]:checked');
   let featuresList = [];
   let featuresCost = 0;
@@ -102,6 +129,7 @@ document.getElementById('downloadQuote').addEventListener('click', function() {
 
   const totalCost = price + featuresCost;
 
+  // Compose PDF content
   let y = 10;
   doc.setFontSize(18);
   doc.text('JayWebs Quote', 105, y, null, null, 'center');
@@ -124,5 +152,6 @@ document.getElementById('downloadQuote').addEventListener('click', function() {
 
   doc.text(`Total Estimated Price: R${totalCost}`, 10, y);
 
+  // Save the PDF
   doc.save('JayWebs_Quote.pdf');
 });
