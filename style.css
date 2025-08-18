@@ -59,6 +59,16 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+/* About Section */
+.about p {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #e6d690;
+  line-height: 1.7;
+}
+
 
 .section-title h2::after {
     content: '';
