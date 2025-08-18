@@ -1,263 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JayWebs | Futuristic Web Design South Africa</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
-  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
-  <meta name="author" content="JayWebs" />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
-  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
-  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
-
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Roboto&display=swap" rel="stylesheet" />
-  
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- jsPDF (for quote PDF) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JayWebs | Premium Web Design & Development</title>
+    <meta name="description" content="JayWebs transforms businesses with luxury web design, development, and digital solutions. Gold standard websites for premium brands.">
+    <meta name="keywords" content="premium web design, luxury website, gold web design, web development, e-commerce">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="JayWebs " />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonials">Client Feedback</a></li>
-        <li><a href="#pricing">Services</a></li>
-        <li><a href="#stats">Impact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#quote-calculator">Quote</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode" class="dark-mode-btn">
-      <i class="fas fa-moon"></i>
-    </button>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Futuristic Web Design South Africa</h1>
-    <p>Fuel Your Brand. Power Your Presence.</p>
-    <button class="btn" onclick="document.getElementById('quote-calculator').scrollIntoView({behavior:'smooth'})">Get Started</button>
-  </section>
-
- <!-- ABOUT SECTION -->
-  <section class="about section-padding" id="about" data-aos="fade-up">
-    <div class="container">
-      <h2>About JayWebs</h2>
-      <p>
-        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.  
-        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.  
-        We believe in innovation, attention to detail, and delivering beyond expectations.
-      </p>
-
-      <div class="owner-card">
-        <h3>Meet the Owner</h3>
-        <h4>Jaden Nkuna.</h4>
-        <p>
-          Jaden is the visionary behind JayWebs, with experience in web design, branding, and digital marketing.  
-          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-left">Portfolio</h2>
-    <div class="swiper portfolio-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide portfolio-card">
-          <img src="images/project1.jpg" alt="Project 1" />
-          <h3>Project Title 1</h3>
-          <p>Brief description of Project 1.</p>
+    <!-- Header with Logo -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <!-- YOUR LOGO GOES HERE -->
+                    <img src="https://via.placeholder.com/200x60/111111/FFD700?text=JAYWEBS+LOGO" alt="JayWebs Logo" class="logo">
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">Services</a>
+                    <a href="#features">Why Us</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#calculator">Get Quote</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="contact-btn btn-primary">Get Started</button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
-        
-      <div class="portfolio-prev swiper-button-prev"></div>
-      <div class="portfolio-next swiper-button-next"></div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials section-padding" id="testimonials" style="background: #111;">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Client Feedback</h2>
-    <div class="swiper testimonials-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide testimonial">
-          <img src="images/client1.jpg" alt="Mr. Ndlovu" class="testimonial-photo"/>
-          <blockquote>“JayWebs built my business site fast and beautiful. Highly recommended!”</blockquote>
-          <cite>– Mr. Ndlovu</cite>
+    <!-- Social Media Sidebar -->
+    <div class="social-media">
+        <a href="https://wa.me/+27 760944650" class="social-icon" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="jaywebs10@gmail.com" class="social-icon">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/jaywebs" class="social-icon" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/jaywebs10" class="social-icon" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Crafting Digital <span>Masterpieces</span></h1>
+                <p>JayWebs creates luxury websites and digital experiences for premium brands. We combine exquisite design with cutting-edge technology to elevate your online presence.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                    <a href="#calculator" class="btn btn-secondary">Get a Quote</a>
+                </div>
+            </div>
         </div>
-        <div class="swiper-slide testimonial">
-          <img src="images/client2.jpg" alt="Mpho D." class="testimonial-photo"/>
-          <blockquote>“Professional and affordable. My sales increased within a month.”</blockquote>
-          <cite>– Mpho D.</cite>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Premium websites crafted with meticulous attention to detail</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="redesign">Website Redesigns</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="luxury">Luxury Brands</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="redesign">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800" alt="Luxury Hotel Redesign" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Hotel Website</h3>
+                        <p>Complete redesign that increased bookings by 220%</p>
+                        <a href="#" class="btn btn-primary">View Case Study</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=800" alt="Jewelry E-commerce" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Premium Jewelry Store</h3>
+                        <p>E-commerce solution with 3D product visualization</p>
+                        <a href="#" class="btn btn-primary">View Case Study</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="luxury">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800" alt="Luxury Auto" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Premium Auto Dealer</h3>
+                        <p>Showcase for luxury vehicles with VR showroom</p>
+                        <a href="#" class="btn btn-primary">View Case Study</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="testimonials-pagination swiper-pagination"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="section-padding">
-    <div class="pricing-box">
-      <h3>Basic Plan</h3>
-      <p>R2,099</p>
-      <p>1 Page Design</p>
-      <p>Responsive Layout</p>
-    </div>
-    <div class="pricing-box">
-      <h3>Standard Plan</h3>
-      <p>R2,999</p>
-      <p>3 Pages</p>
-      <p>Contact Form & SEO</p>
-    </div>
-    <div class="pricing-box">
-      <h3>Premium Plan</h3>
-      <p>R6,999</p>
-      <p>Full Website + Blog</p>
-      <p>Ongoing Support</p>
-    </div>
-  </section>
-
-  <!-- Stats Counters -->
-  <section id="stats" class="section-padding" data-aos="fade-up">
-    <h2 class="section-title gradient-text">Our Impact</h2>
-    <div class="stats-container">
-      <div class="stat">
-        <div class="stat-number" data-target="25">0</div>
-        <div class="stat-label">Websites Built</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number" data-target="19">0</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number" data-target="95">0</div>
-        <div class="stat-label">Satisfaction %</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Accordion -->
-  <section id="faq" class="section-padding" data-aos="fade-up">
-    <h2 class="section-title gradient-text">Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item">
-        <button class="faq-question">How long does a website build take?</button>
-        <div class="faq-answer">
-          Typically, between 2-4 weeks depending on complexity and features.
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Premium solutions for discerning clients</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-gem"></i>
+                    <h3>Luxury Web Design</h3>
+                    <p>Exquisite, bespoke designs that reflect your brand's premium positioning and values.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Premium Development</h3>
+                    <p>High-performance websites built with cutting-edge technologies and meticulous craftsmanship.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>E-Commerce Excellence</h3>
+                    <p>Premium online stores with seamless shopping experiences and premium features.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>SEO & Visibility</h3>
+                    <p>Strategic SEO to position your premium brand at the top of search results.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Brand Identity</h3>
+                    <p>Crafting premium brand identities that communicate exclusivity and quality.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Ongoing Excellence</h3>
+                    <p>Premium maintenance and security packages to keep your digital presence flawless.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Do you offer support after launch?</button>
-        <div class="faq-answer">
-          Yes, ongoing support packages are available for maintenance and updates.
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose JayWebs</h2>
+                <p>The gold standard in premium web design and development</p>
+            </div>
+            <div class="features-container">
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <div class="number">1+</div>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="number">10+</div>
+                    <p>Premium Clients</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal"></i>
+                    <div class="number">98%</div>
+                    <p>Client Retention</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <div class="number">100%</div>
+                    <p>Satisfaction Guarantee</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I update my website content myself?</button>
-        <div class="faq-answer">
-          Absolutely, we provide a simple CMS for content updates if needed.
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Hear what our premium clients have to say</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        "JayWebs transformed our luxury brand's online presence. The website they created is a masterpiece that perfectly captures our brand essence. Our conversion rates have increased by 65% since launch."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Elizabeth Sterling">
+                        </div>
+                        <div>
+                            <h4>Elizabeth Sterling</h4>
+                            <p>CEO, Luxe Interiors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "Working with JayWebs was worth every penny. They understood our premium positioning and created a website that reflects our brand's exclusivity. The attention to detail is exceptional."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Robert Vanderbilt">
+                        </div>
+                        <div>
+                            <h4>Robert Vanderbilt</h4>
+                            <p>Founder, Prestige Watches</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "The e-commerce solution JayWebs built for our jewelry brand is stunning. The 3D product views and seamless checkout experience have significantly boosted our online sales. Truly premium work."
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sophie Laurent">
+                        </div>
+                        <div>
+                            <h4>Sophie Laurent</h4>
+                            <p>Creative Director, Éclat Jewelry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-<section id="quote-calculator" class="calculator-container section-padding">
-    <h2>Instant Quote Calculator</h2>
+    </section>
 
-    <form id="quote-form" onsubmit="return false;">
-      <label for="type">Website Type</label>
-      <select id="type" name="type">
-        <option value="basic">Basic Website (R2,099)</option>
-        <option value="business">Business Website (R3,499)</option>
-        <option value="ecommerce">E-Commerce Website (R6,999)</option>
-      </select>
+    <!-- Quote Calculator Section -->
+    <section id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Project Estimate</h2>
+                <p>Calculate your premium website investment</p>
+            </div>
+            <div class="calculator">
+                <div class="calculator-step">
+                    <h4>What type of website do you need?</h4>
+                    <div class="calculator-options">
+                        <button class="option-btn" data-value="5000">Premium Brochure</button>
+                        <button class="option-btn" data-value="10000">Business Excellence</button>
+                        <button class="option-btn" data-value="20000">E-Commerce Luxury</button>
+                        <button class="option-btn" data-value="35000">Custom Web Application</button>
+                    </div>
+                </div>
+                <div class="calculator-step">
+                    <h4>How many pages will your site have?</h4>
+                    <div class="calculator-options">
+                        <button class="option-btn" data-value="2000">1-5 Pages</button>
+                        <button class="option-btn" data-value="4000">6-10 Pages</button>
+                        <button class="option-btn" data-value="7000">11-15 Pages</button>
+                        <button class="option-btn" data-value="10000">16+ Pages</button>
+                    </div>
+                </div>
+                <div class="calculator-step">
+                    <h4>What premium features do you need?</h4>
+                    <div class="calculator-options">
+                        <button class="option-btn" data-value="2000">3D Visualization</button>
+                        <button class="option-btn" data-value="5000">Membership System</button>
+                        <button class="option-btn" data-value="7000">Custom CMS</button>
+                        <button class="option-btn" data-value="10000">VR Experience</button>
+                    </div>
+                </div>
+                <div class="calculator-result">
+                    <h3>Estimated Investment</h3>
+                    <div class="total-price">R0</div>
+                    <p>This is an approximate quote for premium services. Contact us for a detailed proposal.</p>
+                    <button class="btn btn-primary" id="bookConsultation">Book a Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <label for="features">Additional Features</label>
-      <div class="features" id="features">
-        <label><input type="checkbox" value="seo" /> SEO Optimization (+R500)</label>
-        <label><input type="checkbox" value="chat" /> Live Chat (+R200)</label>
-        <label><input type="checkbox" value="blog" /> Blog Setup (+R400)</label>
-        <label><input type="checkbox" value="booking" /> Booking System (+R700)</label>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Begin Your Project</h2>
+                <p>Contact us to discuss your premium website</p>
+            </div>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="projectType">Project Type</label>
+                    <select id="projectType" name="projectType" required>
+                        <option value="">Select Project Type</option>
+                        <option value="luxury">Luxury Website</option>
+                        <option value="ecommerce">Premium E-Commerce</option>
+                        <option value="redesign">Website Redesign</option>
+                        <option value="branding">Brand Identity</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Project Budget</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select Budget Range</option>
+                        <option value="10000">R10,000 - R20,000</option>
+                        <option value="20000">R20,000 - R50,000</option>
+                        <option value="50000">R50,000 - R100,000</option>
+                        <option value="100000">R100,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Preferred Start Date</label>
+                    <input type="date" id="startDate" name="startDate">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your premium project..." required></textarea>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">Submit Project Request</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-container" style="margin-bottom: 20px;">
+                        <!-- YOUR LOGO GOES HERE -->
+                        <img src="https://via.placeholder.com/200x60/111111/FFD700?text=JAYWEBS+LOGO" alt="JayWebs Logo" class="logo">
+                    </div>
+                    <p>Creating premium digital experiences for luxury brands. Excellence in every pixel.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#services">Services</a>
+                        <a href="#features">Why Choose Us</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <a href="#">Luxury Web Design</a>
+                        <a href="#">Premium Development</a>
+                        <a href="#">E-Commerce Excellence</a>
+                        <a href="#">Brand Identity</a>
+                        <a href="#">SEO & Visibility</a>
+                        <a href="#">Ongoing Excellence</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 1 Premium Avenue, Gold District</p>
+                        <p><i class="fas fa-phone"></i> +27 76 094 4650</p>
+                        <p><i class="fas fa-envelope"></i> contact@jaywebs10.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM EST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 JayWebs. All rights reserved. Crafted with <i class="fas fa-heart"></i> for premium brands</p>
+            </div>
+        </div>
+    </footer>
 
-      <div class="result" id="result">Estimated Quote: R0</div>
-    </form>
-  </section>
-    
-  <!-- Contact Section -->
-  <section id="contact" class="section-padding">
-    <h2>Contact Us</h2>
-    <div class="social-icons">
-      <a href="https://facebook.com/@JayWebs" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </section>
-
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Sticky Contact Button -->
-  <a href="#quote-calculator" class="sticky-contact-btn" aria-label="Get a Quote">
-    <i class="fas fa-comments"></i> Get a Quote
-  </a>
-
-  <!-- AOS JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <!-- Custom JS -->
-  <script src="main.js"></script>
-
-  <!-- Tawk.to Live Chat -->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/your_tawk_id/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
