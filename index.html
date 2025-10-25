@@ -45,7 +45,8 @@
     <div class="container nav-container">
       <a class="brand" href="#home" aria-label="JayWebs Home">
         <div class="logo">
-          <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo">
+          <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="logo-placeholder" style="display: none;">JW</div>
         </div>
         <span class="brand-text">JayWebs</span>
       </a>
@@ -165,7 +166,10 @@
 
         <div class="about-grid">
           <div class="owner-image">
-            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="Jaden Nkuna - Web Developer">
+            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="Jaden Nkuna - Web Developer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="profile-placeholder" style="display: none;">
+              <i class="fas fa-user"></i>
+            </div>
           </div>
 
           <div class="owner-bio">
@@ -370,7 +374,11 @@
         <div class="portfolio-grid">
           <!-- Project 1: Moda Apparel -->
           <article class="portfolio-item" data-category="ecommerce">
-            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/gemma-ecommerce-website-template.jpg" alt="Moda Apparel E-commerce Store">
+            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/gemma-ecommerce-website-template.jpg" alt="Moda Apparel E-commerce Store" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="portfolio-image-placeholder" style="display: none;">
+              <i class="fas fa-shopping-bag"></i>
+              <span>E-Commerce Store</span>
+            </div>
             <div class="portfolio-info">
               <div class="project-header">
                 <span class="project-category">E-Commerce</span>
@@ -443,7 +451,11 @@
 
           <!-- Project 2: Luxe Spa -->
           <article class="portfolio-item" data-category="business">
-            <img src="https://www.menlynhotel.com/newsite/wp-content/uploads/2015/09/menlyn_hotel_spa2-1024x640.jpg" alt="Luxe Spa Website">
+            <img src="https://www.menlynhotel.com/newsite/wp-content/uploads/2015/09/menlyn_hotel_spa2-1024x640.jpg" alt="Luxe Spa Website" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="portfolio-image-placeholder" style="display: none;">
+              <i class="fas fa-spa"></i>
+              <span>Spa Website</span>
+            </div>
             <div class="portfolio-info">
               <div class="project-header">
                 <span class="project-category">Business Website</span>
@@ -516,7 +528,11 @@
 
           <!-- Project 3: Creative Studio -->
           <article class="portfolio-item" data-category="portfolio">
-            <img src="https://i.postimg.cc/Kzp6knT5/1708249854.jpg" alt="Creative Studio Portfolio">
+            <img src="https://i.postimg.cc/Kzp6knT5/1708249854.jpg" alt="Creative Studio Portfolio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="portfolio-image-placeholder" style="display: none;">
+              <i class="fas fa-palette"></i>
+              <span>Design Portfolio</span>
+            </div>
             <div class="portfolio-info">
               <div class="project-header">
                 <span class="project-category">Portfolio Site</span>
@@ -770,34 +786,45 @@
           <p>Real results from real businesses.</p>
         </header>
 
-        <div class="carousel testimonials-carousel" aria-roledescription="carousel">
-          <button class="carousel-btn prev" data-prev><i class="fa-solid fa-chevron-left"></i></button>
-          <div class="carousel-track" id="testimonialsTrack">
-            <figure class="testimonial card">
-              <blockquote>"JayWebs took our brand to the next level. Bookings up 35% within two months."</blockquote>
-              <figcaption>
-                <div style="background: #e0e0e0; width: 60px; height: 60px; border-radius: 50%;"></div>
-                <div><strong>Nomsa M.</strong><span>villa spa</span></div>
-              </figcaption>
-            </figure>
-
-            <figure class="testimonial card">
-              <blockquote>"Fast, clean, and exactly what we needed. Our site finally converts!"</blockquote>
-              <figcaption>
-                <div style="background: #e0e0e0; width: 60px; height: 60px; border-radius: 50%;"></div>
-                <div><strong>Michael R.</strong><span>Moda Apparel</span></div>
-              </figcaption>
-            </figure>
-
-            <figure class="testimonial card">
-              <blockquote>"Great communication and results. Highly recommended."</blockquote>
-              <figcaption>
-                <div style="background: #e0e0e0; width: 60px; height: 60px; border-radius: 50%;"></div>
-                <div><strong>Adv. Khumalo</strong><span>Ridge & Co.</span></div>
-              </figcaption>
-            </figure>
+        <div class="testimonials-container">
+          <div class="testimonial card">
+            <blockquote>"JayWebs took our brand to the next level. Bookings up 35% within two months."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <strong>Nomsa M.</strong>
+                <span>Villa Spa</span>
+              </div>
+            </div>
           </div>
-          <button class="carousel-btn next" data-next><i class="fa-solid fa-chevron-right"></i></button>
+
+          <div class="testimonial card">
+            <blockquote>"Fast, clean, and exactly what we needed. Our site finally converts!"</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <strong>Michael R.</strong>
+                <span>Moda Apparel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial card">
+            <blockquote>"Great communication and results. Highly recommended."</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <strong>Adv. Khumalo</strong>
+                <span>Ridge & Co.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -825,40 +852,6 @@
             <summary>What payment methods do you accept?</summary>
             <p>We accept EFT, credit cards, and payment plans are available for larger projects.</p>
           </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Client Dashboard (Hidden by default) -->
-    <section id="clientDashboard" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>Your Project Dashboard</h2>
-          <p>Track your project progress and communicate with our team</p>
-        </header>
-        
-        <div class="dashboard-grid">
-          <div class="card">
-            <h3>Project Status</h3>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 65%"></div>
-            </div>
-            <p>65% Complete</p>
-          </div>
-          
-          <div class="card">
-            <h3>Recent Updates</h3>
-            <div class="updates-list">
-              <div class="update-item">
-                <strong>Design Phase Completed</strong>
-                <span>2 days ago</span>
-              </div>
-              <div class="update-item">
-                <strong>Development Started</strong>
-                <span>1 day ago</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -921,7 +914,8 @@
       <div>
         <a class="brand" href="#home">
           <div class="logo">
-            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo">
+            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-placeholder" style="display: none;">JW</div>
           </div>
           <span class="brand-text" style="color: white;">JayWebs</span>
         </a>
@@ -965,7 +959,6 @@
   </a>
 
   <!-- JavaScript Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
