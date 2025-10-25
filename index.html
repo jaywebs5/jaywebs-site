@@ -20,50 +20,15 @@
     "@type": "WebSite",
     "name": "JayWebs",
     "description": "Premium web design and development services in South Africa",
-    "url": "https://jaywebs.co.za",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://jaywebs.co.za/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "url": "https://jaywebs.co.za"
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JayWebs",
-    "url": "https://jaywebs.co.za",
-    "logo": "https://jaywebs.co.za/images/logo.png",
-    "description": "Premium web design and development services in South Africa",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "ZA"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+27760944650",
-      "contactType": "customer service"
-    }
-  }
-  </script>
-  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   
-  <!-- Include jsPDF for PDF generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-     <!-- Add these for better performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-<!-- Optional: Add favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-<!-- Link to external CSS -->
-<link rel="stylesheet" href="css/style.css">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -78,11 +43,11 @@
   <!-- Header -->
   <header class="header" id="site-header">
     <div class="container nav-container">
-      <a class="brand" href="index.html" aria-label="JayWebs Home">
+      <a class="brand" href="#home" aria-label="JayWebs Home">
         <div class="logo">
           <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo">
         </div>
-        
+        <span class="brand-text">JayWebs</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -954,7 +919,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="index.html">
+        <a class="brand" href="#home">
           <div class="logo">
             <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo">
           </div>
@@ -999,7 +964,8 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Link to external JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- JavaScript Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
