@@ -1,964 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JayWebs — Premium Web Design</title>
-  <meta name="description" content="JayWebs builds fast, modern, and profitable websites for South African brands." />
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="JayWebs — Premium Web Design">
-  <meta property="og:description" content="Fast, modern, and profitable websites tailored for South African businesses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jaywebs.co.za">
-  <meta property="og:image" content="https://jaywebs.co.za/images/og-image.jpg">
-  
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "JayWebs",
-    "description": "Premium web design and development services in South Africa",
-    "url": "https://jaywebs.co.za"
-  }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JayWebs | Futuristic Web Design South Africa</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- SEO Meta -->
+  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
+  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
+  <meta name="author" content="JayWebs" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
-  <!-- CSS File -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Sexy Fonts Collection -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Tangerine:wght@400;700&family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-consent" id="cookieConsent">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-      <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-      <button id="acceptCookies" class="btn btn-primary">Accept</button>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="header" id="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="#home" aria-label="JayWebs Home">
-        <div class="logo">
-          <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="logo-placeholder" style="display: none;">JW</div>
-        </div>
-        <span class="brand-text">JayWebs</span>
+  <header id="mainHeader">
+    <div class="logo">
+      <a href="#home">
+        <img src="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" alt="JayWebs Logo">
       </a>
-
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="sr-only">Toggle menu</span>
-        </button>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#calculator">Instant Quote</a></li>
-          <li><a href="#booking">Book</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li id="clientPortalLink" style="display: none;">
-            <a href="#clientDashboard" class="btn btn-outline">Client Portal</a>
-          </li>
-          <li><a href="#contact" class="btn btn-primary">Contact</a></li>
-        </ul>
-      </nav>
     </div>
+    
+    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Client Feedback</a></li>
+        <li><a href="#pricing">Services</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote-calculator">Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Websites that look <span class="accent">premium</span> & convert visitors into customers.</h1>
-          <p class="lead">Fast, modern, and profitable websites tailored for South African businesses. Get an instant quote or book a call.</p>
-          <div class="hero-cta">
-            <a href="#calculator" class="btn btn-primary">Get Instant Quote</a>
-            <a href="#booking" class="btn btn-outline">Book a Call</a>
-            <a href="https://wa.me/27760944650?text=Hi%20JayWebs,%20I'm%20interested%20in%20your%20web%20design%20services" class="btn btn-whatsapp" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-            </a>
-          </div>
-          <div class="trust-row">
-            <span><i class="fa-solid fa-bolt"></i> Fast turnaround</span>
-            <span><i class="fa-solid fa-shield"></i> Secure & SEO-friendly</span>
-            <span><i class="fa-solid fa-gauge"></i> High performance</span>
-          </div>
-        </div>
+  <section class="hero" id="home">
+    <h1 data-aos="fade-up">Futuristic Web Design South Africa</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Fuel Your Brand. Power Your Presence.</p>
+    <button class="btn" data-aos="fade-up" data-aos-delay="400" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+  </section>
 
-        <div class="hero-media">
-          <div class="website-showcase">
-            <div class="showcase-container">
-              <div class="browser-window">
-                <div class="browser-header">
-                  <div class="browser-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <div class="browser-url">jaywebs.co.za</div>
-                </div>
-                <div class="browser-content">
-                  <div class="showcase-slide active">
-                    <div class="showcase-content">
-                      <h4>Modern Design</h4>
-                      <p>Clean, responsive layouts that convert</p>
-                      <div class="showcase-features">
-                        <span>Mobile-First</span>
-                        <span>SEO Optimized</span>
-                        <span>Fast Loading</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="showcase-slide">
-                    <div class="showcase-content">
-                      <h4>E-Commerce Ready</h4>
-                      <p>Complete online store solutions</p>
-                      <div class="showcase-features">
-                        <span>Secure Payments</span>
-                        <span>Product Management</span>
-                        <span>Inventory Tracking</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="showcase-slide">
-                    <div class="showcase-content">
-                      <h4>Performance Focused</h4>
-                      <p>Lightning-fast websites that rank higher</p>
-                      <div class="showcase-features">
-                        <span>Core Web Vitals</span>
-                        <span>Optimized Images</span>
-                        <span>Fast Hosting</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="showcase-indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ABOUT SECTION -->
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <h2 class="section-title gradient-text" data-aos="fade-up">About JayWebs</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.  
+        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.  
+        We believe in innovation, attention to detail, and delivering beyond expectations.
+      </p>
+      
+      <p class="italic" data-aos="fade-up" data-aos-delay="300">
+        "Where digital dreams become stunning realities"
+      </p>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-      <div class="container">
-        <header class="section-header">
-          <h2>About JayWebs</h2>
-          <p>Meet the passionate developer behind your next successful website</p>
-        </header>
-
-        <div class="about-grid">
-          <div class="owner-image">
-            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="Jaden Nkuna - Web Developer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="profile-placeholder" style="display: none;">
-              <i class="fas fa-user"></i>
-            </div>
-          </div>
-
-          <div class="owner-bio">
-            <h2>Hi, I'm Jaden Nkuna - Your Web Development Partner</h2>
-            <p>I founded JayWebs to help South African businesses establish a powerful online presence.</p>
-            
-            <p>I've worked with over 10 businesses across various industries - from startups to established enterprises.</p>
-            
-            <p>What sets me apart is my commitment to understanding your business goals first. I don't just build websites; I create digital solutions that drive real results - whether it's more leads, higher conversions, or better customer engagement.</p>
-
-            <div class="owner-skills">
-              <h3>My Expertise</h3>
-              <div class="skills-grid">
-                <div class="skill-item">
-                  <i class="fa-solid fa-code"></i>
-                  <h4>Web Development</h4>
-                </div>
-                <div class="skill-item">
-                  <i class="fa-solid fa-chart-line"></i>
-                  <h4>SEO Optimization</h4>
-                </div>
-                <div class="skill-item">
-                  <i class="fa-solid fa-mobile-screen"></i>
-                  <h4>Responsive Design</h4>
-                </div>
-                <div class="skill-item">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                  <h4>E-Commerce</h4>
-                </div>
-                <div class="skill-item">
-                  <i class="fa-solid fa-rocket"></i>
-                  <h4>Performance</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="owner-cta">
-              <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-              <a href="#portfolio" class="btn btn-outline">See My Work</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Summary -->
-    <section id="services" class="section services">
-      <div class="container">
-        <header class="section-header">
-          <h2>Services</h2>
-          <p>Everything you need to launch, grow and scale online.</p>
-        </header>
-
-        <div class="services-grid stagger">
-          <article class="card service">
-            <i class="fa-solid fa-laptop-code service-icon" aria-hidden="true"></i>
-            <h3>Custom Websites</h3>
-            <p>High-converting business and portfolio websites — built for results.</p>
-            <ul class="list-check">
-              <li>Responsive & mobile-first</li>
-              <li>Performance-focused</li>
-              <li>Hosting & maintenance</li>
-            </ul>
-            <a href="#calculator" class="btn btn-small btn-primary">Get Quote</a>
-          </article>
-
-          <article class="card service">
-            <i class="fa-solid fa-cart-shopping service-icon"></i>
-            <h3>E-Commerce</h3>
-            <p>Shopify / WooCommerce solutions with secure payments & analytics.</p>
-            <a href="#calculator" class="btn btn-small btn-primary">Get Quote</a>
-          </article>
-
-          <article class="card service">
-            <i class="fa-solid fa-magnifying-glass-chart service-icon"></i>
-            <h3>SEO & Performance</h3>
-            <p>Technical SEO and Core Web Vitals improvements to lift organic traffic.</p>
-            <a href="#calculator" class="btn btn-small btn-primary">Get Quote</a>
-          </article>
-
-          <article class="card service">
-            <i class="fa-solid fa-bullhorn service-icon"></i>
-            <h3>Brand & Content</h3>
-            <p>Logo, content and conversion-focused copywriting to speak to your buyers.</p>
-            <a href="#calculator" class="btn btn-small btn-primary">Get Quote</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="section pricing">
-      <div class="container">
-        <header class="section-header">
-          <h2>Transparent Pricing</h2>
-          <p>Clear pricing with no hidden costs. All packages include hosting for the first year.</p>
-        </header>
-
-        <div class="pricing-table">
-          <div class="pricing-card">
-            <h3>Starter Website</h3>
-            <div class="price">R5,000<span class="price-period"> once off</span></div>
-            <p>Perfect for small businesses and personal portfolios</p>
-            <ul class="pricing-features">
-              <li>Up to 5 pages</li>
-              <li>Mobile responsive design</li>
-              <li>Contact form</li>
-              <li>2 weeks delivery</li>
-            </ul>
-            <a href="#calculator" class="btn btn-primary">Get Started</a>
-          </div>
-
-          <div class="pricing-card featured">
-            <h3>Business Website</h3>
-            <div class="price">R10,000<span class="price-period"> once off</span></div>
-            <p>Ideal for growing businesses with more content</p>
-            <ul class="pricing-features">
-              <li>Up to 10 pages</li>
-              <li>Custom design</li>
-              <li>Advanced SEO</li>
-              <li>Blog/CMS integration</li>
-              <li>Social media integration</li>
-              <li>1 year hosting included</li>
-              <li>3-4 weeks delivery</li>
-            </ul>
-            <a href="#calculator" class="btn btn-primary">Get Started</a>
-          </div>
-
-          <div class="pricing-card">
-            <h3>E-Commerce</h3>
-            <div class="price">R15,000<span class="price-period"> once off</span></div>
-            <p>Complete online store with payment processing</p>
-            <ul class="pricing-features">
-              <li>Up to 15 pages + product pages</li>
-              <li>Payment gateway setup</li>
-              <li>Product management</li>
-              <li>Inventory tracking</li>
-              <li>Customer accounts</li>
-              <li>1 year hosting included</li>
-              <li>4-5 weeks delivery</li>
-            </ul>
-            <a href="#calculator" class="btn btn-primary">Get Started</a>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-          <p><strong>Additional pages:</strong> R1,000 per page (Business) | R800 per page (E-Commerce)</p>
-          <p><strong>Rush delivery (50% extra):</strong> 7-10 days for Starter, 2 weeks for Business, 3 weeks for E-Commerce</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it Works / Process -->
-    <section class="section process">
-      <div class="container">
-        <header class="section-header">
-          <h2>How we work</h2>
-          <p>Simple, fast, and transparent — get live updates at every step.</p>
-        </header>
-        <div class="process-grid stagger">
-          <div class="process-step">
-            <div class="step-num">1</div>
-            <h4>Discovery</h4>
-            <p>We align on goals, audience and scope during a short call.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">2</div>
-            <h4>Design & Build</h4>
-            <p>UI/UX first, then performance-focused development.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">3</div>
-            <h4>Launch</h4>
-            <p>Testing, SEO handoff, and a controlled launch.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-num">4</div>
-            <h4>Support</h4>
-            <p>Ongoing maintenance and growth support (optional).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio">
-      <div class="container">
-        <header class="section-header">
-          <h2>Portfolio</h2>
-          <p>Real projects, real results for South African businesses</p>
-        </header>
-
-        <!-- Portfolio Filters -->
-        <div class="portfolio-filters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-          <button class="filter-btn" data-filter="business">Business Websites</button>
-          <button class="filter-btn" data-filter="portfolio">Portfolio Sites</button>
-        </div>
-
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid">
-          <!-- Project 1: Moda Apparel -->
-          <article class="portfolio-item" data-category="ecommerce">
-            <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/gemma-ecommerce-website-template.jpg" alt="Moda Apparel E-commerce Store" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="portfolio-image-placeholder" style="display: none;">
-              <i class="fas fa-shopping-bag"></i>
-              <span>E-Commerce Store</span>
-            </div>
-            <div class="portfolio-info">
-              <div class="project-header">
-                <span class="project-category">E-Commerce</span>
-                <span class="project-timeline">6 Weeks</span>
-              </div>
-              <h3>Moda Apparel — Complete E-Commerce Redesign</h3>
-              
-              <div class="project-section">
-                <h4>🚀 The Challenge</h4>
-                <p>South African fashion brand struggling with outdated website, poor mobile experience, and low conversion rates (1.2%). Customers abandoned carts due to complicated checkout process.</p>
-              </div>
-              
-              <div class="project-section">
-                <h4>💡 Our Solution</h4>
-                <ul class="list-check">
-                  <li>Modern, mobile-first design with local South African aesthetic</li>
-                  <li>Streamlined 3-step checkout process</li>
-                  <li>Integrated PayFast & Ozow payment gateways</li>
-                  <li>Advanced product filtering by size, color, and local trends</li>
-                </ul>
-              </div>
-              
-              <div class="project-section">
-                <h4>📈 Results Achieved</h4>
-                <div class="metrics-grid">
-                  <div class="metric-card">
-                    <div class="metric-value">+214%</div>
-                    <div class="metric-label">Revenue Increase</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">3.8%</div>
-                    <div class="metric-label">Conversion Rate</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">-68%</div>
-                    <div class="metric-label">Cart Abandonment</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="project-section">
-                <h4>🛠️ Technologies Used</h4>
-                <div class="tech-tags">
-                  <span class="tech-tag">Shopify</span>
-                  <span class="tech-tag">PayFast</span>
-                  <span class="tech-tag">Ozow</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">CSS3</span>
-                </div>
-              </div>
-              
-              <div class="project-testimonial">
-                <blockquote>
-                  "JayWebs transformed our online store. The new design not only looks incredible but has more than doubled our revenue. The local payment options were a game-changer."
-                </blockquote>
-                <div class="client-info">
-                  <strong>Michael R.</strong>
-                  <span>Owner, Moda Apparel</span>
-                </div>
-              </div>
-              
-              <div class="project-actions">
-                <a href="https://moda-apparel.co.za" class="btn btn-primary" target="_blank">
-                  <i class="fa-solid fa-external-link"></i> View Live Site
-                </a>
-                <a href="#contact" class="btn btn-outline">Start Your Project</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Luxe Spa -->
-          <article class="portfolio-item" data-category="business">
-            <img src="https://www.menlynhotel.com/newsite/wp-content/uploads/2015/09/menlyn_hotel_spa2-1024x640.jpg" alt="Luxe Spa Website" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="portfolio-image-placeholder" style="display: none;">
-              <i class="fas fa-spa"></i>
-              <span>Spa Website</span>
-            </div>
-            <div class="portfolio-info">
-              <div class="project-header">
-                <span class="project-category">Business Website</span>
-                <span class="project-timeline">4 Weeks</span>
-              </div>
-              <h3>Villa Spa — Wellness Center Website</h3>
-              
-              <div class="project-section">
-                <h4>🚀 The Challenge</h4>
-                <p>Premium spa struggling with low online bookings and outdated website that didn't reflect their luxury brand positioning. No mobile optimization and difficult booking process.</p>
-              </div>
-              
-              <div class="project-section">
-                <h4>💡 Our Solution</h4>
-                <ul class="list-check">
-                  <li>Luxury design reflecting premium brand identity</li>
-                  <li>Integrated online booking system with calendar sync</li>
-                  <li>Mobile-first responsive design</li>
-                  <li>Service packages and gift certificate system</li>
-                </ul>
-              </div>
-              
-              <div class="project-section">
-                <h4>📈 Results Achieved</h4>
-                <div class="metrics-grid">
-                  <div class="metric-card">
-                    <div class="metric-value">+38%</div>
-                    <div class="metric-label">Online Bookings</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">+52%</div>
-                    <div class="metric-label">Mobile Traffic</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">2.1x</div>
-                    <div class="metric-label">Conversion Rate</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="project-section">
-                <h4>🛠️ Technologies Used</h4>
-                <div class="tech-tags">
-                  <span class="tech-tag">WordPress</span>
-                  <span class="tech-tag">PHP</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">CSS3</span>
-                  <span class="tech-tag">Booking Plugin</span>
-                </div>
-              </div>
-              
-              <div class="project-testimonial">
-                <blockquote>
-                  "Our new website perfectly captures the luxury experience we offer. Online bookings have increased significantly and the mobile experience is flawless."
-                </blockquote>
-                <div class="client-info">
-                  <strong>Nomsa M.</strong>
-                  <span>Owner, VILLA Spa</span>
-                </div>
-              </div>
-              
-              <div class="project-actions">
-                <a href="https://luxe-spa.co.za" class="btn btn-primary" target="_blank">
-                  <i class="fa-solid fa-external-link"></i> View Live Site
-                </a>
-                <a href="#contact" class="btn btn-outline">Start Your Project</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: Creative Studio -->
-          <article class="portfolio-item" data-category="portfolio">
-            <img src="https://i.postimg.cc/Kzp6knT5/1708249854.jpg" alt="Creative Studio Portfolio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="portfolio-image-placeholder" style="display: none;">
-              <i class="fas fa-palette"></i>
-              <span>Design Portfolio</span>
-            </div>
-            <div class="portfolio-info">
-              <div class="project-header">
-                <span class="project-category">Portfolio Site</span>
-                <span class="project-timeline">3 Weeks</span>
-              </div>
-              <h3>Creative Studio SA — Design Agency Portfolio</h3>
-              
-              <div class="project-section">
-                <h4>🚀 The Challenge</h4>
-                <p>Design agency needed a portfolio website that showcased their creative work while generating qualified leads. Their existing site was static and didn't reflect their innovative approach.</p>
-              </div>
-              
-              <div class="project-section">
-                <h4>💡 Our Solution</h4>
-                <ul class="list-check">
-                  <li>Interactive portfolio gallery with case studies</li>
-                  <li>Custom animation and micro-interactions</li>
-                  <li>Lead capture forms throughout the site</li>
-                  <li>Blog integration for content marketing</li>
-                </ul>
-              </div>
-              
-              <div class="project-section">
-                <h4>📈 Results Achieved</h4>
-                <div class="metrics-grid">
-                  <div class="metric-card">
-                    <div class="metric-value">+25%</div>
-                    <div class="metric-label">Project Inquiries</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">+40%</div>
-                    <div class="metric-label">Time on Site</div>
-                  </div>
-                  <div class="metric-card">
-                    <div class="metric-value">3.2x</div>
-                    <div class="metric-label">Social Shares</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="project-section">
-                <h4>🛠️ Technologies Used</h4>
-                <div class="tech-tags">
-                  <span class="tech-tag">HTML5</span>
-                  <span class="tech-tag">CSS3</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">GSAP Animations</span>
-                  <span class="tech-tag">Netlify</span>
-                </div>
-              </div>
-              
-              <div class="project-testimonial">
-                <blockquote>
-                  "JayWebs created a portfolio that truly represents our creative vision. The interactive elements and smooth animations have impressed every client who visits our site."
-                </blockquote>
-                <div class="client-info">
-                  <strong>Sarah K.</strong>
-                  <span>Creative Director, Creative Studio SA</span>
-                </div>
-              </div>
-              
-              <div class="project-actions">
-                <a href="https://creative-studio-sa.co.za" class="btn btn-primary" target="_blank">
-                  <i class="fa-solid fa-external-link"></i> View Live Site
-                </a>
-                <a href="#contact" class="btn btn-outline">Start Your Project</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="section stats">
-      <div class="container stats-grid">
-        <div class="stat-card">
-          <span class="stat-number" data-target="50">0</span>
-          <span class="stat-label">Projects Completed</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number" data-target="20">0</span>
-          <span class="stat-label">Happy Clients</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number" data-target="5">0</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-number" data-target="4">0</span>
-          <span class="stat-label">Average ROI (x)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instant Quote Calculator -->
-    <section id="calculator" class="section calculator">
-      <div class="container">
-        <header class="section-header">
-          <h2>Instant Quote</h2>
-          <p>Choose options for an on-screen estimate. Final proposal after a short call.</p>
-        </header>
-
-        <form id="quoteForm" class="card form" novalidate>
-          <div class="form-row">
-            <label for="siteType">Website Type</label>
-            <select id="siteType" name="siteType" required>
-              <option value="" selected disabled>Choose...</option>
-              <option value="landing">Landing Page (R3,000)</option>
-              <option value="business">Business / Portfolio (R5,000+)</option>
-              <option value="ecommerce">E-Commerce (R20,000+)</option>
-              <option value="webapp">Web App (R35,000+)</option>
-            </select>
-            <div class="error-message">Please select a website type</div>
-          </div>
-
-          <div class="form-row">
-            <label for="numPages">Number of Pages</label>
-            <input type="number" id="numPages" name="numPages" min="1" max="50" placeholder="e.g. 5" />
-            <small style="color: var(--gray);">Additional pages: R1,000/page (Business) | R800/page (E-Commerce)</small>
-          </div>
-
-          <div class="form-row">
-            <label>Features</label>
-            <div class="checkbox-grid">
-              <label><input type="checkbox" name="features" value="booking"> Booking (R2,000)</label>
-              <label><input type="checkbox" name="features" value="blog"> Blog / CMS (R1,500)</label>
-              <label><input type="checkbox" name="features" value="seo"> SEO Setup (R3,000)</label>
-              <label><input type="checkbox" name="features" value="payments"> Online Payments (R2,500)</label>
-              <label><input type="checkbox" name="features" value="chat"> Live Chat (R1,000)</label>
-              <label><input type="checkbox" name="features" value="dashboard"> Client Dashboard (R4,000)</label>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="deadline">Timeline</label>
-            <select id="deadline" name="deadline" required>
-              <option value="" selected disabled>Choose...</option>
-              <option value="standard">Standard (3–4 weeks) - No extra cost</option>
-              <option value="rush">Rush (7–10 days) - +30%</option>
-            </select>
-            <div class="error-message">Please select a timeline</div>
-          </div>
-
-          <div class="form-row result">
-            <div class="estimate">
-              <span class="estimate-label">Estimated Cost:</span>
-              <span id="estimateValue" class="estimate-value">R0</span>
-            </div>
-            <div class="calc-actions">
-              <button type="button" id="generateQuote" class="btn btn-primary">Calculate</button>
-              <button type="button" id="downloadQuote" class="btn btn-outline">Download PDF</button>
-              <a href="https://wa.me/27760944650?text=Hi%20JayWebs,%20I%20got%20a%20quote%20of%20R0%20from%20your%20website.%20Can%20we%20discuss%20my%20project?" class="btn btn-whatsapp" id="whatsappQuote" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Discuss on WhatsApp
-              </a>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="booking" class="section booking">
-      <div class="container">
-        <header class="section-header">
-          <h2>Book a Call</h2>
-          <p>Pick a time that suits you. You'll get an instant confirmation email.</p>
-        </header>
-
-        <form id="bookingForm" class="card form" novalidate>
-          <div class="form-row">
-            <label for="fullName">Full Name</label>
-            <input id="fullName" name="fullName" type="text" placeholder="Your name" required />
-            <div class="error-message">Please enter your full name</div>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
-            <div class="error-message">Please enter a valid email address</div>
-          </div>
-          <div class="form-row">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+27 XXX XXX XXXX" required />
-            <div class="error-message">Please enter your phone number</div>
-          </div>
-          <div class="form-row">
-            <label for="service">Service</label>
-            <select id="service" name="service" required>
-              <option value="" selected disabled>Choose...</option>
-              <option value="website">Website Design</option>
-              <option value="ecommerce">E-Commerce</option>
-              <option value="seo">SEO</option>
-              <option value="maintenance">Maintenance</option>
-              <option value="consultation">Free Consultation</option>
-            </select>
-            <div class="error-message">Please select a service</div>
-          </div>
-          <div class="form-row double">
-            <div>
-              <label for="date">Preferred Date</label>
-              <input id="date" name="date" type="date" required />
-              <div class="error-message">Please select a date</div>
-            </div>
-            <div>
-              <label for="time">Preferred Time</label>
-              <select id="time" name="time" required>
-                <option value="" disabled selected>Select time</option>
-                <option value="09:00">09:00 AM</option>
-                <option value="10:00">10:00 AM</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="14:00">02:00 PM</option>
-                <option value="15:00">03:00 PM</option>
-                <option value="16:00">04:00 PM</option>
-              </select>
-              <div class="error-message">Please select a time</div>
-            </div>
-          </div>
-          <div class="form-row">
-            <label for="notes">Project Details</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="Tell me a bit about your project, timeline, and budget..."></textarea>
-          </div>
-          <div class="form-row">
-            <button type="submit" class="btn btn-primary" id="submitBooking">
-              Confirm Booking
-            </button>
-          </div>
-        </form>
-        
-        <!-- Booking Confirmation (Hidden by default) -->
-        <div id="bookingConfirmation" class="card" style="display: none; text-align: center; padding: 40px;">
-          <i class="fa-solid fa-calendar-check" style="font-size: 3rem; color: var(--success); margin-bottom: 20px;"></i>
-          <h3>Booking Confirmed!</h3>
-          <p>Thank you for booking a call. You'll receive a confirmation email shortly with the meeting details.</p>
-          <p><strong>Next steps:</strong></p>
-          <ul style="text-align: left; max-width: 400px; margin: 20px auto;">
-            <li>Check your email for the meeting link</li>
-            <li>Add the appointment to your calendar</li>
-            <li>Prepare any questions or materials you'd like to discuss</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Back to Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section testimonials">
-      <div class="container">
-        <header class="section-header">
-          <h2>What Clients Say</h2>
-          <p>Real results from real businesses.</p>
-        </header>
-
-        <div class="testimonials-container">
-          <div class="testimonial card">
-            <blockquote>"JayWebs took our brand to the next level. Bookings up 35% within two months."</blockquote>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <strong>Nomsa M.</strong>
-                <span>Villa Spa</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial card">
-            <blockquote>"Fast, clean, and exactly what we needed. Our site finally converts!"</blockquote>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <strong>Michael R.</strong>
-                <span>Moda Apparel</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial card">
-            <blockquote>"Great communication and results. Highly recommended."</blockquote>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="author-info">
-                <strong>Adv. Khumalo</strong>
-                <span>Ridge & Co.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section faq">
-      <div class="container">
-        <header class="section-header">
-          <h2>Frequently Asked Questions</h2>
-        </header>
-        <div class="faq-grid">
-          <details open>
-            <summary>How long does a website take to build?</summary>
-            <p>Standard: 3–4 weeks. Rush option: 7–10 days depending on scope.</p>
-          </details>
-          <details>
-            <summary>Do you provide hosting and maintenance?</summary>
-            <p>Yes — we offer hosting, backups and maintenance plans. We can also guide self-hosting.</p>
-          </details>
-          <details>
-            <summary>Will my website be SEO-friendly?</summary>
-            <p>Yes — every build includes technical SEO basics and Core Web Vitals optimisation.</p>
-          </details>
-          <details>
-            <summary>What payment methods do you accept?</summary>
-            <p>We accept EFT, credit cards, and payment plans are available for larger projects.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-      <div class="container contact-grid">
-        <div class="contact-info card">
-          <h2>Let's Build Something Great</h2>
-          <p>Tell me about your project and I'll get back to you within 24 hours.</p>
-          <ul class="contact-list">
-            <li><i class="fa-solid fa-envelope"></i> jaywebs10@gmail.com</li>
-            <li><i class="fa-solid fa-phone"></i> +27 76 0944 650</li>
-            <li><i class="fa-brands fa-whatsapp"></i> +27 76 0944 650</li>
-            <li><i class="fa-solid fa-location-dot"></i> South Africa</li>
-          </ul>
-          <div class="socials">
-            <a href="https://facebook.com/jaywebs" target="_blank" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/jaywebs10" target="_blank" aria-label="X">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
-
-        <form id="contactForm" class="card form" novalidate>
-          <div class="form-row">
-            <label for="cname">Full Name</label>
-            <input id="cname" name="name" type="text" required />
-            <div class="error-message">Please enter your full name</div>
-          </div>
-          <div class="form-row">
-            <label for="cemail">Email</label>
-            <input id="cemail" name="email" type="email" required />
-            <div class="error-message">Please enter a valid email address</div>
-          </div>
-          <div class="form-row">
-            <label for="cmessage">Message</label>
-            <textarea id="cmessage" name="message" rows="4" required></textarea>
-            <div class="error-message">Please enter your message</div>
-          </div>
-          <div class="form-row">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="#home">
-          <div class="logo">
-            <img src="https://i.postimg.cc/zXxQrpfJ/IMG-20251025-WA0008.jpg" alt="JayWebs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="logo-placeholder" style="display: none;">JW</div>
-          </div>
-          <span class="brand-text" style="color: white;">JayWebs</span>
-        </a>
-        <p>Premium web design & development in South Africa.</p>
-      </div>
-      <nav class="footer-nav">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#calculator">Instant Quote</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="footer-socials">
-        <a href="https://facebook.com/jaywebs" target="_blank">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com/jaywebs10" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com/jaywebs10" target="_blank">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://wa.me/27760944650" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+      <div class="owner-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>Meet the Visionary</h3>
+        <h4>Jaden Nkuna</h4>
+        <p>
+          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.  
+          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
+        </p>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <small>© <span id="year"></span> JayWebs. All rights reserved.</small>
+  </section>
+
+  <section id="portfolio" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Masterpieces</h2>
+    <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="Project 1" />
+          <h3>E-Commerce Platform</h3>
+          <p>Modern online store with seamless user experience and secure payment integration.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.pinimg.com/originals/25/c7/59/25c759c4e46eb14e5679040418a384c7.gif" alt="Project 2" />
+          <h3>E-Commerce Platform</h3>
+          <p>Professional online store website with brand storytelling and lead generation features.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://cdn.dribbble.com/users/10960781/screenshots/18089489/desktop_-_18__1_.jpg" alt="Project 3" />
+          <h3>Portfolio Showcase</h3>
+          <p>Creative portfolio website for artists and designers to showcase their work.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" alt="Project 4" />
+          <h3>Restaurant Website</h3>
+          <p>Beautiful restaurant website with online menu and reservation system.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.f3K-1k59TfXxwQ615NlnrQHaHZ?w=1601&h=1600&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Project 5" />
+          <h3>Real Estate Portal</h3>
+          <p>Property listing website with advanced search and filtering capabilities.</p>
+        </div>
+      </div>
+      <div class="portfolio-prev swiper-button-prev"></div>
+      <div class="portfolio-next swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section class="testimonials section-padding" id="testimonials">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Client Love Stories</h2>
+    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client" alt="Mr. Ndlovu" class="testimonial-photo"/>
+          <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
+          <cite>– Mr. Ndlovu</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client" alt="Mpho D." class="testimonial-photo"/>
+          <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
+          <cite>– Mpho D.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client" alt="Sarah K." class="testimonial-photo"/>
+          <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
+          <cite>– Sarah K.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client" alt="David T." class="testimonial-photo"/>
+          <blockquote>"The website exceeded my expectations. Great communication throughout the process."</blockquote>
+          <cite>– David T.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client" alt="Lisa M." class="testimonial-photo"/>
+          <blockquote>"Fast turnaround and excellent support. My business looks professional online now."</blockquote>
+          <cite>– Lisa M.</cite>
+        </div>
+      </div>
+      <div class="testimonials-pagination swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Signature Services</h2>
+    <div class="container">
+      <div class="pricing-container">
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="200">
+          <h3>Basic Plan</h3>
+          <div class="price">R2,099</div>
+          <p>1 Page Design</p>
+          <p>Responsive Layout</p>
+          <p>Basic SEO</p>
+          <p>Contact Form</p>
+          <button class="btn">Select Plan</button>
+        </div>
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="400">
+          <h3>Standard Plan</h3>
+          <div class="price">R3,499</div>
+          <p>3 Pages</p>
+          <p>Contact Form & SEO</p>
+          <p>Social Media Integration</p>
+          <p>1 Month Support</p>
+          <button class="btn">Select Plan</button>
+        </div>
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="600">
+          <h3>Premium Plan</h3>
+          <div class="price">R6,999</div>
+          <p>Full Website + Blog</p>
+          <p>E-commerce Functionality</p>
+          <p>Advanced SEO</p>
+          <p>Ongoing Support</p>
+          <button class="btn">Select Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="section-padding">
+    <div class="container">
+      <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
+      <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
+        <form id="booking-form">
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          
+          <div>
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="basic">Basic Plan (R2,099)</option>
+              <option value="standard">Standard Plan (R3,499)</option>
+              <option value="premium">Premium Plan (R6,999)</option>
+              <option value="custom">Custom Solution</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          
+          <div>
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time" required>
+              <option value="">Select a time</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message">Your Vision</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project dreams..."></textarea>
+          </div>
+          
+          <button type="submit">Begin Your Journey</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Digital Footprint</h2>
+    <div class="stats-container">
+      <div class="stat" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Websites Built</div>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="400">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="600">
+        <div class="stat-number" data-target="99">0</div>
+        <div class="stat-label">Satisfaction %</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+        <button class="faq-question">How long does a website build take?</button>
+        <div class="faq-answer">
+          Typically, between 2-4 weeks depending on complexity and features. We work closely with you to ensure timely delivery without compromising quality.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <button class="faq-question">Do you offer support after launch?</button>
+        <div class="faq-answer">
+          Yes, we provide ongoing support packages for maintenance, updates, and technical assistance. Our support plans are tailored to your specific needs.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+        <button class="faq-question">Can I update my website content myself?</button>
+        <div class="faq-answer">
+          Absolutely! We provide a simple, user-friendly content management system (CMS) that allows you to easily update text, images, and other content without technical knowledge.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+        <button class="faq-question">Do you provide hosting services?</button>
+        <div class="faq-answer">
+          Yes, we offer reliable hosting solutions with 99.9% uptime guarantee, regular backups, and security monitoring. We can also help migrate your existing website to our servers.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote-calculator" class="calculator-container section-padding">
+    <h2 data-aos="fade-up">Instant Quote Calculator</h2>
+
+    <form id="quote-form" onsubmit="return false;" data-aos="fade-up" data-aos-delay="200">
+      <label for="type">Website Type</label>
+      <select id="type" name="type">
+        <option value="2099">Basic Website (R2,099)</option>
+        <option value="3499">Business Website (R3,499)</option>
+        <option value="6999">E-Commerce Website (R6,999)</option>
+      </select>
+
+      <label for="features">Additional Features</label>
+      <div class="features" id="features">
+        <label><input type="checkbox" value="500" /> SEO Optimization (+R500)</label>
+        <label><input type="checkbox" value="200" /> Live Chat (+R200)</label>
+        <label><input type="checkbox" value="400" /> Blog Setup (+R400)</label>
+        <label><input type="checkbox" value="700" /> Booking System (+R700)</label>
+      </div>
+
+      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
+
+      <div class="result" id="result">Estimated Quote: R0</div>
+    </form>
+  </section>
+
+  <section id="contact" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Let's Create Magic Together</h2>
+    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 JayWebs. All rights reserved. | <em>Futuristic Web Design South Africa</em></p>
     </div>
   </footer>
 
-  <!-- Live chat floating button -->
-  <button id="liveChatBtn" class="live-chat" aria-label="Open live chat">
-    <i class="fa-solid fa-comments"></i>
-  </button>
-
-  <!-- WhatsApp floating button -->
-  <a href="https://wa.me/27760944650?text=Hi%20JayWebs,%20I'm%20interested%20in%20your%20web%20design%20services" class="whatsapp-btn" aria-label="Contact us on WhatsApp" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
+  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JavaScript Files -->
-  <script src="main.js"></script>
+  <a href="#booking" class="sticky-contact-btn" aria-label="Book a Consultation">
+    <i class="fas fa-calendar-alt"></i> Book Now
+  </a>
+
+  <!-- External Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
