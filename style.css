@@ -77,8 +77,8 @@ header.hidden {
 }
 
 .logo img {
-  height: 100px; /* Extra large */
-  width: 100px; /* Extra large */
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--white);
@@ -129,7 +129,7 @@ nav ul li a.active {
   color: var(--white);
   position: relative;
   overflow: hidden;
-  margin-top: 80px; /* Account for fixed header */
+  margin-top: 80px;
 }
 
 .hero::before {
