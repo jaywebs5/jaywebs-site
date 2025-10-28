@@ -10,26 +10,33 @@
   <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
   <meta name="author" content="JayWebs" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta property="og:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
+  <meta property="og:url" content="https://www.jaywebs.site" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta name="twitter:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg">
 
-  <!-- Embedded Font Awesome Icons -->
-  <style>
-    /* Font Awesome Icons - Embedded */
-    .fa-bars:before { content: "☰"; }
-    .fa-times:before { content: "✕"; }
-    .fa-facebook-f:before { content: "f"; }
-    .fa-twitter:before { content: "t"; }
-    .fa-instagram:before { content: "📷"; }
-    .fa-whatsapp:before { content: "💬"; }
-    .fa-calendar-alt:before { content: "📅"; }
-  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Embedded Google Fonts -->
-  <style>
-    /* Google Fonts - Embedded Fallbacks */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Abril+Fatface&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Tangerine:wght@400;700&family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
     /* Reset & Base Styles */
@@ -46,14 +53,14 @@
       --light-gray: #666666;
       --white: #ffffff;
       --off-white: #f5f5f5;
-      --accent: #ffffff;
+      --accent: #00bfff; /* changed to light blue accent for highlights */
       --transition: all 0.3s ease;
-      --primary-font: 'Montserrat', Arial, sans-serif;
-      --heading-font: 'Cinzel', Georgia, serif;
-      --accent-font: 'Playfair Display', Georgia, serif;
-      --elegant-font: 'Cormorant Garamond', Georgia, serif;
+      --primary-font: 'Montserrat', sans-serif;
+      --heading-font: 'Cinzel', serif;
+      --accent-font: 'Playfair Display', serif;
+      --elegant-font: 'Cormorant Garamond', serif;
       --script-font: 'Dancing Script', cursive;
-      --luxury-font: 'Abril Fatface', Georgia, serif;
+      --luxury-font: 'Abril Fatface', cursive;
     }
 
     body {
@@ -111,8 +118,8 @@
     }
 
     .logo img {
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      width: 100px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--white);
@@ -121,7 +128,7 @@
 
     .logo:hover img {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.12);
     }
 
     nav ul {
@@ -141,7 +148,7 @@
 
     nav ul li a:hover,
     nav ul li a.active {
-      border-color: var(--white);
+      border-color: var(--accent);
       color: var(--accent);
     }
 
@@ -173,28 +180,30 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.02)"/></svg>');
       background-size: cover;
     }
 
     .hero h1 {
       font-family: var(--luxury-font);
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 1rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       position: relative;
       font-weight: 700;
+      color: var(--white);
     }
 
     .hero p {
       font-family: var(--script-font);
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 2rem;
       font-weight: 500;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      color: var(--off-white);
     }
 
     .btn {
@@ -215,7 +224,8 @@
     .btn:hover {
       background-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
     }
 
     /* Section Padding */
@@ -240,7 +250,6 @@
       background: linear-gradient(45deg, var(--white), var(--light-gray));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     /* About Section */
@@ -272,14 +281,14 @@
       border-radius: 12px;
       margin: 0 auto;
       color: var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       transition: var(--transition);
       text-align: center;
     }
 
     .owner-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
     }
 
     .owner-card h3 {
@@ -307,10 +316,8 @@
     }
 
     /* Portfolio Section */
-    .portfolio-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .portfolio-swiper {
+      position: relative;
       padding: 0 2rem;
     }
 
@@ -322,16 +329,17 @@
       color: var(--white);
       text-align: center;
       padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       transition: var(--transition);
       height: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     .portfolio-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
     }
 
     .portfolio-card img {
@@ -364,17 +372,15 @@
       font-style: italic;
     }
 
+    /* Swiper buttons */
+    .swiper-button-prev, .swiper-button-next {
+      color: var(--white);
+    }
+
     /* Testimonials */
     .testimonials {
       color: var(--white);
       background: var(--dark-gray);
-    }
-
-    .testimonials-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 0 2rem;
     }
 
     .testimonial {
@@ -382,7 +388,7 @@
       border-radius: 12px;
       padding: 2.5rem;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       transition: var(--transition);
       height: 100%;
       display: flex;
@@ -393,7 +399,7 @@
 
     .testimonial:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
     }
 
     .testimonial-photo {
@@ -423,6 +429,15 @@
       font-family: var(--heading-font);
     }
 
+    .testimonials-pagination .swiper-pagination-bullet {
+      background: var(--white);
+      opacity: 0.7;
+    }
+
+    .testimonials-pagination .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
     /* Pricing Section */
     .pricing-container {
       display: flex;
@@ -438,7 +453,7 @@
       padding: 2.5rem 2rem;
       width: 300px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       color: var(--white);
       transition: var(--transition);
       display: flex;
@@ -448,7 +463,7 @@
     .pricing-box:hover {
       transform: translateY(-10px);
       border-color: var(--accent);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
     }
 
     .pricing-box h3 {
@@ -496,21 +511,21 @@
       border-radius: 12px;
       background: var(--dark-gray);
       border: 2px solid var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       transition: var(--transition);
       flex: 1;
     }
 
     .stat:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
     }
 
     .stat-number {
       font-family: var(--luxury-font);
       font-size: 3.5rem;
       font-weight: 900;
-      color: var(--white);
+      color: var(--accent);
       margin-bottom: 0.5rem;
     }
 
@@ -533,7 +548,7 @@
       margin-bottom: 1.5rem;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.02);
     }
 
     .faq-question {
@@ -591,7 +606,7 @@
       border-radius: 12px;
       padding: 2.5rem;
       margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       color: var(--white);
       text-align: center;
     }
@@ -669,7 +684,8 @@
     #downloadQuote:hover {
       background-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
     }
 
     .result {
@@ -692,7 +708,7 @@
       border-radius: 12px;
       padding: 2.5rem;
       margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
       color: var(--white);
     }
 
@@ -755,7 +771,8 @@
     .booking-container button:hover {
       background-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
     }
 
     /* Contact Section */
@@ -788,7 +805,7 @@
     .social-icons a:hover {
       color: var(--accent);
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
     }
 
     /* WhatsApp Floating Button */
@@ -860,19 +877,19 @@
       .hero h1 {
         font-size: 3.2rem;
       }
-      
+
       .hero p {
         font-size: 1.8rem;
       }
-      
+
       .stats-container {
         gap: 2rem;
       }
-      
+
       .stat {
         padding: 1.5rem;
       }
-      
+
       .stat-number {
         font-size: 2.8rem;
       }
@@ -882,11 +899,11 @@
       header {
         padding: 1rem;
       }
-      
+
       .mobile-menu-btn {
         display: block;
       }
-      
+
       nav {
         position: fixed;
         top: 80px;
@@ -901,58 +918,52 @@
         z-index: 999;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-      
+
       nav.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
       }
-      
+
       nav ul {
         flex-direction: column;
         gap: 1rem;
       }
-      
+
       .hero {
         padding: 6rem 1rem 4rem;
       }
-      
+
       .hero h1 {
         font-size: 2.5rem;
       }
-      
+
       .hero p {
         font-size: 1.5rem;
       }
-      
+
       .section-title {
         font-size: 2.2rem;
       }
-      
+
       .stats-container {
         flex-direction: column;
         gap: 1.5rem;
       }
-      
+
       .pricing-box {
         width: 100%;
         max-width: 350px;
       }
-      
+
       .social-icons {
         gap: 1rem;
       }
-      
+
       .social-icons a {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
-      }
-      
-      .portfolio-container,
-      .testimonials-container {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
       }
     }
 
@@ -960,21 +971,21 @@
       .hero h1 {
         font-size: 2rem;
       }
-      
+
       .hero p {
         font-size: 1.3rem;
       }
-      
+
       .section-title {
         font-size: 1.8rem;
       }
-      
+
       .owner-card,
       .calculator-container,
       .booking-container {
         padding: 1.5rem;
       }
-      
+
       .logo img {
         height: 60px;
         width: 60px;
@@ -989,11 +1000,11 @@
         <img src="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" alt="JayWebs Logo">
       </a>
     </div>
-    
+
     <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
       <i class="fas fa-bars"></i>
     </button>
-    
+
     <nav id="mainNav">
       <ul>
         <li><a href="#home" class="active">Home</a></li>
@@ -1011,30 +1022,30 @@
   </header>
 
   <section class="hero" id="home">
-    <h1>Futuristic Web Design South Africa</h1>
-    <p>Fuel Your Brand. Power Your Presence.</p>
-    <button class="btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+    <h1 data-aos="fade-up">Futuristic Web Design South Africa</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Fuel Your Brand. Power Your Presence.</p>
+    <button class="btn" data-aos="fade-up" data-aos-delay="400" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
   </section>
 
   <!-- ABOUT SECTION -->
   <section class="about section-padding" id="about">
     <div class="container">
-      <h2 class="section-title gradient-text">About JayWebs</h2>
-      <p>
-        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.  
-        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.  
+      <h2 class="section-title gradient-text" data-aos="fade-up">About JayWebs</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.
+        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.
         We believe in innovation, attention to detail, and delivering beyond expectations.
       </p>
-      
-      <p class="italic">
+
+      <p class="italic" data-aos="fade-up" data-aos-delay="300">
         "Where digital dreams become stunning realities"
       </p>
 
-      <div class="owner-card">
+      <div class="owner-card" data-aos="fade-up" data-aos-delay="400">
         <h3>Meet the Visionary</h3>
         <h4>Jaden Nkuna</h4>
         <p>
-          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.  
+          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.
           His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
         </p>
       </div>
@@ -1042,62 +1053,79 @@
   </section>
 
   <section id="portfolio" class="section-padding">
-    <h2 class="section-title gradient-text">Our Masterpieces</h2>
-    <div class="portfolio-container">
-      <div class="portfolio-card">
-        <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="E-Commerce Platform" />
-        <h3>E-Commerce Platform</h3>
-        <p>Modern online store with seamless user experience and secure payment integration.</p>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Masterpieces</h2>
+    <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="E-Commerce Platform" />
+          <h3>E-Commerce Platform</h3>
+          <p>Modern online store with seamless user experience and secure payment integration.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.pinimg.com/originals/8b/ed/e9/8bede95dac22b5c02162ffb4ed644ce9.jpg" alt="Corporate Website" />
+          <h3>Corporate Website</h3>
+          <p>Professional online store  website with brand storytelling and lead generation features.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.pinimg.com/originals/31/e0/1e/31e01e6ecf772a824b849eb75756b2eb.jpg" />
+          <h3>Portfolio Showcase</h3>
+          <p>Creative portfolio website for artists and designers to showcase their work.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" />
+          <h3>Restaurant Website</h3>
+          <p>Beautiful restaurant website with online menu and reservation system.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/617fffdd8c69ee8ae8434616_qs4TzbMjvhu7ts2RxQyzlzJoHHcBYOQJHkyDro4Z-eIWCeqo7UFjjTi_6xJFIuaO8X8oXIcqELE5Eb9YM2gA0xRyoM0w2cYCkv7Bmm0GO8zkpemCd77_1fU3JeI0teEP0MZIcDZ6.jpeg" />
+          <h3>Real Estate Portal</h3>
+          <p>Property listing website with advanced search and filtering capabilities.</p>
+        </div>
       </div>
-      <div class="portfolio-card">
-        <img src="https://i.pinimg.com/originals/8b/ed/e9/8bede95dac22b5c02162ffb4ed644ce9.jpg" alt="Corporate Website" />
-        <h3>Corporate Website</h3>
-        <p>Professional online store website with brand storytelling and lead generation features.</p>
-      </div>
-      <div class="portfolio-card">
-        <img src="https://i.pinimg.com/originals/31/e0/1e/31e01e6ecf772a824b849eb75756b2eb.jpg" alt="Portfolio Showcase" />
-        <h3>Portfolio Showcase</h3>
-        <p>Creative portfolio website for artists and designers to showcase their work.</p>
-      </div>
-      <div class="portfolio-card">
-        <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" alt="Restaurant Website" />
-        <h3>Restaurant Website</h3>
-        <p>Beautiful restaurant website with online menu and reservation system.</p>
-      </div>
-      <div class="portfolio-card">
-        <img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/617fffdd8c69ee8ae8434616_qs4TzbMjvhu7ts2RxQyzlzJoHHcBYOQJHkyDro4Z-eIWCeqo7UFjjTi_6xJFIuaO8X8oXIcqELE5Eb9YM2gA0xRyoM0w2cYCkv7Bmm0GO8zkpemCd77_1fU3JeI0teEP0MZIcDZ6.jpeg" alt="Real Estate Portal" />
-        <h3>Real Estate Portal</h3>
-        <p>Property listing website with advanced search and filtering capabilities.</p>
-      </div>
+      <div class="portfolio-prev swiper-button-prev"></div>
+      <div class="portfolio-next swiper-button-next"></div>
     </div>
   </section>
 
   <section class="testimonials section-padding" id="testimonials">
-    <h2 class="section-title gradient-text">Client Love Stories</h2>
-    <div class="testimonials-container">
-      <div class="testimonial">
-        <img src="https://placehold.co/100x100/333/white?text=Client+1" alt="Mr. Ndlovu" class="testimonial-photo"/>
-        <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
-        <cite>– Mr. Ndlovu</cite>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Client Love Stories</h2>
+    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+1" alt="Mr. Ndlovu" class="testimonial-photo"/>
+          <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
+          <cite>– Mr. Ndlovu</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+2" alt="Mpho D." class="testimonial-photo"/>
+          <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
+          <cite>– Mpho D.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+3" alt="Sarah K." class="testimonial-photo"/>
+          <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
+          <cite>– Sarah K.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+4" alt="David T." class="testimonial-photo"/>
+          <blockquote>"The website exceeded my expectations. Great communication throughout the process."</blockquote>
+          <cite>– David T.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+5" alt="Lisa M." class="testimonial-photo"/>
+          <blockquote>"Fast turnaround and excellent support. My business looks professional online now."</blockquote>
+          <cite>– Lisa M.</cite>
+        </div>
       </div>
-      <div class="testimonial">
-        <img src="https://placehold.co/100x100/333/white?text=Client+2" alt="Mpho D." class="testimonial-photo"/>
-        <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
-        <cite>– Mpho D.</cite>
-      </div>
-      <div class="testimonial">
-        <img src="https://placehold.co/100x100/333/white?text=Client+3" alt="Sarah K." class="testimonial-photo"/>
-        <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
-        <cite>– Sarah K.</cite>
-      </div>
+      <div class="testimonials-pagination swiper-pagination"></div>
     </div>
   </section>
 
   <section id="pricing" class="section-padding">
-    <h2 class="section-title gradient-text">Our Signature Services</h2>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Signature Services</h2>
     <div class="container">
       <div class="pricing-container">
-        <div class="pricing-box">
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="200">
           <h3>Basic Plan</h3>
           <div class="price">R2,099</div>
           <p>1 Page Design</p>
@@ -1106,7 +1134,7 @@
           <p>Contact Form</p>
           <button class="btn">Select Plan</button>
         </div>
-        <div class="pricing-box">
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="400">
           <h3>Standard Plan</h3>
           <div class="price">R3,499</div>
           <p>3 Pages</p>
@@ -1115,7 +1143,7 @@
           <p>1 Month Support</p>
           <button class="btn">Select Plan</button>
         </div>
-        <div class="pricing-box">
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="600">
           <h3>Premium Plan</h3>
           <div class="price">R6,999</div>
           <p>Full Website + Blog</p>
@@ -1131,24 +1159,24 @@
   <!-- BOOKING SECTION -->
   <section id="booking" class="section-padding">
     <div class="container">
-      <h2 class="section-title gradient-text">Book Your Digital Transformation</h2>
-      <div class="booking-container">
+      <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
+      <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
         <form id="booking-form" netlify>
           <div>
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
           </div>
-          
+
           <div>
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" required>
           </div>
-          
+
           <div>
             <label for="phone">Phone Number</label>
             <input type="tel" id="phone" name="phone" required>
           </div>
-          
+
           <div>
             <label for="service">Service Interested In</label>
             <select id="service" name="service" required>
@@ -1159,12 +1187,12 @@
               <option value="custom">Custom Solution</option>
             </select>
           </div>
-          
+
           <div>
             <label for="date">Preferred Date</label>
             <input type="date" id="date" name="date" required>
           </div>
-          
+
           <div>
             <label for="time">Preferred Time</label>
             <select id="time" name="time" required>
@@ -1179,12 +1207,12 @@
               <option value="16:00">04:00 PM</option>
             </select>
           </div>
-          
+
           <div>
             <label for="message">Your Vision</label>
             <textarea id="message" name="message" placeholder="Tell us about your project dreams..."></textarea>
           </div>
-          
+
           <button type="submit">Begin Your Journey</button>
         </form>
       </div>
@@ -1192,17 +1220,17 @@
   </section>
 
   <section id="stats" class="section-padding">
-    <h2 class="section-title gradient-text">Our Digital Footprint</h2>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Digital Footprint</h2>
     <div class="stats-container">
-      <div class="stat">
+      <div class="stat" data-aos="fade-up" data-aos-delay="200">
         <div class="stat-number" data-target="15">0</div>
         <div class="stat-label">Websites Built</div>
       </div>
-      <div class="stat">
+      <div class="stat" data-aos="fade-up" data-aos-delay="400">
         <div class="stat-number" data-target="12">0</div>
         <div class="stat-label">Happy Clients</div>
       </div>
-      <div class="stat">
+      <div class="stat" data-aos="fade-up" data-aos-delay="600">
         <div class="stat-number" data-target="99">0</div>
         <div class="stat-label">Satisfaction %</div>
       </div>
@@ -1210,27 +1238,27 @@
   </section>
 
   <section id="faq" class="section-padding">
-    <h2 class="section-title gradient-text">Frequently Asked Questions</h2>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
     <div class="faq-container">
-      <div class="faq-item">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
         <button class="faq-question">How long does a website build take?</button>
         <div class="faq-answer">
           Typically, between 2-4 weeks depending on complexity and features. We work closely with you to ensure timely delivery without compromising quality.
         </div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
         <button class="faq-question">Do you offer support after launch?</button>
         <div class="faq-answer">
           Yes, we provide ongoing support packages for maintenance, updates, and technical assistance. Our support plans are tailored to your specific needs.
         </div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
         <button class="faq-question">Can I update my website content myself?</button>
         <div class="faq-answer">
           Absolutely! We provide a simple, user-friendly content management system (CMS) that allows you to easily update text, images, and other content without technical knowledge.
         </div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
         <button class="faq-question">Do you provide hosting services?</button>
         <div class="faq-answer">
           Yes, we offer reliable hosting solutions with 99.9% uptime guarantee, regular backups, and security monitoring. We can also help migrate your existing website to our servers.
@@ -1240,9 +1268,9 @@
   </section>
 
   <section id="quote-calculator" class="calculator-container section-padding">
-    <h2>Instant Quote Calculator</h2>
+    <h2 data-aos="fade-up">Instant Quote Calculator</h2>
 
-    <form id="quote-form" onsubmit="return false;">
+    <form id="quote-form" onsubmit="return false;" data-aos="fade-up" data-aos-delay="200">
       <label for="type">Website Type</label>
       <select id="type" name="type">
         <option value="2099">Basic Website (R2,099)</option>
@@ -1265,8 +1293,8 @@
   </section>
 
   <section id="contact" class="section-padding">
-    <h2 class="section-title gradient-text">Let's Create Magic Together</h2>
-    <div class="social-icons">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Let's Create Magic Together</h2>
+    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
       <a href="https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1288,243 +1316,329 @@
     <i class="fas fa-calendar-alt"></i> Book Now
   </a>
 
+  <!-- External Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Main Script (keeps your original logic, DOM-ready wrapper added) -->
   <script>
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mainNav = document.getElementById('mainNav');
-    
-    mobileMenuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const icon = mobileMenuToggle.querySelector('i');
-      if (mainNav.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS (Animate On Scroll)
+      if (window.AOS) {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100
+        });
       }
-    });
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all answers
-        document.querySelectorAll('.faq-answer').forEach(ans => {
-          ans.style.display = 'none';
-        });
-        document.querySelectorAll('.faq-question').forEach(q => {
-          q.classList.remove('active');
-        });
-        
-        // Open clicked answer if it wasn't active
-        if (!isActive) {
-          answer.style.display = 'block';
-          question.classList.add('active');
-        }
-      });
-    });
-
-    // Quote Calculator
-    const quoteForm = document.getElementById('quote-form');
-    const typeSelect = document.getElementById('type');
-    const featureCheckboxes = document.querySelectorAll('.features input[type="checkbox"]');
-    const resultDiv = document.getElementById('result');
-    
-    function calculateQuote() {
-      let total = parseInt(typeSelect.value);
-      
-      featureCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          total += parseInt(checkbox.value);
-        }
-      });
-      
-      resultDiv.textContent = `Estimated Quote: R${total}`;
-    }
-    
-    typeSelect.addEventListener('change', calculateQuote);
-    featureCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', calculateQuote);
-    });
-    
-    // Initialize with default value
-    calculateQuote();
-    
-    // Stats Counter Animation
-    const stats = document.querySelectorAll('.stat-number');
-    
-    function animateStats() {
-      stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
+      // Initialize Swiper for Portfolio with autoplay
+      let portfolioSwiper;
+      try {
+        portfolioSwiper = new Swiper('.portfolio-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.portfolio-next',
+            prevEl: '.portfolio-prev',
+          },
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            }
           }
-          stat.textContent = Math.floor(current);
-        }, 16);
-      });
-    }
-    
-    // Animate stats when they come into view
-    function checkStatsVisibility() {
-      const statsSection = document.getElementById('stats');
-      const rect = statsSection.getBoundingClientRect();
-      
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        animateStats();
-        window.removeEventListener('scroll', checkStatsVisibility);
+        });
+      } catch (e) {
+        console.warn('Portfolio swiper init failed:', e);
       }
-    }
-    
-    window.addEventListener('scroll', checkStatsVisibility);
-    checkStatsVisibility(); // Check on load
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
+      // Initialize Swiper for Testimonials with autoplay
+      let testimonialsSwiper;
+      try {
+        testimonialsSwiper = new Swiper('.testimonials-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          pagination: {
+            el: '.testimonials-pagination',
+            clickable: true,
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            }
+          }
+        });
+      } catch (e) {
+        console.warn('Testimonials swiper init failed:', e);
+      }
+
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mainNav = document.getElementById('mainNav');
+
+      if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', () => {
+          mainNav.classList.toggle('active');
+          const icon = mobileMenuToggle.querySelector('i');
           if (mainNav.classList.contains('active')) {
-            mainNav.classList.remove('active');
-            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
           }
-        }
-      });
-    });
-
-    // Download Quote as PDF
-    document.getElementById('downloadQuote').addEventListener('click', function() {
-      const quote = resultDiv.textContent;
-      const name = "JayWebs Quote";
-      
-      // Create a simple text file instead of PDF
-      const content = `
-JayWebs Quote
-${quote}
-
-Thank you for your interest in JayWebs!
-We'll contact you shortly to discuss your project.
-      `.trim();
-      
-      const blob = new Blob([content], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'jaywebs-quote.txt';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
-
-    // Booking Form Functionality
-    const bookingForm = document.getElementById('booking-form');
-    const dateInput = document.getElementById('date');
-    
-    // Set minimum date to today
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    dateInput.setAttribute('min', formattedDate);
-    
-    // Handle form submission
-    bookingForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(bookingForm);
-      const bookingData = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        service: formData.get('service'),
-        date: formData.get('date'),
-        time: formData.get('time'),
-        message: formData.get('message')
-      };
-      
-      // Show success message
-      alert('Thank you for your booking! We will contact you shortly to confirm your consultation.');
-      
-      // Reset form
-      bookingForm.reset();
-      
-      // Reset date min attribute
-      dateInput.setAttribute('min', formattedDate);
-    });
-
-    // Scroll-aware header functionality
-    const header = document.getElementById('mainHeader');
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', () => {
-      // Don't hide header on mobile when menu is open
-      if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
-        return;
+        });
       }
-      
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        // Scrolling down - hide header
-        header.classList.add('hidden');
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const isActive = question.classList.contains('active');
+
+          // Close all answers
+          document.querySelectorAll('.faq-answer').forEach(ans => {
+            ans.style.display = 'none';
+          });
+          document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('active');
+          });
+
+          // Open clicked answer if it wasn't active
+          if (!isActive) {
+            answer.style.display = 'block';
+            question.classList.add('active');
+          }
+        });
+      });
+
+      // Quote Calculator
+      const quoteForm = document.getElementById('quote-form');
+      const typeSelect = document.getElementById('type');
+      const featureCheckboxes = document.querySelectorAll('.features input[type="checkbox"]');
+      const resultDiv = document.getElementById('result');
+
+      function calculateQuote() {
+        let total = parseInt(typeSelect.value) || 0;
+
+        featureCheckboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            total += parseInt(checkbox.value) || 0;
+          }
+        });
+
+        resultDiv.textContent = `Estimated Quote: R${total}`;
+      }
+
+      if (typeSelect) {
+        typeSelect.addEventListener('change', calculateQuote);
+      }
+      featureCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', calculateQuote);
+      });
+
+      // Initialize with default value
+      calculateQuote();
+
+      // Stats Counter Animation
+      const stats = document.querySelectorAll('.stat-number');
+
+      function animateStats() {
+        stats.forEach(stat => {
+          const target = parseInt(stat.getAttribute('data-target')) || 0;
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current);
+          }, 16);
+        });
+      }
+
+      // Intersection Observer for stats animation
+      const statsSection = document.getElementById('stats');
+      if (statsSection && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateStats();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
       } else {
-        // Scrolling up - show header
-        header.classList.remove('hidden');
+        // Fallback
+        animateStats();
       }
-      
-      lastScrollY = window.scrollY;
-    });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target) && mainNav.classList.contains('active')) {
-        mainNav.classList.remove('active');
-        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (mainNav.classList.contains('active')) {
+              mainNav.classList.remove('active');
+              mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+              mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            }
+          }
+        });
+      });
+
+      // Download Quote as PDF
+      const downloadBtn = document.getElementById('downloadQuote');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+          try {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const quote = resultDiv ? resultDiv.textContent : 'Estimated Quote: R0';
+            const name = "JayWebs Quote";
+
+            doc.setFontSize(20);
+            doc.text(name, 20, 30);
+            doc.setFontSize(16);
+            doc.text(quote, 20, 50);
+            doc.text("Thank you for your interest in JayWebs!", 20, 70);
+            doc.text("We'll contact you shortly to discuss your project.", 20, 85);
+
+            doc.save('jaywebs-quote.pdf');
+          } catch (err) {
+            console.error('PDF generation failed', err);
+            alert('Unable to generate PDF in this browser.');
+          }
+        });
       }
-    });
 
-    // Simple scroll animations
-    function animateOnScroll() {
-      const elements = document.querySelectorAll('.section-title, .portfolio-card, .pricing-box, .testimonial');
-      
-      elements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
+      // Pause autoplay on hover for better UX
+      document.querySelectorAll('.portfolio-swiper, .testimonials-swiper').forEach(swiperContainer => {
+        swiperContainer.addEventListener('mouseenter', function() {
+          // stop the matching swiper instance if present
+          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
+            portfolioSwiper.autoplay.stop();
+          }
+          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
+            testimonialsSwiper.autoplay.stop();
+          }
+        });
+
+        swiperContainer.addEventListener('mouseleave', function() {
+          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
+            portfolioSwiper.autoplay.start();
+          }
+          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
+            testimonialsSwiper.autoplay.start();
+          }
+        });
+      });
+
+      // Booking Form Functionality
+      const bookingForm = document.getElementById('booking-form');
+      const dateInput = document.getElementById('date');
+
+      // Set minimum date to today
+      if (dateInput) {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        dateInput.setAttribute('min', formattedDate);
+      }
+
+      // Handle form submission
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Get form data
+          const formData = new FormData(bookingForm);
+          const bookingData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            service: formData.get('service'),
+            date: formData.get('date'),
+            time: formData.get('time'),
+            message: formData.get('message')
+          };
+
+          // Show success message
+          alert('Thank you for your booking! We will contact you shortly to confirm your consultation.');
+
+          // Reset form
+          bookingForm.reset();
+
+          // Reset date min attribute
+          if (dateInput) {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0];
+            dateInput.setAttribute('min', formattedDate);
+          }
+        });
+      }
+
+      // Scroll-aware header functionality
+      const header = document.getElementById('mainHeader');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        // Don't hide header on mobile when menu is open
+        if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+          return;
+        }
+
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          // Scrolling down - hide header
+          header.classList.add('hidden');
+        } else {
+          // Scrolling up - show header
+          header.classList.remove('hidden');
+        }
+
+        lastScrollY = window.scrollY;
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+          mainNav.classList.remove('active');
+          mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+          mobileMenuToggle.querySelector('i').classList.add('fa-bars');
         }
       });
-    }
-
-    // Initialize elements for animation
-    document.querySelectorAll('.section-title, .portfolio-card, .pricing-box, .testimonial').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run on load
   </script>
 </body>
 </html>
