@@ -866,11 +866,6 @@
       font-style: italic;
     }
 
-    /* Netlify Form Honeypot */
-    .netlify-honeypot {
-      display: none;
-    }
-
     /* Responsive */
     @media (max-width: 992px) {
       .hero h1 {
@@ -1160,11 +1155,7 @@
     <div class="container">
       <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
       <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
-        <form name="booking" method="POST" netlify netlify-honeypot="bot-field">
-          <p class="netlify-honeypot">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
-          
+        <form id="booking-form">
           <div>
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
@@ -1184,10 +1175,10 @@
             <label for="service">Service Interested In</label>
             <select id="service" name="service" required>
               <option value="">Select a service</option>
-              <option value="basic">Basic Plan (R2,099)</option>
-              <option value="standard">Standard Plan (R3,499)</option>
-              <option value="premium">Premium Plan (R6,999)</option>
-              <option value="custom">Custom Solution</option>
+              <option value="Basic Plan (R2,099)">Basic Plan (R2,099)</option>
+              <option value="Standard Plan (R3,499)">Standard Plan (R3,499)</option>
+              <option value="Premium Plan (R6,999)">Premium Plan (R6,999)</option>
+              <option value="Custom Solution">Custom Solution</option>
             </select>
           </div>
           
@@ -1527,25 +1518,74 @@
       });
     });
 
-    // Booking Form Functionality
-    const bookingForm = document.querySelector('form[name="booking"]');
+    // Booking Form WhatsApp Integration
+    const bookingForm = document.getElementById('booking-form');
     const dateInput = document.getElementById('date');
-    
+
     // Set minimum date to today
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
     if (dateInput) {
       dateInput.setAttribute('min', formattedDate);
     }
-    
-    // Handle form submission
+
+    // Handle form submission to WhatsApp
     if (bookingForm) {
       bookingForm.addEventListener('submit', function(e) {
-        // Let Netlify handle the form submission
-        // Show success message after a short delay
-        setTimeout(() => {
-          alert('Thank you for your booking! We will contact you shortly to confirm your consultation.');
-        }, 1000);
+        e.preventDefault();
+        
+        // Get form data
+        const bookingData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          service: document.getElementById('service').value,
+          date: document.getElementById('date').value,
+          time: document.getElementById('time').value,
+          message: document.getElementById('message').value
+        };
+        
+        // Create WhatsApp message
+        const whatsappMessage = `📅 *NEW BOOKING REQUEST* 📅
+        
+👤 *Client Details:*
+• Name: ${bookingData.name}
+• Email: ${bookingData.email}
+• Phone: ${bookingData.phone}
+
+💼 *Service Requested:*
+${bookingData.service}
+
+📅 *Preferred Appointment:*
+• Date: ${bookingData.date}
+• Time: ${bookingData.time}
+
+💭 *Project Vision:*
+${bookingData.message || 'No additional message provided'}
+
+---
+JayWebs Website Booking Form`;
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        
+        // Your WhatsApp number
+        const whatsappNumber = '27760944650';
+        
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, '_blank');
+        
+        // Show success message
+        alert('Thank you! Opening WhatsApp to send your booking details...');
+        
+        // Reset form
+        bookingForm.reset();
+        
+        // Reset date min attribute
+        dateInput.setAttribute('min', formattedDate);
       });
     }
 
