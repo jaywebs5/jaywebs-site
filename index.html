@@ -1,1623 +1,2363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JayWebs | Futuristic Web Design South Africa</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
-  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
-  <meta name="author" content="JayWebs" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
-  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta property="og:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
-  <meta property="og:url" content="https://www.jaywebs.site" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
-  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta name="twitter:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg">
-
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Tangerine:wght@400;700&family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    /* Reset & Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --black: #000000;
-      --dark-gray: #111111;
-      --medium-gray: #333333;
-      --light-gray: #666666;
-      --white: #ffffff;
-      --off-white: #f5f5f5;
-      --accent: #ffffff;
-      --transition: all 0.3s ease;
-      --primary-font: 'Montserrat', sans-serif;
-      --heading-font: 'Cinzel', serif;
-      --accent-font: 'Playfair Display', serif;
-      --elegant-font: 'Cormorant Garamond', serif;
-      --script-font: 'Dancing Script', cursive;
-      --luxury-font: 'Abril Fatface', cursive;
-    }
-
-    body {
-      font-family: var(--primary-font);
-      background-color: var(--black);
-      color: var(--white);
-      line-height: 1.6;
-      font-size: 16px;
-      overflow-x: hidden;
-      transition: var(--transition);
-    }
-
-    a {
-      color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    a:hover,
-    a:focus {
-      color: var(--accent);
-    }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 5%;
-      background: var(--dark-gray);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      border-bottom: 2px solid var(--white);
-      transition: transform 0.4s ease;
-      transform: translateY(0);
-    }
-
-    header.hidden {
-      transform: translateY(-100%);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--white);
-      transition: var(--transition);
-    }
-
-    .logo:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      font-family: var(--accent-font);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 5px 0;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      border-color: var(--white);
-      color: var(--accent);
-    }
-
-    /* Mobile Menu */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 8rem 1rem 6rem;
-      background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-      margin-top: 80px;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
-      background-size: cover;
-    }
-
-    .hero h1 {
-      font-family: var(--luxury-font);
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      position: relative;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-family: var(--script-font);
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn {
-      background-color: var(--white);
-      color: var(--black);
-      border: none;
-      padding: 0.75rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-family: var(--accent-font);
-    }
-
-    .btn:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
-
-    /* Section Padding */
-    .section-padding {
-      padding: 5rem 0;
-    }
-
-    /* Section Titles */
-    .section-title {
-      font-family: var(--luxury-font);
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: var(--white);
-      position: relative;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .gradient-text {
-      background: linear-gradient(45deg, var(--white), var(--light-gray));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* About Section */
-    .about p {
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.125rem;
-      font-weight: 400;
-      color: var(--off-white);
-      line-height: 1.7;
-      text-align: center;
-      font-family: var(--elegant-font);
-    }
-
-    .about .italic {
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--white);
-      margin: 2rem 0;
-      font-family: var(--accent-font);
-    }
-
-    /* Owner Card */
-    .owner-card {
-      max-width: 700px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      padding: 2.5rem;
-      border-radius: 12px;
-      margin: 0 auto;
-      color: var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      transition: var(--transition);
-      text-align: center;
-    }
-
-    .owner-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-    }
-
-    .owner-card h3 {
-      font-family: var(--heading-font);
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .owner-card h4 {
-      font-family: var(--accent-font);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: var(--light-gray);
-      font-style: italic;
-    }
-
-    .owner-card p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--off-white);
-      font-family: var(--elegant-font);
-    }
-
-    /* Portfolio Section */
-    .portfolio-swiper {
-      position: relative;
-      padding: 0 2rem;
-    }
-
-    .portfolio-card {
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      color: var(--white);
-      text-align: center;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-    }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      filter: grayscale(100%);
-      transition: var(--transition);
-    }
-
-    .portfolio-card:hover img {
-      filter: grayscale(0%);
-    }
-
-    .portfolio-card h3 {
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      font-family: var(--heading-font);
-    }
-
-    .portfolio-card p {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--light-gray);
-      flex-grow: 1;
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Swiper buttons */
-    .swiper-button-prev, .swiper-button-next {
-      color: var(--white);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      color: var(--white);
-      background: var(--dark-gray);
-    }
-
-    .testimonial {
-      background: var(--medium-gray);
-      border-radius: 12px;
-      padding: 2.5rem;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-    }
-
-    .testimonial-photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
-      border: 2px solid var(--white);
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
-
-    .testimonial blockquote {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-      color: var(--off-white);
-      line-height: 1.7;
-      font-family: var(--accent-font);
-      font-weight: 400;
-    }
-
-    .testimonial cite {
-      font-weight: 700;
-      color: var(--white);
-      font-style: normal;
-      font-family: var(--heading-font);
-    }
-
-    .testimonials-pagination .swiper-pagination-bullet {
-      background: var(--white);
-      opacity: 0.7;
-    }
-
-    .testimonials-pagination .swiper-pagination-bullet-active {
-      opacity: 1;
-    }
-
-    /* Pricing Section */
-    .pricing-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .pricing-box {
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      color: var(--white);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pricing-box:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-    }
-
-    .pricing-box h3 {
-      font-family: var(--luxury-font);
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .pricing-box .price {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      color: var(--white);
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    .pricing-box p {
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
-      font-weight: 500;
-      color: var(--light-gray);
-      font-family: var(--elegant-font);
-    }
-
-    .pricing-box .btn {
-      margin-top: auto;
-      width: 100%;
-    }
-
-    /* Stats Section */
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 2rem;
-      border-radius: 12px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      transition: var(--transition);
-      flex: 1;
-    }
-
-    .stat:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
-    }
-
-    .stat-number {
-      font-family: var(--luxury-font);
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: var(--light-gray);
-      font-weight: 500;
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    /* FAQ Section */
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
-    }
-
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      color: var(--white);
-      font-weight: 600;
-      padding: 1.5rem;
-      cursor: pointer;
-      border-radius: 12px;
-      transition: var(--transition);
-      font-size: 1.1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--accent-font);
-    }
-
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      transition: var(--transition);
-    }
-
-    .faq-question.active::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
-
-    .faq-question.active,
-    .faq-question:hover {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 1.5rem;
-      background: var(--medium-gray);
-      color: var(--off-white);
-      border-radius: 0 0 12px 12px;
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Quote Calculator */
-    .calculator-container {
-      max-width: 500px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .calculator-container h2 {
-      margin-bottom: 2rem;
-      font-family: var(--heading-font);
-    }
-
-    .calculator-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .calculator-container label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      display: block;
-      font-family: var(--accent-font);
-    }
-
-    .calculator-container select {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 2px solid var(--white);
-      background: var(--dark-gray);
-      color: var(--white);
-      font-size: 1rem;
-      cursor: pointer;
-      font-family: var(--primary-font);
-    }
-
-    .calculator-container input[type="checkbox"] {
-      cursor: pointer;
-      margin-right: 0.5rem;
-    }
-
-    .features {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .features label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 500;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-bottom: 0;
-      font-family: var(--elegant-font);
-    }
-
-    #downloadQuote {
-      background-color: var(--white);
-      color: var(--black);
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1rem;
-      font-family: var(--accent-font);
-    }
-
-    #downloadQuote:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
-
-    .result {
-      margin-top: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      padding: 1rem;
-      border-radius: 8px;
-      background: var(--medium-gray);
-      color: var(--white);
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    /* Booking Section */
-    .booking-container {
-      max-width: 600px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-      color: var(--white);
-    }
-
-    .booking-container h2 {
-      margin-bottom: 2rem;
-      font-family: var(--heading-font);
-      text-align: center;
-    }
-
-    .booking-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .booking-container label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      display: block;
-      font-family: var(--accent-font);
-    }
-
-    .booking-container input,
-    .booking-container select,
-    .booking-container textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 2px solid var(--white);
-      background: var(--dark-gray);
-      color: var(--white);
-      font-size: 1rem;
-      font-family: var(--primary-font);
-    }
-
-    .booking-container textarea {
-      min-height: 120px;
-      resize: vertical;
-      font-family: var(--elegant-font);
-    }
-
-    .booking-container button {
-      background-color: var(--white);
-      color: var(--black);
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1rem;
-      font-family: var(--accent-font);
-    }
-
-    .booking-container button:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
-
-    /* Contact Section */
-    #contact {
-      text-align: center;
-      padding-bottom: 4rem;
-    }
-
-    .social-icons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .social-icons a {
-      font-size: 2rem;
-      color: var(--white);
-      transition: var(--transition);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-    }
-
-    .social-icons a:hover {
-      color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px 18px;
-      font-size: 28px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      z-index: 10000;
-      transition: var(--transition);
-    }
-
-    .whatsapp-float:hover {
-      background-color: #128c3e;
-      transform: scale(1.1);
-    }
-
-    /* Sticky Contact Button */
-    .sticky-contact-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 20px;
-      background: var(--white);
-      color: var(--black);
-      padding: 12px 18px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 9999;
-      transition: var(--transition);
-      font-family: var(--accent-font);
-    }
-
-    .sticky-contact-btn i {
-      font-size: 1.2rem;
-    }
-
-    .sticky-contact-btn:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark-gray);
-      color: var(--white);
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid var(--white);
-    }
-
-    footer p {
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 3.2rem;
-      }
-      
-      .hero p {
-        font-size: 1.8rem;
-      }
-      
-      .stats-container {
-        gap: 2rem;
-      }
-      
-      .stat {
-        padding: 1.5rem;
-      }
-      
-      .stat-number {
-        font-size: 2.8rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 1rem;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      nav {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--dark-gray);
-        padding: 1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        z-index: 999;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      
-      nav.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .hero {
-        padding: 6rem 1rem 4rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .hero p {
-        font-size: 1.5rem;
-      }
-      
-      .section-title {
-        font-size: 2.2rem;
-      }
-      
-      .stats-container {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      
-      .pricing-box {
-        width: 100%;
-        max-width: 350px;
-      }
-      
-      .social-icons {
-        gap: 1rem;
-      }
-      
-      .social-icons a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1.3rem;
-      }
-      
-      .section-title {
-        font-size: 1.8rem;
-      }
-      
-      .owner-card,
-      .calculator-container,
-      .booking-container {
-        padding: 1.5rem;
-      }
-      
-      .logo img {
-        height: 60px;
-        width: 60px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JayWebs | Premium Streetwear</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- PayFast Integration -->
+    <script src="https://www.payfast.co.za/onsite/engine.js"></script>
+    <!-- Yoco SDK -->
+    <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
+        :root {
+            --header-height: 3rem;
+            --font-medium: 500;
+            --font-semi-bold: 600;
+            --font-bold: 700;
+            --dark-color: #141414;
+            --dark-color-light: #8A8A8A;
+            --dark-color-lighten: #F2F2F2;
+            --white-color: #FFFFFF;
+            --accent-color: #ff3c78;
+            --success-color: #4CAF50;
+            --warning-color: #ff9800;
+            --error-color: #f44336;
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret Road', sans-serif;
+            --big-font-size: 1.25rem;
+            --bigger-font-size: 1.5rem;
+            --biggest-font-size: 2rem;
+            --h2-font-size: 1.25rem;
+            --normal-font-size: .938rem;
+            --smaller-font-size: .813rem;
+            --m1: .5rem;
+            --m2: 1rem;
+            --m3: 1.5rem;
+            --m4: 2rem;
+            --m5: 2.5rem;
+            --m6: 3rem;
+            --z-fixed: 100;
+            --z-modal: 1000;
+            --rotate-img: rotate(-30deg);
+        }
+
+        @media screen and (min-width: 768px){
+            :root {
+                --big-font-size: 1.5rem;
+                --bigger-font-size: 2rem;
+                --biggest-font-size: 3rem;
+                --normal-font-size: 1rem;
+                --smaller-font-size: .875rem;
+            }
+        }
+
+        *, ::before, ::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: var(--header-height) 0 0 0; font-family: var(--body-font); font-size: var(--normal-font-size); font-weight: var(--font-medium); color: var(--dark-color); line-height: 1.6; }
+        h1, h2, h3, p, ul { margin: 0; }
+            ul { padding: 0; list-style: none; }
+        a { text-decoration: none; color: var(--dark-color); }
+        img { max-width: 100%; height: auto; display: block; }
+        section { padding: 5rem 0 2rem; }
+        .section-title { position: relative; font-size: var(--big-font-size); margin-bottom: var(--m4); text-align: center; letter-spacing: 0.1rem; }
+            .section-title::after { content: ''; position: absolute; width: 56px; height: 0.18rem; top: -1rem; left: 0; right: 0; margin: auto; background-color: var(--dark-color); }
+        .bd-grid { max-width: 1024px; display: grid; grid-template-columns: 100%; column-gap: 2rem; width: calc(100% - 2rem); margin-left: var(--m2); margin-right: var(--m2); }
+        .button { display: inline-block; background-color: var(--dark-color); color: var(--white-color); padding: 1.125rem 2rem; font-weight: var(--font-medium); border-radius: .5rem; transition: .4s; cursor: pointer; border: none; }
+            .button:hover { transform: translateY(-.25rem); background-color: var(--accent-color); }
+        .button-light { display: inline-flex; color: var(--dark-color); font-weight: var(--font-bold); align-items: center; transition: .4s; cursor: pointer; }
+        .button-icon { font-size: 1.25rem; margin-left: var(--m1); transition: .4s; }
+            .button-light:hover, .button-icon:hover { transform: translateX(.25rem); color: var(--accent-color); }
+
+        /*Header*/
+        .l-header { width: 100%; position: fixed; top: 0; left: 0; z-index: var(--z-fixed); background-color: var(--dark-color-lighten); }
+        .nav { height: var(--header-height); display: flex; justify-content: space-between; align-items: center; }
+
+        @media screen and (max-width: 768px) {
+            .nav-menu { position: fixed; top: var(--header-height); left: -100%; width: 70%; height: 100vh; padding: 2rem; background-color: var(--white-color); transition: .5s; }
+            .show { left: 0; }
+        }
+
+        .nav-item { margin-bottom: var(--m4); }
+        .nav-logo { font-weight: var(--font-semi-bold); font-family: var(--signature-font); font-size: 1.5rem; }
+        .nav-toggle, .nav-shop { font-size: 1.3rem; cursor: pointer; }
+        .active { position: relative; }
+            .active::before { content: ''; position: absolute; bottom: -0.5rem; left: 45%; width: 4px; height: 4px; background-color: var(--dark-color); border-radius: 50%; }
+        .scroll-header { background-color: var(--white-color); box-shadow: 0 2px 4px rgba(0, 0, 0, .1); }
+
+        /*Home*/
+        .home { background-color: var(--dark-color-lighten); overflow: hidden; }
+        .home-container { height: calc(100vh - var(--header-height)); }
+        .home-sneaker { position: relative; display: flex; justify-content: center; align-self: center; }
+        .home-shape { width: 220px; height: 220px; background-color: var(--dark-color); border-radius: 50%; }
+        .home-img { position: absolute; top: 1.5rem; max-width: initial; width: 275px; transform: var(--rotate-img); }
+        .home-new { display: block; font-size: var(--smaller-font-size); font-weight: var(--font-semi-bold); margin-bottom: var(--m2); }
+        .home-title { font-size: var(--bigger-font-size); margin-bottom: var(--m1); }
+        .home-description { margin-bottom: var(--m6); }
+
+        /*Featured*/
+        .featured-container { row-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .sneaker { position: relative; display: flex; flex-direction: column; align-items: center; padding: 2rem; background-color: var(--dark-color-lighten); border-radius: .5rem; transition: .4s; }
+            .sneaker:hover { transform: translateY(-.5rem); }
+        .sneaker-sale { position: absolute; left: 0.5rem; background-color: var(--dark-color); color: var(--white-color); padding: 0.25rem .5rem; border-radius: .25rem; font-size: var(--h2-font-size); transform: rotate(-90deg); letter-spacing: 0.1rem; }
+        .sneaker-img { width: 220px; margin-top: var(--m3); margin-bottom: var(--m6); filter: drop-shadow(0 12px 8px rgba(0, 0, 0, .2)); }
+        .sneaker-name, .sneaker-price { font-size: var(--h2-font-size); letter-spacing: 0.1rem; font-weight: var(--font-bold); }
+            .sneaker-name { margin-bottom: var(--m1); }
+            .sneaker-price { margin-bottom: var(--m4); }
+
+        /* Jackets Section */
+        .jackets-container { row-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .jacket { position: relative; display: flex; flex-direction: column; align-items: center; padding: 2rem; background-color: var(--dark-color-lighten); border-radius: .5rem; transition: .4s; }
+            .jacket:hover { transform: translateY(-.5rem); }
+        .jacket-sale { position: absolute; left: 0.5rem; background-color: var(--dark-color); color: var(--white-color); padding: 0.25rem .5rem; border-radius: .25rem; font-size: var(--h2-font-size); transform: rotate(-90deg); letter-spacing: 0.1rem; }
+        .jacket-img { width: 200px; margin-top: var(--m3); margin-bottom: var(--m2); filter: drop-shadow(0 12px 8px rgba(0, 0, 0, .2)); }
+        .jacket-name, .jacket-price { font-size: var(--h2-font-size); letter-spacing: 0.1rem; font-weight: var(--font-bold); }
+            .jacket-name { margin-bottom: var(--m1); }
+            .jacket-price { margin-bottom: var(--m2); }
+        .size-selector { display: flex; gap: 0.5rem; margin-bottom: var(--m3); }
+        .size-option { width: 35px; height: 35px; border: 2px solid var(--dark-color-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: .3s; font-weight: var(--font-semi-bold); }
+        .size-option:hover { border-color: var(--dark-color); }
+        .size-option.selected { background-color: var(--dark-color); color: var(--white-color); border-color: var(--dark-color); }
+
+        /*Collection*/
+        .collection-container { row-gap: 2rem; justify-content: center; }
+        .collection-card { position: relative; display: flex; height: 328px; background-color: var(--dark-color-lighten); padding: 2rem; border-radius: .5rem; transition: .4s; }
+            .collection-card:hover { transform: translateY(-.5rem); }
+        .collection-data { align-self: flex-end; }
+        .collection-img { position: absolute; top: 0; right: 0; width: 230px; }
+        .collection-name { font-size: var(--bigger-font-size); margin-bottom: .25rem; }
+        .collection-description { margin-bottom: var(--m2); }
+
+        /*Women*/
+        .women-container { row-gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+        /*Offer*/
+        .offer-container { grid-template-columns: 55% 45%; column-gap: 0; background-color: var(--dark-color-lighten); border-radius: .5rem; justify-content: center; }
+        .offer-data { padding: 4rem 0 4rem 1.5rem; }
+        .offer-title { font-size: var(--biggest-font-size); margin-bottom: .25rem; }
+        .offer-description { margin-bottom: var(--m3); }
+        .offer-img { width: 153px; }
+
+        /*New*/
+        .new-container { row-gap: 2rem; }
+        .new-mens { display: flex; flex-direction: column; justify-content: center; background-color: var(--dark-color-lighten); border-radius: .5rem; padding: 2rem; }
+        .new-mens-img { width: 276px; margin-bottom: var(--m3); }
+        .new-title { font-size: var(--bigger-font-size); margin-bottom: .25rem; }
+        .new-price { display: block; margin-bottom: var(--m3); }
+        .new-sneaker { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .new-sneaker-card { position: relative; padding: 3.5rem 1.5rem; background-color: var(--dark-color-lighten); border-radius: .5rem; overflow: hidden; display: flex; justify-content: center; }
+        .new-sneaker-img { width: 220px; }
+        .new-sneaker-overlay { position: absolute; left: 0; bottom: -100%; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(138, 138, 138, .3); transition: .4s; }
+            .new-sneaker-card:hover .new-sneaker-overlay { bottom: 0 !important; }
+
+        /*Newsletter*/
+        .newsletter-container { background-color: var(--dark-color); color: var(--white-color); padding: 2rem .5rem; border-radius: .5rem; text-align: center; }
+        .newsletter-title { font-size: var(--bigger-font-size); margin-bottom: var(--m2); }
+        .newsletter-description { margin-bottom: var(--m5); }
+        .newsletter-subscribe { display: flex; column-gap: .5rem; background-color: var(--white-color); padding: 0.5rem; border-radius: .5rem; }
+        .newsletter-input { outline: none; border: none; width: 90%; font-size: var(--normal-font-size); }
+            .newsletter-input::placeholder { color: var(--dark-color); font-family: var(--body-font); font-size: var(--normal-font-size); font-weight: var(--font-semi-bold); }
+
+        /*Footer*/
+        .footer-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .footer-box { margin-bottom: var(--m4); }
+        .footer-title { font-size: var(--big-font-size); }
+        .footer-link { display: block; width: max-content; margin-bottom: var(--m1); }
+        .footer-social { font-size: 1.5rem; margin-right: 1.25rem; }
+        .footer-copy { padding-top: 3rem; font-size: var(--smaller-font-size); color: var(--dark-color-light); text-align: center; }
+            .footer-copy a { font-size: var(--smaller-font-size); color: var(--dark-color-light); transition: .4s; font-family: var(--signature-font); }
+                .footer-copy a:hover { color: var(--dark-color); }
+
+        /* Cart Styles */
+        .nav-shop { position: relative; }
+        .cart-count { position: absolute; top: -8px; right: -8px; background-color: var(--accent-color); color: var(--white-color); border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; display: flex; justify-content: center; align-items: center; }
+
+        .cart-modal, .checkout-modal {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            transition: .5s;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .cart-modal.active, .checkout-modal.active {
+            right: 0;
+        }
+
+        .cart-content, .checkout-content {
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background-color: var(--white-color);
+            padding: 2rem;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .checkout-content {
+            max-width: 500px;
+        }
+
+        .cart-close, .checkout-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-title, .checkout-title {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--dark-color-lighten);
+        }
+
+        .cart-items {
+            margin-bottom: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--dark-color-lighten);
+        }
+
+        .cart-item-img {
+            width: 80px;
+            margin-right: 1rem;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: var(--font-semi-bold);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            color: var(--dark-color-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-size {
+            color: var(--dark-color-light);
+            font-size: var(--smaller-font-size);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-btn {
+            background: none;
+            border: 1px solid var(--dark-color-lighten);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid var(--dark-color-lighten);
+            margin: 0 0.5rem;
+        }
+
+        .cart-item-remove {
+            color: var(--dark-color);
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            font-weight: var(--font-semi-bold);
+            font-size: 1.2rem;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--dark-color-light);
+        }
+
+        /* Checkout Form Styles */
+        .checkout-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--dark-color-lighten);
+        }
+
+        .checkout-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-row input {
+            flex: 1;
+        }
+
+        .checkout-section input,
+        .checkout-section select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--dark-color-lighten);
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            font-family: var(--body-font);
+        }
+
+        .payment-methods {
+            margin-bottom: 1rem;
+        }
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid var(--dark-color-lighten);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .payment-method:hover {
+            background-color: var(--dark-color-lighten);
+        }
+
+        .payment-method.selected {
+            background-color: var(--dark-color-lighten);
+            border-color: var(--accent-color);
+        }
+
+        .payment-method input {
+            margin-right: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .payment-form {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--dark-color-lighten);
+            border-radius: 0.25rem;
+            display: none;
+        }
+
+        .payment-form.active {
+            display: block;
+        }
+
+        .payment-providers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .payment-provider {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem;
+            border: 1px solid var(--dark-color-light);
+            border-radius: 0.25rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-provider:hover {
+            border-color: var(--accent-color);
+            background-color: var(--dark-color-lighten);
+        }
+
+        .payment-provider.selected {
+            border-color: var(--accent-color);
+            background-color: var(--dark-color-lighten);
+        }
+
+        .payment-provider-logo {
+            height: 30px;
+            margin-bottom: 0.5rem;
+        }
+
+        .yoco-card-form {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .checkout-summary {
+            background-color: var(--dark-color-lighten);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #checkout-items {
+            margin-bottom: 1rem;
+        }
+
+        .checkout-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-totals {
+            margin-top: 1rem;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .grand-total {
+            font-weight: var(--font-bold);
+            font-size: 1.2rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* Order Success Modal */
+        .order-success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1002;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s;
+        }
+
+        .order-success-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .order-success-content {
+            background-color: var(--white-color);
+            padding: 3rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .order-success-icon {
+            font-size: 4rem;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+        }
+
+        .order-success-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-success-details {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--dark-color-lighten);
+            border-radius: 0.25rem;
+        }
+
+        .order-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Size Selection Modal */
+        .size-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .size-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .size-modal-content {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .size-modal.active .size-modal-content {
+            transform: translateY(0);
+        }
+
+        .size-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color-light);
+            transition: color 0.3s ease;
+        }
+
+        .size-modal-close:hover {
+            color: var(--dark-color);
+        }
+
+        .size-modal-product-info {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--dark-color-lighten);
+        }
+
+        .size-modal-product-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .size-modal-product-details {
+            flex: 1;
+        }
+
+        .size-modal-product-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: var(--h2-font-size);
+        }
+
+        .size-modal-product-price {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .size-modal-selection h3 {
+            margin-bottom: 1rem;
+            font-size: var(--big-font-size);
+        }
+
+        .size-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .size-modal-option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            border: 2px solid var(--dark-color-lighten);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .size-modal-option:hover {
+            border-color: var(--dark-color);
+        }
+
+        .size-modal-option.selected {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            border-color: var(--dark-color);
+        }
+
+        .size-modal-option.unavailable {
+            color: var(--dark-color-light);
+            background-color: var(--dark-color-lighten);
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .size-modal-option.unavailable::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--dark-color-light);
+            transform: rotate(-45deg);
+        }
+
+        .size-modal-guide {
+            color: var(--dark-color-light);
+            font-size: var(--smaller-font-size);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .size-modal-add-to-cart-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: var(--normal-font-size);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .size-modal-add-to-cart-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .size-modal-add-to-cart-btn:disabled {
+            background-color: var(--dark-color-light);
+            cursor: not-allowed;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: var(--z-modal);
+        }
+
+        .notification.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /*Media Queries*/
+        @media screen and (min-width: 398px) {
+            .new-mens { align-items: center; }
+        }
+
+        @media screen and (min-width: 576px) {
+            .collection-container { grid-template-columns: 415px; }
+            .collection-img { width: 260px; }
+
+            .offer-container { grid-template-columns: max-content max-content; }
+            .offer-data { text-align: center; }
+        }
+
+        @media screen and (min-width: 768px) {
+            body { margin: 0; }
+            .section { padding: 7rem 0; }
+            .section-title::after { width: 76px; }
+            .nav { height: calc(var(--header-height) + 1.5rem); }
+            .nav-menu { margin-left: auto; }
+            .nav-list { display: flex; }
+            .nav-item { margin-left: var(--m6); margin-bottom: 0; }
+            .nav-toggle { display: none; }
+
+            .home-container { height: 100vh; grid-template-columns: max-content max-content; justify-content: center; align-items: center; }
+            .home-sneaker { order: 1; }
+            .home-shape { width: 376px; height: 376px; }
+            .home-img { width: 470px; top: 3.5rem; right: 0; left: -3rem; transform: var(--rotate-img); }
+
+            .newsletter-container { grid-template-columns: max-content max-content; justify-content: center; align-items: center; padding: 4.5rem 2rem; column-gap: 3rem; }
+            .newsletter-description { margin-bottom: 0; }
+            .newsletter-subscribe { width: 360px; height: max-content; }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .bd-grid { margin-left: auto; margin-right: auto; }
+            .home-container { column-gap: 8rem; }
+            .collection-container { grid-template-columns: 720px; }
+            .new-container { grid-template-columns: max-content 1fr; }
+            .new-mens { align-items: initial; justify-content: flex-end; padding: 4rem 2rem; }
+            .new-mens-img { margin-bottom: var(--m6); }
+        }
+
+        @media (max-width: 768px) {
+            .size-modal-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .size-modal-product-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .size-modal-product-image {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                align-self: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header id="mainHeader">
-    <div class="logo">
-      <a href="#home">
-        <img src="https://i.postimg.cc/V62SgRYk/IMG-20251104-WA0005.jpg" alt="JayWebs Logo">
-      </a>
+    <header class="l-header" id="header">
+        <nav class="nav bd-grid">
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="bx bxs-grid"></i>
+            </div>
+
+            <a href="#" class="nav-logo">JayWebs</a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#featured" class="nav-link">Featured</a></li>
+                    <li class="nav-item"><a href="#women" class="nav-link">Women</a></li>
+                    <li class="nav-item"><a href="#jackets" class="nav-link">Jackets</a></li>
+                    <li class="nav-item"><a href="#new" class="nav-link">New</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-shop" id="cart-icon">
+                <i class="bx bx-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-close" id="cart-close">
+                <i class="bx bx-x"></i>
+            </div>
+            <h2 class="cart-title">Your Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <div class="cart-empty">Your cart is empty</div>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R0.00</span>
+            </div>
+            <button class="button" id="checkout-btn">Proceed to Checkout</button>
+        </div>
     </div>
-    
-    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonials">Client Feedback</a></li>
-        <li><a href="#pricing">Services</a></li>
-        <li><a href="#booking">Book Now</a></li>
-        <li><a href="#stats">Impact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#quote-calculator">Quote</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <h1 data-aos="fade-up">Futuristic Web Design South Africa</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Fuel Your Brand. Power Your Presence.</p>
-    <button class="btn" data-aos="fade-up" data-aos-delay="400" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
-  </section>
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-close" id="checkout-close">
+                <i class="bx bx-x"></i>
+            </div>
+            <h2 class="checkout-title">Checkout</h2>
+            
+            <form id="checkout-form">
+                <!-- Customer Information -->
+                <div class="checkout-section">
+                    <h3>Contact Information</h3>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
 
-  <!-- ABOUT SECTION -->
-  <section class="about section-padding" id="about">
-    <div class="container">
-      <h2 class="section-title gradient-text" data-aos="fade-up">About JayWebs</h2>
-      <p data-aos="fade-up" data-aos-delay="200">
-        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.  
-        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.  
-        We believe in innovation, attention to detail, and delivering beyond expectations.
-      </p>
-      
-      <p class="italic" data-aos="fade-up" data-aos-delay="300">
-        "Where digital dreams become stunning realities"
-      </p>
+                <!-- Shipping Address -->
+                <div class="checkout-section">
+                    <h3>Shipping Address</h3>
+                    <div class="form-row">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    <input type="text" name="address" placeholder="Street Address" required>
+                    <div class="form-row">
+                        <input type="text" name="city" placeholder="City" required>
+                        <input type="text" name="postalCode" placeholder="Postal Code" required>
+                    </div>
+                    <select name="province" required>
+                        <option value="">Select Province</option>
+                        <option value="EC">Eastern Cape</option>
+                        <option value="FS">Free State</option>
+                        <option value="GP">Gauteng</option>
+                        <option value="KZN">KwaZulu-Natal</option>
+                        <option value="LP">Limpopo</option>
+                        <option value="MP">Mpumalanga</option>
+                        <option value="NW">North West</option>
+                        <option value="NC">Northern Cape</option>
+                        <option value="WC">Western Cape</option>
+                    </select>
+                </div>
 
-      <div class="owner-card" data-aos="fade-up" data-aos-delay="400">
-        <h3>Meet the Visionary</h3>
-        <h4>Jaden Nkuna</h4>
-        <p>
-          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.  
-          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
-        </p>
-      </div>
+                <!-- Payment Method -->
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <label class="payment-method" data-method="card">
+                            <input type="radio" name="paymentMethod" value="card" checked>
+                            <span>Credit/Debit Card</span>
+                        </label>
+                        <label class="payment-method" data-method="instant-eft">
+                            <input type="radio" name="paymentMethod" value="instant-eft">
+                            <span>Instant EFT</span>
+                        </label>
+                        <label class="payment-method" data-method="payfast">
+                            <input type="radio" name="paymentMethod" value="payfast">
+                            <span>PayFast</span>
+                        </label>
+                    </div>
+
+                    <!-- Card Payment Form -->
+                    <div id="card-payment" class="payment-form active">
+                        <div class="payment-providers">
+                            <div class="payment-provider selected" data-provider="yoco">
+                                <div>Yoco</div>
+                                <small>Secure Card Payments</small>
+                            </div>
+                        </div>
+                        
+                        <div id="yoco-payment-form" class="yoco-card-form">
+                            <div class="form-row">
+                                <input type="text" id="card-number" placeholder="Card Number" maxlength="19" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                                <input type="text" id="cvv" placeholder="CVV" maxlength="3" required>
+                            </div>
+                            <input type="text" id="card-name" placeholder="Name on Card" required>
+                        </div>
+                    </div>
+
+                    <!-- Instant EFT Options -->
+                    <div id="instant-eft-payment" class="payment-form">
+                        <div class="payment-providers">
+                            <div class="payment-provider selected" data-provider="ozow">
+                                <div>Ozow</div>
+                                <small>Instant Bank Transfer</small>
+                            </div>
+                            <div class="payment-provider" data-provider="payflex">
+                                <div>PayFlex</div>
+                                <small>Pay in 4</small>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--dark-color-light);">
+                            You will be redirected to your bank to complete the payment securely.
+                        </p>
+                    </div>
+
+                    <!-- PayFast Options -->
+                    <div id="payfast-payment" class="payment-form">
+                        <div class="payment-providers">
+                            <div class="payment-provider selected" data-provider="payfast">
+                                <div>PayFast</div>
+                                <small>Multiple Payment Options</small>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--dark-color-light);">
+                            PayFast supports credit cards, debit cards, EFT, and more.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items"></div>
+                    <div class="summary-totals">
+                        <div class="total-line">
+                            <span>Subtotal:</span>
+                            <span id="checkout-subtotal">R0.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Shipping:</span>
+                            <span id="checkout-shipping">R99.00</span>
+                        </div>
+                        <div class="total-line">
+                            <span>Tax (15%):</span>
+                            <span id="checkout-tax">R0.00</span>
+                        </div>
+                        <div class="total-line grand-total">
+                            <span>Total:</span>
+                            <span id="checkout-total">R0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="button" id="place-order-btn">
+                    Place Order - R0.00
+                </button>
+            </form>
+        </div>
     </div>
-  </section>
 
-  <section id="portfolio" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Masterpieces</h2>
-    <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="E-Commerce Platform" />
-          <h3>E-Commerce Platform</h3>
-          <p>Modern online store with seamless user experience and secure payment integration.</p>
+    <!-- Order Success Modal -->
+    <div class="order-success-modal" id="order-success-modal">
+        <div class="order-success-content">
+            <div class="order-success-icon">
+                <i class="bx bx-check-circle"></i>
+            </div>
+            <h2 class="order-success-title">Payment Successful!</h2>
+            <p>Thank you for your purchase. Your order has been confirmed.</p>
+            
+            <div class="order-success-details">
+                <div class="order-detail">
+                    <span>Order Number:</span>
+                    <span id="order-number">#SC-0000</span>
+                </div>
+                <div class="order-detail">
+                    <span>Total Amount:</span>
+                    <span id="order-total">R0.00</span>
+                </div>
+                <div class="order-detail">
+                    <span>Payment Method:</span>
+                    <span id="payment-method">Credit Card</span>
+                </div>
+                <div class="order-detail">
+                    <span>Estimated Delivery:</span>
+                    <span id="delivery-date">5-7 business days</span>
+                </div>
+            </div>
+            
+            <button class="button" id="continue-shopping-btn">Continue Shopping</button>
         </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.pinimg.com/originals/8b/ed/e9/8bede95dac22b5c02162ffb4ed644ce9.jpg" alt="Corporate Website" />
-          <h3>Corporate Website</h3>
-          <p>Professional online store  website with brand storytelling and lead generation features.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.pinimg.com/originals/31/e0/1e/31e01e6ecf772a824b849eb75756b2eb.jpg" />
-          <h3>Portfolio Showcase</h3>
-          <p>Creative portfolio website for artists and designers to showcase their work.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" />
-          <h3>Restaurant Website</h3>
-          <p>Beautiful restaurant website with online menu and reservation system.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/617fffdd8c69ee8ae8434616_qs4TzbMjvhu7ts2RxQyzlzJoHHcBYOQJHkyDro4Z-eIWCeqo7UFjjTi_6xJFIuaO8X8oXIcqELE5Eb9YM2gA0xRyoM0w2cYCkv7Bmm0GO8zkpemCd77_1fU3JeI0teEP0MZIcDZ6.jpeg" />
-          <h3>Real Estate Portal</h3>
-          <p>Property listing website with advanced search and filtering capabilities.</p>
-        </div>
-      </div>
-      <div class="portfolio-prev swiper-button-prev"></div>
-      <div class="portfolio-next swiper-button-next"></div>
     </div>
-  </section>
 
-  <section class="testimonials section-padding" id="testimonials">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Client Love Stories</h2>
-    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+1" alt="Mr. Ndlovu" class="testimonial-photo"/>
-          <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
-          <cite>– Mr. Ndlovu</cite>
+    <!-- Size Selection Modal -->
+    <div class="size-modal" id="size-modal">
+        <div class="size-modal-content">
+            <button class="size-modal-close" id="size-modal-close">
+                <i class="bx bx-x"></i>
+            </button>
+            
+            <div class="size-modal-product-info">
+                <img src="" alt="" class="size-modal-product-image" id="size-modal-product-image">
+                <div class="size-modal-product-details">
+                    <h3 class="size-modal-product-name" id="size-modal-product-name"></h3>
+                    <p class="size-modal-product-price" id="size-modal-product-price"></p>
+                </div>
+            </div>
+            
+            <div class="size-modal-selection">
+                <h3>Select Size</h3>
+                <div class="size-modal-grid" id="size-modal-grid">
+                    <!-- Size options will be dynamically generated here -->
+                </div>
+                <p class="size-modal-guide">Select your size to continue</p>
+                <button class="size-modal-add-to-cart-btn" id="size-modal-add-to-cart-btn" disabled>Add to Cart</button>
+            </div>
         </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+2" alt="Mpho D." class="testimonial-photo"/>
-          <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
-          <cite>– Mpho D.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+3" alt="Sarah K." class="testimonial-photo"/>
-          <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
-          <cite>– Sarah K.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+4" alt="David T." class="testimonial-photo"/>
-          <blockquote>"The website exceeded my expectations. Great communication throughout the process."</blockquote>
-          <cite>– David T.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+5" alt="Lisa M." class="testimonial-photo"/>
-          <blockquote>"Fast turnaround and excellent support. My business looks professional online now."</blockquote>
-          <cite>– Lisa M.</cite>
-        </div>
-      </div>
-      <div class="testimonials-pagination swiper-pagination"></div>
     </div>
-  </section>
 
-  <section id="pricing" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Signature Services</h2>
-    <div class="container">
-      <div class="pricing-container">
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="200">
-          <h3>Basic Plan</h3>
-          <div class="price">R2,099</div>
-          <p>1 Page Design</p>
-          <p>Responsive Layout</p>
-          <p>Basic SEO</p>
-          <p>Contact Form</p>
-          <button class="btn">Select Plan</button>
-        </div>
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="400">
-          <h3>Standard Plan</h3>
-          <div class="price">R3,499</div>
-          <p>3 Pages</p>
-          <p>Contact Form & SEO</p>
-          <p>Social Media Integration</p>
-          <p>1 Month Support</p>
-          <button class="btn">Select Plan</button>
-        </div>
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="600">
-          <h3>Premium Plan</h3>
-          <div class="price">R6,999</div>
-          <p>Full Website + Blog</p>
-          <p>E-commerce Functionality</p>
-          <p>Advanced SEO</p>
-          <p>Ongoing Support</p>
-          <button class="btn">Select Plan</button>
-        </div>
-      </div>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Product added to cart successfully!
     </div>
-  </section>
 
-  <!-- BOOKING SECTION -->
-  <section id="booking" class="section-padding">
-    <div class="container">
-      <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
-      <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
-        <form id="booking-form">
-          <div>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div>
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-          
-          <div>
-            <label for="service">Service Interested In</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option value="Basic Plan (R2,099)">Basic Plan (R2,099)</option>
-              <option value="Standard Plan (R3,499)">Standard Plan (R3,499)</option>
-              <option value="Premium Plan (R6,999)">Premium Plan (R6,999)</option>
-              <option value="Custom Solution">Custom Solution</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-          
-          <div>
-            <label for="time">Preferred Time</label>
-            <select id="time" name="time" required>
-              <option value="">Select a time</option>
-              <option value="09:00">09:00 AM</option>
-              <option value="10:00">10:00 AM</option>
-              <option value="11:00">11:00 AM</option>
-              <option value="12:00">12:00 PM</option>
-              <option value="13:00">01:00 PM</option>
-              <option value="14:00">02:00 PM</option>
-              <option value="15:00">03:00 PM</option>
-              <option value="16:00">04:00 PM</option>
-            </select>
-          </div>
-          
-          <div>
-            <label for="message">Your Vision</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project dreams..."></textarea>
-          </div>
-          
-          <button type="submit">Begin Your Journey</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    <main class="l-main">
+        <!-- Your existing main content remains the same -->
+        <section class="home" id="home">
+            <div class="home-container bd-grid">
+                <div class="home-sneaker">
+                    <div class="home-shape"></div>
+                    <img src="https://i.postimg.cc/X7YDSKCb/9736a3916d86ba731b099a6c4162d623.png" alt="" class="home-img">
+                </div>
 
-  <section id="stats" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Digital Footprint</h2>
-    <div class="stats-container">
-      <div class="stat" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-number" data-target="15">0</div>
-        <div class="stat-label">Websites Built</div>
-      </div>
-      <div class="stat" data-aos="fade-up" data-aos-delay="400">
-        <div class="stat-number" data-target="12">0</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div class="stat" data-aos="fade-up" data-aos-delay="600">
-        <div class="stat-number" data-target="99">0</div>
-        <div class="stat-label">Satisfaction %</div>
-      </div>
-    </div>
-  </section>
+                <div class="home-data">
+                    <span class="home-new">New in</span>
+                    <h1 class="home-title">YEEZY  <br> 700-V3</h1>
+                    <p class="home-description">Explore the new collections of sneakers</p>
+                    <a href="#featured" class="button">Explore Now</a>
+                </div>
+            </div>
+        </section>
 
-  <section id="faq" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-        <button class="faq-question">How long does a website build take?</button>
-        <div class="faq-answer">
-          Typically, between 2-4 weeks depending on complexity and features. We work closely with you to ensure timely delivery without compromising quality.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-        <button class="faq-question">Do you offer support after launch?</button>
-        <div class="faq-answer">
-          Yes, we provide ongoing support packages for maintenance, updates, and technical assistance. Our support plans are tailored to your specific needs.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-        <button class="faq-question">Can I update my website content myself?</button>
-        <div class="faq-answer">
-          Absolutely! We provide a simple, user-friendly content management system (CMS) that allows you to easily update text, images, and other content without technical knowledge.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-        <button class="faq-question">Do you provide hosting services?</button>
-        <div class="faq-answer">
-          Yes, we offer reliable hosting solutions with 99.9% uptime guarantee, regular backups, and security monitoring. We can also help migrate your existing website to our servers.
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="featured section" id="featured">
+            <h2 class="section-title">FEATURED</h2>
 
-  <section id="quote-calculator" class="calculator-container section-padding">
-    <h2 data-aos="fade-up">Instant Quote Calculator</h2>
+            <div class="featured-container bd-grid">
+                <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/HkVZjQdg/987b9ef51d783690cffd101095a9be8b.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">NEW BALANCE 9060</span>
+                    <span class="sneaker-price">R3199.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="NEW BALANCE 9060" data-price="3199.95" data-img="https://i.postimg.cc/HkVZjQdg/987b9ef51d783690cffd101095a9be8b.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/CLXDPxJp/3e54f4b756d0409b84ee948db21beb2d.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> NIKE AIR FORCE 1'07 </span>
+                    <span class="sneaker-price">R2099.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="NIKE AIR FORCE 1'07" data-price="2099.95" data-img="https://i.postimg.cc/CLXDPxJp/3e54f4b756d0409b84ee948db21beb2d.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/4NqtLxwG/1185d6ef51cb9b67311ab2849079b385.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> NIKE AIR FORCE 1 </span>
+                    <span class="sneaker-price">R1999.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="NIKE AIR FORCE 1" data-price="1999.95" data-img="https://i.postimg.cc/4NqtLxwG/1185d6ef51cb9b67311ab2849079b385.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/tTG3z6P0/65df655b17d0d8a459ff3c5df25bb436-1.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> Nike Dunk Low Gtx Light Bone</span>
+                    <span class="sneaker-price">R3499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Dunk Low Gtx Light Bone" data-price="3499.95" data-img="https://i.postimg.cc/tTG3z6P0/65df655b17d0d8a459ff3c5df25bb436-1.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/TYFm73QX/91257f062ff2cd8370bdd50d0edb8bb9.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> NIKE AIR FORCE 1'07 </span>
+                    <span class="sneaker-price">R2499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="NIKE AIR FORCE 1'07" data-price="2499.95" data-img="https://i.postimg.cc/TYFm73QX/91257f062ff2cd8370bdd50d0edb8bb9.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/JzXX9CY9/602a4975ff7362da2368f2eb5252a944.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> Suede XL|PUMA</span>
+                    <span class="sneaker-price">R2499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Suede XL|PUMA" data-price="2499.95" data-img="https://i.postimg.cc/JzXX9CY9/602a4975ff7362da2368f2eb5252a944.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/L5bBLb38/45040b89d5ba519f0b03ad386f579dec.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> Adidas Samba</span>
+                    <span class="sneaker-price">R1999.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Adidas Samba" data-price="1999.95" data-img="https://i.postimg.cc/L5bBLb38/45040b89d5ba519f0b03ad386f579dec.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/HkVZjQdg/987b9ef51d783690cffd101095a9be8b.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> NEW BALANCE 9060</span>
+                    <span class="sneaker-price">R3499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="NEW BALANCE 9060" data-price="3499.95" data-img="https://i.postimg.cc/HkVZjQdg/987b9ef51d783690cffd101095a9be8b.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+              
+               <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/X7pdkCfs/65dffb1135c19128728d11e40f7f337a-(1).png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> o-brain*x Nike Dunk low"AE86"</span>
+                    <span class="sneaker-price">R4399.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="o-brain*x Nike Dunk low AE86" data-price="4399.95" data-img="https://i.postimg.cc/X7pdkCfs/65dffb1135c19128728d11e40f7f337a-(1).png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/J0DR4sT9/IMG-20251113-WA0038.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Nike Dunk Low Light Bone Dark Stucco</span>
+                    <span class="sneaker-price">R3499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Dunk Low Light Bone Dark Stucco" data-price="3499.95" data-img="https://i.postimg.cc/J0DR4sT9/IMG-20251113-WA0038.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>             
+              
 
-    <form id="quote-form" onsubmit="return false;" data-aos="fade-up" data-aos-delay="200">
-      <label for="type">Website Type</label>
-      <select id="type" name="type">
-        <option value="2099">Basic Website (R2,099)</option>
-        <option value="3499">Business Website (R3,499)</option>
-        <option value="6999">E-Commerce Website (R6,999)</option>
-      </select>
+                <article class="sneaker" data-category="mens-shoes">
+                    <div class="sneaker-sale">Sale</div>
+                    <img src="https://i.postimg.cc/fL9kbqgM/8468c02a82c3de293dda75d6dc8bb1ac.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Nike Air Max Plus</span>
+                    <span class="sneaker-price">R2999.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Air Max Plus" data-price="2999.95" data-img="https://i.postimg.cc/fL9kbqgM/8468c02a82c3de293dda75d6dc8bb1ac.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-      <label for="features">Additional Features</label>
-      <div class="features" id="features">
-        <label><input type="checkbox" value="500" /> SEO Optimization (+R500)</label>
-        <label><input type="checkbox" value="200" /> Live Chat (+R200)</label>
-        <label><input type="checkbox" value="400" /> Blog Setup (+R400)</label>
-        <label><input type="checkbox" value="700" /> Booking System (+R700)</label>
-      </div>
+            </div>
+        </section>
 
-      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
+        <section class="collection section">
+            <div class="collection-container bd-grid">
+                <div class="collection-card">
+                    <div class="collection-data">
+                        <h3 class="collection-name">Adidas</h3>
+                        <p class="collection-description">New Collection 2025</p>
+                        <a href="#featured" class="button-light">Buy Now <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                    </div>
 
-      <div class="result" id="result">Estimated Quote: R0</div>
-    </form>
-  </section>
+                    <img src="https://i.postimg.cc/gj1C24Qb/f52142a91d4d1bc987f7cfd3a1598353.png" alt="" class="collection-img">
+                </div>
+            </div>
+        </section>
 
-  <section id="contact" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Let's Create Magic Together</h2>
-    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
-      <a href="https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </section>
+        <section class="women section" id="women">
+            <h2 class="section-title">WOMEN SNEAKERS</h2>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 JayWebs. All rights reserved. | <em>Futuristic Web Design South Africa</em></p>
-    </div>
-  </footer>
+            <div class="women-container bd-grid">
+                <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/Kv42npyd/2bb246c344e6a78ca8b3e543109a3d77.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Nike Air Max Plus</span>
+                    <span class="sneaker-price">R3499.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Air Max Plus" data-price="3499.95" data-img="https://i.postimg.cc/Kv42npyd/2bb246c344e6a78ca8b3e543109a3d77.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+                <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/B6LSYHgB/8b79202a34696ed3980fc2019fb2f25d.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Nike Portal</span>
+                    <span class="sneaker-price">R1599.95</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Portal" data-price="1599.95" data-img="https://i.postimg.cc/B6LSYHgB/8b79202a34696ed3980fc2019fb2f25d.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                  <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/G2WcZt7X/cae044e42e074086cf562c738d1eb51c.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Air Jordan 4 Retro 'Royalty'</span>
+                    <span class="sneaker-price">R4999.99</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Air Jordan 4 Retro 'Royalty'" data-price="4999.99" data-img="https://i.postimg.cc/G2WcZt7X/cae044e42e074086cf562c738d1eb51c.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/ydMVwxQh/f5605687c6b641b785e0b4834f6c07b3.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Vans Knu Skool</span>
+                    <span class="sneaker-price">R1699.99</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Vans Knu Skool" data-price="1699.99" data-img="https://i.postimg.cc/ydMVwxQh/f5605687c6b641b785e0b4834f6c07b3.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/x1pDqK7M/3e993113c8fca2e03e332d96b647c17d.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Nike P-6000</span>
+                    <span class="sneaker-price">R1999.99</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike P-6000" data-price="1999.99" data-img="https://i.postimg.cc/x1pDqK7M/3e993113c8fca2e03e332d96b647c17d.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-  <a href="#booking" class="sticky-contact-btn" aria-label="Book a Consultation">
-    <i class="fas fa-calendar-alt"></i> Book Now
-  </a>
+                <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/mgpfhQqQ/5f11a7998ca736a881f24108c3910963.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name">Asics Gel-NYC </span>
+                    <span class="sneaker-price">R2549.99</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Asics Gel-NYC " data-price="2549.99" data-img="https://i.postimg.cc/mgpfhQqQ/5f11a7998ca736a881f24108c3910963.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-  <!-- External Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  
-  <script>
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
+                <article class="sneaker" data-category="womens-shoes">
+                    <img src="https://i.postimg.cc/0yXRrp36/787fe51f4ae3ef3389d0751028a830ac.png" alt="" class="sneaker-img">
+                    <span class="sneaker-name"> Nike Air Max 90 Futura</span>
+                    <span class="sneaker-price">R2599.99</span>
+                    <a href="#" class="button-light add-to-cart" data-name="Nike Air Max 90 Futura" data-price="2599.99" data-img="https://i.postimg.cc/0yXRrp36/787fe51f4ae3ef3389d0751028a830ac.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+            </div>
+        </section>
 
-    // Initialize Swiper for Portfolio with autoplay
-    const portfolioSwiper = new Swiper('.portfolio-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.portfolio-next',
-        prevEl: '.portfolio-prev',
-      },
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        }
-      }
-    });
+        <!-- New Jackets Section -->
+        <section class="jackets section" id="jackets">
+            <h2 class="section-title">JACKETS & FOOTBALL JERSEYS</h2>
 
-    // Initialize Swiper for Testimonials with autoplay
-    const testimonialsSwiper = new Swiper('.testimonials-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      pagination: {
-        el: '.testimonials-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        }
-      }
-    });
+            <div class="jackets-container bd-grid">
+                <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">Sale</div>
+                    <img src="https://i.postimg.cc/G22CN26F/4651fc45fc7a0cbfeb804b0348ca78e4.png" alt="NOCTA Tech fleece" class="jacket-img">
+                   
+                    <span class="jacket-name">NOCTA Tech fleece </span>
+                    <span class="jacket-price">R3499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="NOCTA Tech fleece" data-price="3499.95" data-img="https://i.postimg.cc/G22CN26F/4651fc45fc7a0cbfeb804b0348ca78e4.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mainNav = document.getElementById('mainNav');
-    
-    mobileMenuToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const icon = mobileMenuToggle.querySelector('i');
-      if (mainNav.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
+                <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">Sale</div>
+                    <img src="https://i.postimg.cc/pTWPQk2M/429938104aa6f46b78978981ee2a9f74.png" alt="Adidas Neuclassics " class="jacket-img">
+                    <span class="jacket-name">Adidas Neuclassics </span>
+                    <span class="jacket-price">R1999.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="Adidas Neuclassics " data-price="1999.95" data-img="https://i.postimg.cc/pTWPQk2M/429938104aa6f46b78978981ee2a9f74.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all answers
-        document.querySelectorAll('.faq-answer').forEach(ans => {
-          ans.style.display = 'none';
+                <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/x1QssZzT/f9dd8fe63d8a20cda8a67b9ee0619ea5.png" alt="Yeezy Dove Shrunken" class="jacket-img">
+                    <span class="jacket-name">Yeezy Dove Shrunken</span>
+                    <span class="jacket-price">R8999.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="Yeezy Dove Shrunken" data-price="8999.95" data-img="https://i.postimg.cc/x1QssZzT/f9dd8fe63d8a20cda8a67b9ee0619ea5.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+                <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/prC0xZn2/8f325a52478201b47be4a79bbf12db1d.png" alt="NIKE FC BARCELONA " class="jacket-img">
+                    <span class="jacket-name">NIKE FC BARCELONA 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="NIKE FC BARCELONA 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/prC0xZn2/8f325a52478201b47be4a79bbf12db1d.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+
+                  <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/g2xPSwfD/819bbb82704797feea57d2613bcb9acd.png" alt="ADIDAS REAL MADRID" class="jacket-img">
+                    <span class="jacket-name">ADIDAS REAL MADRID 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="ADIDAS REAL MADRID 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/g2xPSwfD/819bbb82704797feea57d2613bcb9acd.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+            
+              
+              
+              <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/hvwqccmJ/8212d0b86d44595045194fb669e294a4.png" alt="ADIDAS LIVERPOOL" class="jacket-img">
+                    <span class="jacket-name">ADIDAS LIVERPOOL 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    
+               <a href="#" class="button-light add-to-cart-jacket" data-name="ADIDAS LIVERPOOL 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/hvwqccmJ/8212d0b86d44595045194fb669e294a4.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+                  <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/65J01TTm/b2a052fb7a9beb29fe830852dffd47fc.png" alt="NIKE FC BARCELONA " class="jacket-img">
+                    <span class="jacket-name">NIKE FC BARCELONA 25/26 AWAY JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="NIKE FC BARCELONA 25/26 AWAY JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/65J01TTm/b2a052fb7a9beb29fe830852dffd47fc.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+               <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/XvTHjqHk/70775a2c045c5f04bf287fc9e54d1996.png" alt="PSG" class="jacket-img">
+                    <span class="jacket-name">NIKE PSG 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    
+               <a href="#" class="button-light add-to-cart-jacket" data-name="NIKE PSG 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/XvTHjqHk/70775a2c045c5f04bf287fc9e54d1996.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+                     <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/prdqkjpK/03cd3707eb1ef872731396cc0118ded6.png" alt="ARSENAL" class="jacket-img">
+                    <span class="jacket-name">ADIDAS ARSENAL 25/26 THIRD JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    
+               <a href="#" class="button-light add-to-cart-jacket" data-name="ADIDAS ARSENAL 25/26 THIRD JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/prdqkjpK/03cd3707eb1ef872731396cc0118ded6.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+                     <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/8cCtwvjj/088dfdf1c2c200ae2b3f6db889a9c893.png" alt="MAN UTD" class="jacket-img">
+                    <span class="jacket-name">ADIDAS MAN UTD 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    
+               <a href="#" class="button-light add-to-cart-jacket" data-name="ADIDAS MAN UTD 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/8cCtwvjj/088dfdf1c2c200ae2b3f6db889a9c893.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+                     <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">New</div>
+                    <img src="https://i.postimg.cc/vTm3XncL/6aaebb61188af24a2336554fd21f981d.png" alt="MAN CITY" class="jacket-img">
+                    <span class="jacket-name">PUMA MAN CITY 25/26 HOME JERSEY MEN</span>
+                    <span class="jacket-price">R1499.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    
+               <a href="#" class="button-light add-to-cart-jacket" data-name="PUMA MAN CITY 25/26 HOME JERSEY MEN" data-price="1499.95" data-img="https://i.postimg.cc/vTm3XncL/6aaebb61188af24a2336554fd21f981d.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+              
+              
+                <article class="jacket" data-category="jackets">
+                    <div class="jacket-sale">Sale</div>
+                    <img src="https://i.postimg.cc/t41hNtB5/HJ6411-010-1.png" alt="Barcelona x Kobe Bryant" class="jacket-img">
+                    <span class="jacket-name">Barcelona x Kobe Bryant</span>
+                    <span class="jacket-price">R1849.95</span>
+                    <div class="size-selector">
+                        <div class="size-option" data-size="S">S</div>
+                        <div class="size-option" data-size="M">M</div>
+                        <div class="size-option" data-size="L">L</div>
+                        <div class="size-option" data-size="XL">XL</div>
+                    </div>
+                    <a href="#" class="button-light add-to-cart-jacket" data-name="Barcelona x Kobe Bryant" data-price="1849.95" data-img="https://i.postimg.cc/t41hNtB5/HJ6411-010-1.png">Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <section class="offer section">
+            <div class="offer-container bd-grid">
+                <div class="offer-data">
+                    <h3 class="offer-title">50% OFF</h3>
+                    <p class="offer-description">In Adidas Sneakers</p>
+                    <a href="#featured" class="button">Shop Now</a>
+                </div>
+
+                <img src="https://i.postimg.cc/63MpxMcZ/offert.png" alt="" class="offer-img">
+            </div>
+        </section>
+
+        <section class="new section" id="new">
+            <h2 class="section-title">NEW COLLECTION</h2>
+
+            <div class="new-container bd-grid">
+                <div class="new-mens">
+                    <img src="https://i.postimg.cc/8CqqJMCY/new1.png" alt="" class="new-mens-img">
+                    <h3 class="new-title">Mens Shoes</h3>
+                    <span class="new-price">From R5099.99</span>
+                    <a href="#featured" class="button-light">View Collection <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                </div>
+
+                <div class="new-sneaker">
+                    <div class="new-sneaker-card" data-category="mens-shoes">
+                        <img src="https://i.postimg.cc/gJWgbDjG/new2.png" alt="" class="new-sneaker-img">
+                        <div class="new-sneaker-overlay">
+                            <a href="#" class="button add-to-cart" data-name="Adidas Yeezy Boost 350 V2 Beluga 2.0" data-price="13399.99" data-img="https://i.postimg.cc/gJWgbDjG/new2.png">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <div class="new-sneaker-card" data-category="mens-shoes">
+                        <img src="https://i.postimg.cc/mDgF9z6Q/new4.png" alt="" class="new-sneaker-img">
+                        <div class="new-sneaker-overlay">
+                            <a href="#" class="button add-to-cart" data-name="Adidas Yeezy Boost 350 V2 Reflective" data-price="8599.99" data-img="https://i.postimg.cc/mDgF9z6Q/new4.png">Add to Cart</a>
+                        </div>
+                    </div>
+
+                    <div class="new-sneaker-card" data-category="mens-shoes">
+                        <img src="https://i.postimg.cc/kGQW72Kp/46f701313940f6d20738f2bde3051806.png" alt="Adidas Yeezy Boost 700" class="new-sneaker-img">
+                        <div class="new-sneaker-overlay">
+                            <a href="#" class="button add-to-cart" data-name="Adidas Yeezy Boost 700" data-price="8899.99" data-img="https://i.postimg.cc/kGQW72Kp/46f701313940f6d20738f2bde3051806.png">Add to Cart</a>
+                        </div>
+                    </div>    
+                  
+                    <div class="new-sneaker-card" data-category="mens-shoes">
+                        <img src="https://i.postimg.cc/W3Hx1jf6/e66ef4052aafbbc7d18fd9ae8af03368.png" alt="" class="new-sneaker-img">
+                        <div class="new-sneaker-overlay">
+                            <a href="#" class="button add-to-cart" data-name="Nike Hot Step 2 Drake Nocta" data-price="15499.99" data-img="https://i.postimg.cc/W3Hx1jf6/e66ef4052aafbbc7d18fd9ae8af03368.png">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter section">
+            <div class="newsletter-container bd-grid">
+                <div>
+                    <h3 class="newsletter-title">Subscribe and get <br>10% OFF</h3>
+                    <p class="newsletter-description">Get 10% discount for all products</p>
+                </div>
+
+                <form action="" class="newsletter-subscribe">
+                    <input type="text" class="newsletter-input" placeholder="@email.com">
+                    <a href="#" class="button">Subscribe</a>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer section">
+            <div class="footer-container bd-grid">
+                <div class="footer-box">
+                    <h3 class="footer-title">STREET COUTURE</h3>
+                    <p class="footer-description">New Collection of shoes 2025</p>
+                </div>
+
+                <div class="footer-box">
+                    <h3 class="footer-title">EXPLORE</h3>
+                    <ul>
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#featured" class="footer-link">Featured</a></li>
+                        <li><a href="#women" class="footer-link">Women</a></li>
+                        <li><a href="#jackets" class="footer-link">Jackets</a></li>
+                        <li><a href="#new" class="footer-link">New</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h3 class="footer-title">SUPPORT</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link">Product Help</a></li>
+                        <li><a href="#" class="footer-link">Customer Care</a></li>
+                        <li><a href="#" class="footer-link">Authorized Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <a href="#" class="footer-social"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="footer-social"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="footer-social"><i class="bx bxl-whatsapp"></i></a>
+                    <a href="#" class="footer-social"><i class="bx bxl-google"></i></a>
+                </div>
+            </div>
+
+            <p class="footer-copy">&#169; 2025 <a href="#">jaywebs</a>. All rights reserved</p>
+        </footer>
+    </main>
+
+    <script>
+        // Initialize Yoco SDK
+        const yoco = new window.YocoSDK({
+            publicKey: 'pk_test_ed3c54a6gOol69qa7f45' // Test public key - replace with your live key
         });
-        document.querySelectorAll('.faq-question').forEach(q => {
-          q.classList.remove('active');
-        });
-        
-        // Open clicked answer if it wasn't active
-        if (!isActive) {
-          answer.style.display = 'block';
-          question.classList.add('active');
-        }
-      });
-    });
 
-    // Quote Calculator
-    const quoteForm = document.getElementById('quote-form');
-    const typeSelect = document.getElementById('type');
-    const featureCheckboxes = document.querySelectorAll('.features input[type="checkbox"]');
-    const resultDiv = document.getElementById('result');
-    
-    function calculateQuote() {
-      let total = parseInt(typeSelect.value);
-      
-      featureCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          total += parseInt(checkbox.value);
-        }
-      });
-      
-      resultDiv.textContent = `Estimated Quote: R${total}`;
-    }
-    
-    typeSelect.addEventListener('change', calculateQuote);
-    featureCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', calculateQuote);
-    });
-    
-    // Initialize with default value
-    calculateQuote();
-    
-    // Stats Counter Animation
-    const stats = document.querySelectorAll('.stat-number');
-    
-    function animateStats() {
-      stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          stat.textContent = Math.floor(current);
-        }, 16);
-      });
-    }
-    
-    // Intersection Observer for stats animation
-    const statsSection = document.getElementById('stats');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateStats();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    observer.observe(statsSection);
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
-          if (mainNav.classList.contains('active')) {
-            mainNav.classList.remove('active');
-            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
-          }
-        }
-      });
-    });
-
-    // Download Quote as PDF
-    document.getElementById('downloadQuote').addEventListener('click', function() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      
-      const quote = resultDiv.textContent;
-      const name = "JayWebs Quote";
-      
-      doc.setFontSize(20);
-      doc.text(name, 20, 30);
-      doc.setFontSize(16);
-      doc.text(quote, 20, 50);
-      doc.text("Thank you for your interest in JayWebs!", 20, 70);
-      doc.text("We'll contact you shortly to discuss your project.", 20, 85);
-      
-      doc.save('jaywebs-quote.pdf');
-    });
-
-    // Pause autoplay on hover for better UX
-    document.querySelectorAll('.portfolio-swiper, .testimonials-swiper').forEach(swiperContainer => {
-      swiperContainer.addEventListener('mouseenter', function() {
-        this.swiper.autoplay.stop();
-      });
-      
-      swiperContainer.addEventListener('mouseleave', function() {
-        this.swiper.autoplay.start();
-      });
-    });
-
-    // Booking Form WhatsApp Integration
-    const bookingForm = document.getElementById('booking-form');
-    const dateInput = document.getElementById('date');
-
-    // Set minimum date to today
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    if (dateInput) {
-      dateInput.setAttribute('min', formattedDate);
-    }
-
-    // Handle form submission to WhatsApp
-    if (bookingForm) {
-      bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const bookingData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          phone: document.getElementById('phone').value,
-          service: document.getElementById('service').value,
-          date: document.getElementById('date').value,
-          time: document.getElementById('time').value,
-          message: document.getElementById('message').value
+        // Product data with available sizes
+        const productSizes = {
+            'mens-shoes': ['6', '7', '8', '9', '10', '11', '12'],
+            'womens-shoes': ['4', '5', '6', '7', '8', '9', '10'],
+            'jackets': ['S', 'M', 'L', 'XL', 'XXL']
         };
-        
-        // Create WhatsApp message
-        const whatsappMessage = `📅 *NEW BOOKING REQUEST* 📅
-        
-👤 *Client Details:*
-• Name: ${bookingData.name}
-• Email: ${bookingData.email}
-• Phone: ${bookingData.phone}
 
-💼 *Service Requested:*
-${bookingData.service}
+        // Unavailable sizes for each product (for demonstration)
+        const unavailableSizes = {
+            'NEW BALANCE 9060': ['6', '12'],
+            'NIKE AIR FORCE 1\'07': ['7', '11'],
+            'NIKE AIR FORCE 1': ['8'],
+            'Nike Dunk Low Gtx Light Bone': ['9'],
+            'Suede XL|PUMA': ['10'],
+            'Adidas Samba': ['6', '7'],
+            'o-brain*x Nike Dunk low AE86': ['8', '9'],
+            'Nike Dunk Low Light Bone Dark Stucco': ['10'],
+            'Nike Air Max Plus': ['11'],
+            'Nike Portal': ['4', '5'],
+            'Air Jordan 4 Retro \'Royalty\'': ['6'],
+            'Vans Knu Skool': ['7'],
+            'Nike P-6000': ['8'],
+            'Asics Gel-NYC': ['9'],
+            'Nike Air Max 90 Futura': ['10'],
+            'NOCTA Tech fleece': ['XXL'],
+            'Adidas Neuclassics': ['S'],
+            'Yeezy Dove Shrunken': ['M'],
+            'NIKE FC BARCELONA 25/26 HOME JERSEY MEN': ['L'],
+            'ADIDAS REAL MADRID 25/26 HOME JERSEY MEN': ['XL'],
+            'ADIDAS LIVERPOOL 25/26 HOME JERSEY MEN': ['S'],
+            'NIKE FC BARCELONA 25/26 AWAY JERSEY MEN': ['M'],
+            'NIKE PSG 25/26 HOME JERSEY MEN': ['L'],
+            'ADIDAS ARSENAL 25/26 THIRD JERSEY MEN': ['XL'],
+            'ADIDAS MAN UTD 25/26 HOME JERSEY MEN': ['XXL'],
+            'PUMA MAN CITY 25/26 HOME JERSEY MEN': ['S'],
+            'Barcelona x Kobe Bryant': ['M'],
+            'Adidas Yeezy Boost 350 V2 Beluga 2.0': ['6', '7'],
+            'Adidas Yeezy Boost 350 V2 Reflective': ['8', '9'],
+            'Adidas Yeezy Boost 700': ['10', '11'],
+            'Nike Hot Step 2 Drake Nocta': ['12']
+        };
 
-📅 *Preferred Appointment:*
-• Date: ${bookingData.date}
-• Time: ${bookingData.time}
+        // Cart functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const cartClose = document.getElementById('cart-close');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const addToCartJacketButtons = document.querySelectorAll('.add-to-cart-jacket');
 
-💭 *Project Vision:*
-${bookingData.message || 'No additional message provided'}
+        // Checkout functionality
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutClose = document.getElementById('checkout-close');
+        const checkoutForm = document.getElementById('checkout-form');
+        const placeOrderBtn = document.getElementById('place-order-btn');
+        const checkoutItems = document.getElementById('checkout-items');
+        const checkoutSubtotal = document.getElementById('checkout-subtotal');
+        const checkoutShipping = document.getElementById('checkout-shipping');
+        const checkoutTax = document.getElementById('checkout-tax');
+        const checkoutTotal = document.getElementById('checkout-total');
 
----
-JayWebs Website Booking Form`;
+        // Order success modal
+        const orderSuccessModal = document.getElementById('order-success-modal');
+        const orderNumber = document.getElementById('order-number');
+        const orderTotal = document.getElementById('order-total');
+        const paymentMethod = document.getElementById('payment-method');
+        const deliveryDate = document.getElementById('delivery-date');
+        const continueShoppingBtn = document.getElementById('continue-shopping-btn');
 
-        // Encode message for URL
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        
-        // Your WhatsApp number
-        const whatsappNumber = '27760944650';
-        
-        // Create WhatsApp URL
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        
-        // Open WhatsApp in new tab
-        window.open(whatsappURL, '_blank');
-        
-        // Show success message
-        alert('Thank you! Opening WhatsApp to send your booking details...');
-        
-        // Reset form
-        bookingForm.reset();
-        
-        // Reset date min attribute
-        dateInput.setAttribute('min', formattedDate);
-      });
-    }
+        // Size selection functionality
+        const sizeOptions = document.querySelectorAll('.size-option');
+        let selectedSizes = {};
 
-    // Scroll-aware header functionality
-    const header = document.getElementById('mainHeader');
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', () => {
-      // Don't hide header on mobile when menu is open
-      if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
-        return;
-      }
-      
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        // Scrolling down - hide header
-        header.classList.add('hidden');
-      } else {
-        // Scrolling up - show header
-        header.classList.remove('hidden');
-      }
-      
-      lastScrollY = window.scrollY;
-    });
+        // Payment method selection
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const paymentForms = document.querySelectorAll('.payment-form');
+        const paymentProviders = document.querySelectorAll('.payment-provider');
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target) && mainNav.classList.contains('active')) {
-        mainNav.classList.remove('active');
-        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
-      }
-    });
-  </script>
+        // Size Selection Modal
+        const sizeModal = document.getElementById('size-modal');
+        const sizeModalClose = document.getElementById('size-modal-close');
+        const sizeModalProductImage = document.getElementById('size-modal-product-image');
+        const sizeModalProductName = document.getElementById('size-modal-product-name');
+        const sizeModalProductPrice = document.getElementById('size-modal-product-price');
+        const sizeModalGrid = document.getElementById('size-modal-grid');
+        const sizeModalAddToCartBtn = document.getElementById('size-modal-add-to-cart-btn');
+        const notification = document.getElementById('notification');
+
+        // Current product data for size modal
+        let currentProduct = null;
+        let selectedSize = null;
+
+        // Initialize payment methods
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', function() {
+                const methodType = this.getAttribute('data-method');
+                
+                // Update radio button
+                this.querySelector('input').checked = true;
+                
+                // Show corresponding payment form
+                paymentForms.forEach(form => form.classList.remove('active'));
+                document.getElementById(`${methodType}-payment`).classList.add('active');
+                
+                // Update selected state
+                paymentMethods.forEach(m => m.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Payment provider selection
+        paymentProviders.forEach(provider => {
+            provider.addEventListener('click', function() {
+                paymentProviders.forEach(p => p.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Size selection functionality for jackets
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const jacket = this.closest('.jacket');
+                const jacketName = jacket.querySelector('.jacket-name').textContent;
+                
+                // Remove selected class from all options in this jacket
+                jacket.querySelectorAll('.size-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Store selected size for this jacket
+                selectedSizes[jacketName] = this.getAttribute('data-size');
+            });
+        });
+
+        // Add event listeners to all "Add to Cart" buttons for sneakers
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const img = button.getAttribute('data-img');
+                const category = button.closest('.sneaker, .new-sneaker-card').getAttribute('data-category');
+                
+                // Set current product
+                currentProduct = {
+                    name: name,
+                    price: price,
+                    img: img,
+                    category: category
+                };
+                
+                // Open size selection modal for sneakers
+                openSizeModal(currentProduct);
+            });
+        });
+
+        // Add event listeners to all "Add to Cart" buttons for jackets
+        addToCartJacketButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const jacket = button.closest('.jacket');
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const img = button.getAttribute('data-img');
+                const selectedSize = selectedSizes[name];
+                
+                if (!selectedSize) {
+                    alert('Please select a size before adding to cart.');
+                    return;
+                }
+                
+                addToCart(name, price, img, selectedSize);
+                
+                // Show notification
+                showNotification(`${name} (Size: ${selectedSize}) added to cart!`);
+            });
+        });
+
+        // Open size selection modal
+        function openSizeModal(product) {
+            // Update modal content
+            sizeModalProductImage.src = product.img;
+            sizeModalProductImage.alt = product.name;
+            sizeModalProductName.textContent = product.name;
+            sizeModalProductPrice.textContent = `R${product.price}`;
+            
+            // Generate size options based on product category
+            generateSizeOptions(product.category, product.name);
+            
+            // Reset selected size
+            selectedSize = null;
+            sizeModalAddToCartBtn.disabled = true;
+            sizeModalAddToCartBtn.textContent = 'Add to Cart';
+            
+            // Show modal
+            sizeModal.classList.add('active');
+        }
+
+        // Generate size options for the modal
+        function generateSizeOptions(category, productName) {
+            // Clear previous options
+            sizeModalGrid.innerHTML = '';
+            
+            // Get available sizes for this category
+            const sizes = productSizes[category];
+            
+            // Get unavailable sizes for this product
+            const unavailable = unavailableSizes[productName] || [];
+            
+            // Create size options
+            sizes.forEach(size => {
+                const sizeOption = document.createElement('div');
+                sizeOption.classList.add('size-modal-option');
+                sizeOption.textContent = size;
+                
+                // Check if size is unavailable
+                if (unavailable.includes(size)) {
+                    sizeOption.classList.add('unavailable');
+                } else {
+                    // Add click event for available sizes
+                    sizeOption.addEventListener('click', function() {
+                        selectSize(this, size);
+                    });
+                }
+                
+                sizeModalGrid.appendChild(sizeOption);
+            });
+        }
+
+        // Select a size in the modal
+        function selectSize(element, size) {
+            // Remove selected class from all size options
+            document.querySelectorAll('.size-modal-option').forEach(option => {
+                if (!option.classList.contains('unavailable')) {
+                    option.classList.remove('selected');
+                }
+            });
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Update selected size
+            selectedSize = size;
+            
+            // Enable add to cart button
+            sizeModalAddToCartBtn.disabled = false;
+            sizeModalAddToCartBtn.textContent = `Add to Cart - Size ${size}`;
+        }
+
+        // Close size modal
+        sizeModalClose.addEventListener('click', function() {
+            sizeModal.classList.remove('active');
+        });
+
+        // Close size modal when clicking outside
+        sizeModal.addEventListener('click', function(e) {
+            if (e.target === sizeModal) {
+                sizeModal.classList.remove('active');
+            }
+        });
+
+        // Add to cart from size modal
+        sizeModalAddToCartBtn.addEventListener('click', function() {
+            if (currentProduct && selectedSize) {
+                // Add product to cart with selected size
+                addToCart(currentProduct.name, currentProduct.price, currentProduct.img, selectedSize);
+                
+                // Close modal
+                sizeModal.classList.remove('active');
+                
+                // Show notification
+                showNotification(`${currentProduct.name} (Size: ${selectedSize}) added to cart!`);
+            }
+        });
+
+        // Add item to cart
+        function addToCart(name, price, img, size) {
+            const existingItem = cart.find(item => item.name === name && item.size === size);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    img,
+                    size,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Remove item from cart
+        function removeFromCart(name, size) {
+            cart = cart.filter(item => !(item.name === name && item.size === size));
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Update quantity
+        function updateQuantity(name, size, newQuantity) {
+            if (newQuantity < 1) return;
+            
+            const item = cart.find(item => item.name === name && item.size === size);
+            if (item) {
+                item.quantity = newQuantity;
+                updateCartCount();
+                updateCartDisplay();
+            }
+        }
+
+        // Update cart count display
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+                cartTotalPrice.textContent = 'R0.00';
+                return;
+            }
+            
+            let itemsHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="cart-item">
+                        <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">R${item.price.toFixed(2)}</div>
+                            ${item.size !== 'One Size' ? `<div class="cart-item-size">Size: ${item.size}</div>` : ''}
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-name="${item.name}" data-size="${item.size}">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-name="${item.name}" data-size="${item.size}">
+                                <button class="quantity-btn plus" data-name="${item.name}" data-size="${item.size}">+</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-remove" data-name="${item.name}" data-size="${item.size}">
+                            <i class="bx bx-trash"></i>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = itemsHTML;
+            cartTotalPrice.textContent = `R${total.toFixed(2)}`;
+            
+            // Add event listeners to quantity buttons and remove buttons
+            document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const size = btn.getAttribute('data-size');
+                    const item = cart.find(item => item.name === name && item.size === size);
+                    if (item) {
+                        updateQuantity(name, size, item.quantity - 1);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const size = btn.getAttribute('data-size');
+                    const item = cart.find(item => item.name === name && item.size === size);
+                    if (item) {
+                        updateQuantity(name, size, item.quantity + 1);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', () => {
+                    const name = input.getAttribute('data-name');
+                    const size = input.getAttribute('data-size');
+                    updateQuantity(name, size, parseInt(input.value));
+                });
+            });
+            
+            document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const size = btn.getAttribute('data-size');
+                    removeFromCart(name, size);
+                });
+            });
+        }
+
+        // Show cart modal
+        cartIcon.addEventListener('click', () => {
+            cartModal.classList.add('active');
+            updateCartDisplay();
+        });
+
+        // Close cart modal
+        cartClose.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+
+        // Close cart modal when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.classList.remove('active');
+            }
+        });
+
+        // Show checkout modal
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            cartModal.classList.remove('active');
+            checkoutModal.classList.add('active');
+            updateCheckoutDisplay();
+        });
+
+        // Close checkout modal
+        checkoutClose.addEventListener('click', () => {
+            checkoutModal.classList.remove('active');
+        });
+
+        // Close checkout modal when clicking outside
+        checkoutModal.addEventListener('click', (e) => {
+            if (e.target === checkoutModal) {
+                checkoutModal.classList.remove('active');
+            }
+        });
+
+        // Close order success modal
+        continueShoppingBtn.addEventListener('click', () => {
+            orderSuccessModal.classList.remove('active');
+        });
+
+        // Update checkout display
+        function updateCheckoutDisplay() {
+            if (cart.length === 0) {
+                checkoutItems.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+                checkoutSubtotal.textContent = 'R0.00';
+                checkoutTotal.textContent = 'R0.00';
+                placeOrderBtn.textContent = 'Place Order - R0.00';
+                return;
+            }
+            
+            let itemsHTML = '';
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                itemsHTML += `
+                    <div class="checkout-item">
+                        <span>${item.name} ${item.size !== 'One Size' ? `(${item.size})` : ''} x${item.quantity}</span>
+                        <span>R${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            const shipping = 99.00;
+            const tax = subtotal * 0.15; // 15% VAT
+            const total = subtotal + shipping + tax;
+            
+            checkoutItems.innerHTML = itemsHTML;
+            checkoutSubtotal.textContent = `R${subtotal.toFixed(2)}`;
+            checkoutShipping.textContent = `R${shipping.toFixed(2)}`;
+            checkoutTax.textContent = `R${tax.toFixed(2)}`;
+            checkoutTotal.textContent = `R${total.toFixed(2)}`;
+            placeOrderBtn.textContent = `Place Order - R${total.toFixed(2)}`;
+        }
+
+        // Handle checkout form submission
+        checkoutForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // Get form data
+            const formData = new FormData(checkoutForm);
+            const selectedPaymentMethod = formData.get('paymentMethod');
+            const selectedProvider = document.querySelector('.payment-provider.selected').getAttribute('data-provider');
+            
+            const orderData = {
+                customer: {
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    address: formData.get('address'),
+                    city: formData.get('city'),
+                    postalCode: formData.get('postalCode'),
+                    province: formData.get('province')
+                },
+                payment: {
+                    method: selectedPaymentMethod,
+                    provider: selectedProvider
+                },
+                items: cart,
+                subtotal: parseFloat(checkoutSubtotal.textContent.replace('R', '')),
+                shipping: parseFloat(checkoutShipping.textContent.replace('R', '')),
+                tax: parseFloat(checkoutTax.textContent.replace('R', '')),
+                total: parseFloat(checkoutTotal.textContent.replace('R', ''))
+            };
+            
+            // Process payment based on selected method
+            try {
+                await processPayment(orderData, selectedPaymentMethod, selectedProvider);
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('Payment failed. Please try again.');
+                placeOrderBtn.disabled = false;
+                placeOrderBtn.innerHTML = `Place Order - R${orderData.total.toFixed(2)}`;
+            }
+        });
+
+        // Process payment
+        async function processPayment(orderData, paymentMethod, provider) {
+            // Show loading state
+            placeOrderBtn.disabled = true;
+            placeOrderBtn.innerHTML = '<div class="loading-spinner"></div> Processing...';
+
+            // Simulate processing delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Process based on payment method
+            switch (paymentMethod) {
+                case 'card':
+                    if (provider === 'yoco') {
+                        await processYocoPayment(orderData);
+                    }
+                    break;
+                    
+                case 'instant-eft':
+                    if (provider === 'ozow') {
+                        await processOzowPayment(orderData);
+                    } else if (provider === 'payflex') {
+                        await processPayflexPayment(orderData);
+                    }
+                    break;
+                    
+                case 'payfast':
+                    await processPayfastPayment(orderData);
+                    break;
+                    
+                default:
+                    throw new Error('Unsupported payment method');
+            }
+        }
+
+        // Process Yoco card payment
+        async function processYocoPayment(orderData) {
+            // In a real implementation, you would use Yoco SDK
+            // This is a simulation for demonstration
+            
+            const cardData = {
+                number: document.getElementById('card-number').value.replace(/\s/g, ''),
+                expiry: document.getElementById('expiry-date').value,
+                cvv: document.getElementById('cvv').value,
+                name: document.getElementById('card-name').value
+            };
+            
+            // Validate card details
+            if (!validateCardDetails(cardData)) {
+                throw new Error('Invalid card details');
+            }
+            
+            // Simulate Yoco API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Simulate successful payment
+            completeOrder(orderData, 'Yoco Card Payment');
+        }
+
+        // Process Ozow payment
+        async function processOzowPayment(orderData) {
+            // Simulate Ozow payment processing
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // In a real implementation, you would redirect to Ozow
+            completeOrder(orderData, 'Ozow Instant EFT');
+        }
+
+        // Process PayFlex payment
+        async function processPayflexPayment(orderData) {
+            // Simulate PayFlex payment processing
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            completeOrder(orderData, 'PayFlex (Pay in 4)');
+        }
+
+        // Process PayFast payment
+        async function processPayfastPayment(orderData) {
+            // Simulate PayFast payment processing
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            completeOrder(orderData, 'PayFast');
+        }
+
+        // Validate card details
+        function validateCardDetails(cardData) {
+            const { number, expiry, cvv, name } = cardData;
+            
+            // Simple validation
+            if (number.length !== 16 || isNaN(number)) {
+                alert('Please enter a valid 16-digit card number.');
+                return false;
+            }
+            
+            if (!expiry.match(/^\d{2}\/\d{2}$/)) {
+                alert('Please enter a valid expiry date in MM/YY format.');
+                return false;
+            }
+            
+            if (cvv.length !== 3 || isNaN(cvv)) {
+                alert('Please enter a valid 3-digit CVV.');
+                return false;
+            }
+            
+            if (name.trim().length < 2) {
+                alert('Please enter the name on your card.');
+                return false;
+            }
+            
+            return true;
+        }
+        // Complete order process
+        function completeOrder(orderData, paymentMethodUsed) {
+            // Generate order number
+            const orderNumber = 'SC-' + Math.floor(1000 + Math.random() * 9000);
+            
+            // Update order success modal
+            document.getElementById('order-number').textContent = `#${orderNumber}`;
+            document.getElementById('order-total').textContent = `R${orderData.total.toFixed(2)}`;
+            document.getElementById('payment-method').textContent = paymentMethodUsed;
+            
+            // Calculate delivery date (5-7 business days from now)
+            const deliveryDate = new Date();
+            deliveryDate.setDate(deliveryDate.getDate() + 5 + Math.floor(Math.random() * 3));
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('delivery-date').textContent = deliveryDate.toLocaleDateString('en-ZA', options);
+            
+            // Close checkout modal and show success modal
+            checkoutModal.classList.remove('active');
+            orderSuccessModal.classList.add('active');
+            
+            // Clear cart
+            cart = [];
+            updateCartCount();
+            updateCartDisplay();
+            
+            // Reset form
+            checkoutForm.reset();
+            
+            // Reset payment method display
+            document.querySelectorAll('.payment-form').forEach(form => form.classList.remove('active'));
+            document.getElementById('card-payment').classList.add('active');
+            document.querySelectorAll('.payment-method').forEach(method => method.classList.remove('selected'));
+            document.querySelector('[data-method="card"]').classList.add('selected');
+            document.querySelectorAll('.payment-provider').forEach(provider => provider.classList.remove('selected'));
+            document.querySelector('[data-provider="yoco"]').classList.add('selected');
+        }
+
+        // Show notification
+        function showNotification(message) {
+            notification.textContent = message;
+            notification.classList.add('active');
+            
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 3000);
+        }
+
+        // Navigation functionality
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Toggle mobile menu
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+
+        // Scroll header effect
+        function scrollHeader() {
+            const header = document.getElementById('header');
+            if (this.scrollY >= 50) {
+                header.classList.add('scroll-header');
+            } else {
+                header.classList.remove('scroll-header');
+            }
+        }
+        window.addEventListener('scroll', scrollHeader);
+
+        // Active link highlighting
+        function activeLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 50;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(`.nav-menu a[href*=${sectionId}]`).classList.add('active');
+                } else {
+                    document.querySelector(`.nav-menu a[href*=${sectionId}]`).classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', activeLink);
+
+        // Scroll reveal animation
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 2500,
+            delay: 400,
+        });
+
+        sr.reveal('.home-data, .home-sneaker, .featured-container, .jackets-container, .collection-card, .women-container, .offer-data, .offer-img, .new-mens, .new-sneaker');
+        sr.reveal('.newsletter-container', { interval: 100 });
+
+        // Newsletter subscription
+        const newsletterForm = document.querySelector('.newsletter-subscribe');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = newsletterForm.querySelector('.newsletter-input');
+                const email = emailInput.value.trim();
+                
+                if (email) {
+                    alert(`Thank you for subscribing with ${email}! You'll receive 10% off your next purchase.`);
+                    emailInput.value = '';
+                }
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            updateCartDisplay();
+            
+            // Set minimum date for delivery (today)
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('delivery-date').min = today;
+        });
+
+        // Additional utility functions for card formatting
+        document.getElementById('card-number')?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let matches = value.match(/\d{4,16}/g);
+            let match = matches && matches[0] || '';
+            let parts = [];
+            
+            for (let i = 0; i < match.length; i += 4) {
+                parts.push(match.substring(i, i + 4));
+            }
+            
+            if (parts.length) {
+                e.target.value = parts.join(' ');
+            } else {
+                e.target.value = value;
+            }
+        });
+
+        document.getElementById('expiry-date')?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+        });
+
+        document.getElementById('cvv')?.addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 3);
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                cartModal.classList.remove('active');
+                checkoutModal.classList.remove('active');
+                orderSuccessModal.classList.remove('active');
+                sizeModal.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Product image lazy loading
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
 </html>
