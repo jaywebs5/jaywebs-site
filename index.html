@@ -520,6 +520,138 @@
             to { transform: rotate(360deg); }
         }
 
+/* About Section Styles */
+.about {
+    background-color: var(--dark-color-lighten);
+    padding: 5rem 0;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-founder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--dark-color-lighten);
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.founder-name {
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.founder-title {
+    font-size: var(--normal-font-size);
+    color: var(--accent-color);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 0.25rem;
+}
+
+.founder-age {
+    font-size: var(--smaller-font-size);
+    color: var(--dark-color-light);
+}
+
+.about-text {
+    padding: 0 1rem;
+}
+
+.about-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: var(--normal-font-size);
+    color: var(--dark-color);
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--white-color);
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.value-item h4 {
+    font-size: var(--h2-font-size);
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+}
+
+.value-item p {
+    font-size: var(--smaller-font-size);
+    color: var(--dark-color-light);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 300px 1fr;
+    }
+    
+    .about-founder {
+        padding: 2.5rem;
+    }
+    
+    .about-text {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+}
+        
         /* Size Selection Modal */
         .size-modal {
             position: fixed;
@@ -1014,6 +1146,61 @@
         Product added to cart successfully!
     </div>
 
+<!-- About Section -->
+<section class="about section" id="about">
+    <h2 class="section-title">OUR STORY</h2>
+    <div class="about-container bd-grid">
+        <div class="about-content">
+            <div class="about-founder">
+                <div class="founder-image">
+                    <img src="https://i.postimg.cc/GmH6XChz/IMG-20250522-WA0143.jpg" alt="Jaden - Founder">
+                </div>
+                <div class="founder-info">
+                    <h3 class="founder-name">Jaden</h3>
+                    <p class="founder-title">Founder & CEO</p>
+                    <p class="founder-age">19-Year-Old Entrepreneur</p>
+                </div>
+            </div>
+            
+            <div class="about-text">
+                <p class="about-description">
+                    <strong>Jaden Ecommerce Shop</strong> is a clothing store founded and owned by Jaden, a 19-year-old entrepreneur with a passion for fashion and modern streetwear. Our goal is simple — to provide stylish, high-quality clothes at affordable prices.
+                </p>
+                
+                <p class="about-description">
+                    Every item in our store is carefully selected to match current trends, comfort, and quality. Whether you're looking for casual wear, hoodies, tracksuits, or everyday essentials, Jaden Ecommerce Shop brings you fashion that fits your lifestyle.
+                </p>
+                
+                <p class="about-description">
+                    As a young business owner, Jaden is committed to great customer service, fast delivery, and creating a shopping experience you can trust.
+                </p>
+                
+                <p class="about-description">
+                    <strong>At Jaden Ecommerce Shop, style meets affordability.</strong>
+                </p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <i class="bx bx-trending-up"></i>
+                        <h4>Trend-Focused</h4>
+                        <p>Always up-to-date with the latest streetwear trends</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="bx bx-dollar-circle"></i>
+                        <h4>Affordable</h4>
+                        <p>Quality fashion without breaking the bank</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="bx bx-check-shield"></i>
+                        <h4>Trusted</h4>
+                        <p>Reliable service and fast delivery guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
     <main class="l-main">
         <!-- Your existing main content remains the same -->
         <section class="home" id="home">
