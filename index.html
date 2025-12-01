@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1a3a5f;
-            --secondary: #2c6fb7;
-            --accent: #e74c3c;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --gray: #6c757d;
-            --border: #e1e5eb;
-            --shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --primary: #000000;
+            --secondary: #111111;
+            --accent: #ff3b30;
+            --success: #34c759;
+            --warning: #ff9500;
+            --light: #0a0a0a;
+            --dark: #f5f5f7;
+            --gray: #8e8e93;
+            --border: #222222;
+            --shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
         }
         
         body {
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: #ffffff;
+            background-color: #000000;
             overflow-x: hidden;
         }
         
@@ -42,15 +42,17 @@
         
         /* Header */
         header {
-            background-color: white;
-            padding: 1rem 0;
+            background-color: #000000;
+            padding: 0.8rem 0;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: transform 0.4s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+            border-bottom: 1px solid #222222;
+            backdrop-filter: blur(10px);
         }
         
         header.hidden {
@@ -71,9 +73,13 @@
         }
         
         .logo-image {
-            width: 180px;
-            height: auto;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
             transition: transform 0.3s ease;
+            border: 2px solid #ffffff;
+            /* Keep original logo colors */
         }
         
         .logo:hover .logo-image {
@@ -83,11 +89,7 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .logo-text span {
-            color: var(--secondary);
+            color: #ffffff;
         }
         
         nav ul {
@@ -101,7 +103,7 @@
         }
         
         nav ul li a {
-            color: var(--dark);
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -116,7 +118,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary);
+            background-color: #ffffff;
             transition: width 0.3s ease;
         }
         
@@ -125,7 +127,7 @@
         }
         
         nav ul li a:hover {
-            color: var(--secondary);
+            color: #f0f0f0;
         }
         
         .auth-buttons {
@@ -135,8 +137,8 @@
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary);
-            color: white;
+            background-color: #ffffff;
+            color: #000000;
             padding: 0.7rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
@@ -156,7 +158,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.5s;
         }
         
@@ -166,25 +168,25 @@
         
         .btn-outline {
             background-color: transparent;
-            border: 1px solid var(--secondary);
-            color: var(--secondary);
+            border: 1px solid #ffffff;
+            color: #ffffff;
         }
         
         .btn:hover {
-            background-color: #1a5a9e;
+            background-color: #f0f0f0;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(44, 111, 183, 0.2);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.2);
         }
         
         .btn-outline:hover {
-            background-color: rgba(44, 111, 183, 0.05);
+            background-color: rgba(255,255,255,0.1);
         }
         
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--primary);
+            color: #ffffff;
             transition: transform 0.3s ease;
         }
         
@@ -194,11 +196,12 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #0f2a4a 100%);
-            color: white;
-            padding: 8rem 0 5rem;
+            background: #000000;
+            color: #ffffff;
+            padding: 10rem 0 6rem;
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid #222222;
         }
         
         .hero::before {
@@ -223,12 +226,16 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #cccccc;
         }
         
         .hero-buttons {
@@ -236,13 +243,35 @@
             gap: 1rem;
             animation: fadeIn 1.5s ease;
         }
+      
+
+      /* Make the circular logo bigger */
+.logo-image {
+    width: 100px; /* Increased from 70px */
+    height: 100px; /* Increased from 70px */
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border: 3px solid #ffffff; /* Slightly thicker border */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Added subtle glow */
+}
+
+/* For even larger logo */
+.logo-image.large {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+}
+      
+      
         
-        /* Auto-scrolling Partners Section */
+        /* Auto-scrolling Partners Section - WHITE BACKGROUND */
         .partners-scroll {
             padding: 3rem 0;
-            background-color: white;
+            background-color: #ffffff !important; /* White background */
             overflow: hidden;
             position: relative;
+            border-bottom: 1px solid #ddd;
         }
         
         .partners-scroll::before,
@@ -257,12 +286,12 @@
         
         .partners-scroll::before {
             left: 0;
-            background: linear-gradient(to right, white, transparent);
+            background: linear-gradient(to right, #ffffff, transparent);
         }
         
         .partners-scroll::after {
             right: 0;
-            background: linear-gradient(to left, white, transparent);
+            background: linear-gradient(to left, #ffffff, transparent);
         }
         
         .partners-track {
@@ -280,14 +309,16 @@
             justify-content: center;
             min-width: 200px;
             padding: 1.5rem;
-            background: var(--light);
+            background: #f8f9fa;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            border: 1px solid #e1e5eb;
         }
         
         .partner-item:hover {
             transform: translateY(-5px);
+            border-color: #ccc;
         }
         
         .partner-logo-scroll {
@@ -302,11 +333,13 @@
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
+            /* Original logo colors for partners section */
+            filter: none !important;
         }
         
         .partner-name {
             font-weight: 600;
-            color: var(--primary);
+            color: #000000 !important; /* Black text on white background */
             text-align: center;
         }
         
@@ -319,10 +352,10 @@
             }
         }
         
-        /* Partners Grid Section */
+        /* Partners Grid Section - WHITE BACKGROUND */
         .partners {
             padding: 5rem 0;
-            background-color: var(--light);
+            background-color: #ffffff !important; /* White background */
         }
         
         .section-header {
@@ -332,12 +365,12 @@
         
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: #000000 !important; /* Black text */
             margin-bottom: 1rem;
         }
         
         .section-header p {
-            color: var(--gray);
+            color: #666666 !important; /* Dark gray text */
             max-width: 700px;
             margin: 0 auto;
         }
@@ -350,11 +383,11 @@
         }
         
         .partner-card {
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
@@ -364,6 +397,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
+            border: 1px solid #e1e5eb;
         }
         
         .partner-card.animate {
@@ -373,6 +407,7 @@
         
         .partner-card:hover {
             transform: translateY(-5px);
+            border-color: #ccc;
         }
         
         .partner-logo {
@@ -387,11 +422,13 @@
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
+            /* Original logo colors for partners section */
+            filter: none !important;
         }
         
         .partner-description {
             font-size: 0.9rem;
-            color: var(--gray);
+            color: #666666 !important; /* Dark gray text */
             margin-top: 1rem;
         }
         
@@ -399,7 +436,7 @@
         .dashboard {
             padding: 3rem 0;
             display: none;
-            background-color: #f5f7fa;
+            background-color: #000000;
             min-height: 80vh;
         }
         
@@ -409,16 +446,16 @@
             align-items: center;
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #222222;
         }
         
         .user-welcome h2 {
-            color: var(--primary);
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
         
         .user-welcome p {
-            color: var(--gray);
+            color: #8e8e93;
         }
         
         .dashboard-grid {
@@ -429,12 +466,12 @@
         }
         
         .dashboard-card {
-            background-color: white;
+            background-color: #111111;
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid var(--border);
+            border: 1px solid #222222;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
@@ -447,12 +484,13 @@
         
         .dashboard-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-color: #333333;
         }
         
         .dashboard-card h3 {
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -463,23 +501,24 @@
             font-size: 2.2rem;
             font-weight: 700;
             margin: 1rem 0;
+            color: #ffffff;
         }
         
         .profit {
-            color: var(--success);
+            color: #34c759;
         }
         
         .loss {
-            color: var(--accent);
+            color: #ff3b30;
         }
         
         .fee {
-            color: var(--warning);
+            color: #ff9500;
         }
         
         .progress-bar {
             height: 10px;
-            background-color: #eee;
+            background-color: #222222;
             border-radius: 5px;
             margin: 1.5rem 0;
             overflow: hidden;
@@ -487,7 +526,7 @@
         
         .progress {
             height: 100%;
-            background: linear-gradient(90deg, var(--secondary) 0%, #4a9eff 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #888 100%);
             border-radius: 5px;
             transition: width 0.5s ease-in-out;
         }
@@ -497,7 +536,7 @@
             justify-content: space-between;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #222222;
         }
         
         .stat-item {
@@ -507,19 +546,21 @@
         .stat-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: #ffffff;
         }
         
         .stat-label {
             font-size: 0.85rem;
-            color: var(--gray);
+            color: #8e8e93;
             margin-top: 0.3rem;
         }
         
         /* Calculator */
         .calculator {
             padding: 5rem 0;
-            background-color: white;
+            background-color: #000000;
+            border-top: 1px solid #222222;
+            border-bottom: 1px solid #222222;
         }
         
         .calculator-container {
@@ -531,10 +572,10 @@
         }
         
         .calculator-form {
-            background-color: var(--light);
+            background-color: #111111;
             padding: 2.5rem;
             border-radius: 12px;
-            border: 1px solid var(--border);
+            border: 1px solid #222222;
             opacity: 0;
             transform: translateX(-30px);
             transition: all 0.6s ease;
@@ -553,22 +594,24 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--dark);
+            color: #ffffff;
         }
         
         .form-control {
             width: 100%;
             padding: 0.9rem;
-            border: 1px solid var(--border);
+            background-color: #000000;
+            border: 1px solid #222222;
             border-radius: 6px;
             font-size: 1rem;
             transition: border 0.3s;
+            color: #ffffff;
         }
         
         .form-control:focus {
-            border-color: var(--secondary);
+            border-color: #ffffff;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(44, 111, 183, 0.1);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
         }
         
         .input-with-icon {
@@ -580,18 +623,19 @@
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--gray);
+            color: #8e8e93;
         }
         
         .results {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #111111 0%, #000000 100%);
             color: white;
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(44, 111, 183, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             opacity: 0;
             transform: translateX(30px);
             transition: all 0.6s ease;
+            border: 1px solid #222222;
         }
         
         .results.animate {
@@ -602,6 +646,7 @@
         .results h3 {
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            color: #ffffff;
         }
         
         .result-item {
@@ -609,7 +654,7 @@
             justify-content: space-between;
             margin-bottom: 1.2rem;
             padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #222222;
         }
         
         .result-item:last-child {
@@ -619,19 +664,21 @@
         }
         
         .result-label {
-            opacity: 0.9;
+            color: #cccccc;
         }
         
         .result-value {
             font-weight: 600;
             font-size: 1.1rem;
+            color: #ffffff;
         }
         
         .highlight {
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255,255,255,0.05);
             padding: 1rem;
             border-radius: 8px;
             margin-top: 1.5rem;
+            border: 1px solid #222222;
         }
         
         /* Login Modal */
@@ -642,7 +689,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.9);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -651,15 +698,16 @@
         }
         
         .modal-content {
-            background-color: white;
+            background-color: #111111;
             padding: 2rem;
             border-radius: 12px;
             width: 90%;
             max-width: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             animation: modalAppear 0.3s ease-out;
             max-height: 90vh;
             overflow-y: auto;
+            border: 1px solid #222222;
         }
         
         .compact-form {
@@ -674,17 +722,17 @@
         }
         
         .compact-form::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #111111;
             border-radius: 10px;
         }
         
         .compact-form::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
+            background: #222222;
             border-radius: 10px;
         }
         
         .compact-form::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
+            background: #333333;
         }
         
         @keyframes modalAppear {
@@ -700,25 +748,25 @@
         }
         
         .modal-header h2 {
-            color: var(--primary);
+            color: #ffffff;
             font-size: 1.5rem;
         }
         
         .close-modal {
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--gray);
+            color: #8e8e93;
             transition: color 0.3s;
         }
         
         .close-modal:hover {
-            color: var(--dark);
+            color: #ffffff;
         }
         
         .tabs {
             display: flex;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #222222;
         }
         
         .tab {
@@ -728,11 +776,12 @@
             transition: all 0.3s;
             font-weight: 500;
             font-size: 0.9rem;
+            color: #8e8e93;
         }
         
         .tab.active {
-            border-bottom: 3px solid var(--secondary);
-            color: var(--secondary);
+            border-bottom: 3px solid #ffffff;
+            color: #ffffff;
         }
         
         .tab-content {
@@ -745,9 +794,10 @@
         
         /* Footer */
         footer {
-            background-color: var(--primary);
+            background-color: #000000;
             color: white;
             padding: 4rem 0 2rem;
+            border-top: 1px solid #222222;
         }
         
         .footer-content {
@@ -760,6 +810,7 @@
         .footer-column h3 {
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
+            color: #ffffff;
         }
         
         .footer-column ul {
@@ -768,23 +819,27 @@
         
         .footer-column ul li {
             margin-bottom: 0.8rem;
+            color: #8e8e93;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .footer-column ul li a {
-            color: rgba(255,255,255,0.7);
+            color: #8e8e93;
             text-decoration: none;
             transition: color 0.3s;
         }
         
         .footer-column ul li a:hover {
-            color: white;
+            color: #ffffff;
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.6);
+            border-top: 1px solid #222222;
+            color: #8e8e93;
             font-size: 0.9rem;
         }
         
@@ -800,14 +855,15 @@
             justify-content: center;
             width: 36px;
             height: 36px;
-            background-color: rgba(255,255,255,0.1);
+            background-color: #111111;
             border-radius: 50%;
             color: white;
             transition: background-color 0.3s, transform 0.3s;
+            border: 1px solid #222222;
         }
         
         .social-links a:hover {
-            background-color: var(--secondary);
+            background-color: #222222;
             transform: translateY(-3px);
         }
         
@@ -865,11 +921,13 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background-color: white;
+                background-color: rgba(0,0,0,0.98);
                 flex-direction: column;
                 padding: 1rem 0;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
                 animation: fadeInDown 0.3s ease;
+                border-top: 1px solid #222222;
+                border-bottom: 1px solid #222222;
             }
             
             nav ul.show {
@@ -931,8 +989,8 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <!-- Replace this image with your actual logo -->
-                    <img src="https://i.postimg.cc/HLD1j7mC/IMG-20251115-WA0048.jpg" alt="SA Fund Recovery Logo" class="logo-image">
+                    <!-- Circular logo with exact black background match -->
+                    <img src="https://i.postimg.cc/dtS0nhFX/IMG-20251201-WA0006.jpg" alt="SA Fund Recovery Logo" class="logo-image">
                 </a>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -967,7 +1025,7 @@
         </div>
     </section>
 
-    <!-- Auto-scrolling Partners Section -->
+    <!-- Auto-scrolling Partners Section - WHITE BACKGROUND -->
     <section class="partners-scroll">
         <div class="partners-track">
             <!-- These will be duplicated for seamless scrolling -->
@@ -1108,7 +1166,7 @@
         </div>
     </section>
 
-    <!-- Partners Grid Section -->
+    <!-- Partners Grid Section - WHITE BACKGROUND -->
     <section class="partners" id="partners">
         <div class="container">
             <div class="section-header">
@@ -1299,7 +1357,7 @@
                             <span class="result-value" style="font-size: 1.3rem;">R <span id="resultNet">270,375</span></span>
                         </div>
                     </div>
-                    <p style="margin-top: 1.5rem; opacity: 0.8; font-size: 0.9rem;">
+                    <p style="margin-top: 1.5rem; color: #cccccc; font-size: 0.9rem;">
                         <i class="fas fa-info-circle"></i> These calculations are estimates. Actual returns may vary based on market conditions.
                     </p>
                 </div>
@@ -1335,9 +1393,9 @@
                     <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <input type="checkbox" id="rememberMe">
-                            <label for="rememberMe" style="display: inline; margin-left: 5px;">Remember me</label>
+                            <label for="rememberMe" style="display: inline; margin-left: 5px; color: #cccccc;">Remember me</label>
                         </div>
-                        <a href="#" style="color: var(--secondary); text-decoration: none; font-size: 0.9rem;">Forgot password?</a>
+                        <a href="#" style="color: #ffffff; text-decoration: none; font-size: 0.9rem;">Forgot password?</a>
                     </div>
                     
                     <button type="submit" class="btn" style="width: 100%;">
@@ -1376,7 +1434,7 @@
                         
                         <div class="form-group">
                             <input type="checkbox" id="agreeTerms" required>
-                            <label for="agreeTerms" style="display: inline; margin-left: 5px; font-size: 0.85rem;">I agree to the <a href="#" style="color: var(--secondary);">Terms of Service</a> and <a href="#" style="color: var(--secondary);">Privacy Policy</a></label>
+                            <label for="agreeTerms" style="display: inline; margin-left: 5px; font-size: 0.85rem; color: #cccccc;">I agree to the <a href="#" style="color: #ffffff;">Terms of Service</a> and <a href="#" style="color: #ffffff;">Privacy Policy</a></label>
                         </div>
                     </form>
                 </div>
@@ -1393,7 +1451,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>SA Fund Recovery</h3>
-                    <p>Professional fund recovery services with a proven track record of success in helping South African clients recover lost investments.</p>
+                    <p style="color: #8e8e93;">Professional fund recovery services with a proven track record of success in helping South African clients recover lost investments.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1424,8 +1482,8 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i>5026 Sandton City, Johannesburg, SA</li>
-                        <li><i class="fas fa-phone"></i> +27 60 5064 784 </li>
+                        <li><i class="fas fa-map-marker-alt"></i> 5026 Sandton City, Johannesburg, SA</li>
+                        <li><i class="fas fa-phone"></i> +27 60 5064 784</li>
                         <li><i class="fas fa-envelope"></i> safundrecovery@gmail.com</li>
                         <li><i class="far fa-clock"></i> Mon-Fri: 9AM-6PM SAST</li>
                     </ul>
