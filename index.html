@@ -1,1831 +1,1814 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SA Fund Recovery | Professional Financial Recovery Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #000000;
-            --secondary: #111111;
-            --accent: #ff3b30;
-            --success: #34c759;
-            --warning: #ff9500;
-            --light: #0a0a0a;
-            --dark: #f5f5f7;
-            --gray: #8e8e93;
-            --border: #222222;
-            --shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #ffffff;
-            background-color: #000000;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header */
-        header {
-            background-color: #000000;
-            padding: 0.8rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
-            transition: all 0.4s ease;
-            border-bottom: 1px solid #222222;
-            backdrop-filter: blur(10px);
-        }
-        
-        header.hidden {
-            transform: translateY(-100%);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        
-        .logo-image {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            border: 2px solid #ffffff;
-            /* Keep original logo colors */
-        }
-        
-        .logo:hover .logo-image {
-            transform: scale(1.05);
-        }
-        
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.8rem;
-            position: relative;
-        }
-        
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-            position: relative;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #ffffff;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        nav ul li a:hover {
-            color: #f0f0f0;
-        }
-        
-        .auth-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid #ffffff;
-            color: #ffffff;
-        }
-        
-        .btn:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255,255,255,0.2);
-        }
-        
-        .btn-outline:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #ffffff;
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: #000000;
-            color: #ffffff;
-            padding: 10rem 0 6rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid #222222;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
-            background-size: cover;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            background: linear-gradient(90deg, #fff, #aaa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #cccccc;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            animation: fadeIn 1.5s ease;
-        }
-      
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JayWebs | Futuristic Web Design South Africa</title>
 
-      /* Make the circular logo bigger */
-.logo-image {
-    width: 100px; /* Increased from 70px */
-    height: 100px; /* Increased from 70px */
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    border: 3px solid #ffffff; /* Slightly thicker border */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Added subtle glow */
-}
+  <!-- SEO Meta -->
+  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
+  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
+  <meta name="author" content="JayWebs" />
 
-/* For even larger logo */
-.logo-image.large {
-    width: 120px;
-    height: 120px;
-    border-width: 4px;
-}
-      
-      
-        
-        /* Auto-scrolling Partners Section - WHITE BACKGROUND */
-        .partners-scroll {
-            padding: 3rem 0;
-            background-color: #ffffff !important; /* White background */
-            overflow: hidden;
-            position: relative;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .partners-scroll::before,
-        .partners-scroll::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 100%;
-            z-index: 2;
-        }
-        
-        .partners-scroll::before {
-            left: 0;
-            background: linear-gradient(to right, #ffffff, transparent);
-        }
-        
-        .partners-scroll::after {
-            right: 0;
-            background: linear-gradient(to left, #ffffff, transparent);
-        }
-        
-        .partners-track {
-            display: flex;
-            animation: scroll 40s linear infinite;
-            gap: 4rem;
-            padding: 0 2rem;
-        }
-        
-        .partner-item {
-            flex: 0 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: 200px;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            border: 1px solid #e1e5eb;
-        }
-        
-        .partner-item:hover {
-            transform: translateY(-5px);
-            border-color: #ccc;
-        }
-        
-        .partner-logo-scroll {
-            height: 60px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .partner-logo-scroll img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-            /* Original logo colors for partners section */
-            filter: none !important;
-        }
-        
-        .partner-name {
-            font-weight: 600;
-            color: #000000 !important; /* Black text on white background */
-            text-align: center;
-        }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-200px * 11 - 4rem * 11));
-            }
-        }
-        
-        /* Partners Grid Section - WHITE BACKGROUND */
-        .partners {
-            padding: 5rem 0;
-            background-color: #ffffff !important; /* White background */
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #000000 !important; /* Black text */
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666666 !important; /* Dark gray text */
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .partner-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 280px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-            border: 1px solid #e1e5eb;
-        }
-        
-        .partner-card.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .partner-card:hover {
-            transform: translateY(-5px);
-            border-color: #ccc;
-        }
-        
-        .partner-logo {
-            height: 60px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .partner-logo img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-            /* Original logo colors for partners section */
-            filter: none !important;
-        }
-        
-        .partner-description {
-            font-size: 0.9rem;
-            color: #666666 !important; /* Dark gray text */
-            margin-top: 1rem;
-        }
-        
-        /* Dashboard */
-        .dashboard {
-            padding: 3rem 0;
-            display: none;
-            background-color: #000000;
-            min-height: 80vh;
-        }
-        
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #222222;
-        }
-        
-        .user-welcome h2 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-        
-        .user-welcome p {
-            color: #8e8e93;
-        }
-        
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .dashboard-card {
-            background-color: #111111;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #222222;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .dashboard-card.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border-color: #333333;
-        }
-        
-        .dashboard-card h3 {
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .amount {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            color: #ffffff;
-        }
-        
-        .profit {
-            color: #34c759;
-        }
-        
-        .loss {
-            color: #ff3b30;
-        }
-        
-        .fee {
-            color: #ff9500;
-        }
-        
-        .progress-bar {
-            height: 10px;
-            background-color: #222222;
-            border-radius: 5px;
-            margin: 1.5rem 0;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #ffffff 0%, #888 100%);
-            border-radius: 5px;
-            transition: width 0.5s ease-in-out;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #222222;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            color: #8e8e93;
-            margin-top: 0.3rem;
-        }
-        
-        /* Calculator */
-        .calculator {
-            padding: 5rem 0;
-            background-color: #000000;
-            border-top: 1px solid #222222;
-            border-bottom: 1px solid #222222;
-        }
-        
-        .calculator-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .calculator-form {
-            background-color: #111111;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #222222;
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s ease;
-        }
-        
-        .calculator-form.animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #ffffff;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.9rem;
-            background-color: #000000;
-            border: 1px solid #222222;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border 0.3s;
-            color: #ffffff;
-        }
-        
-        .form-control:focus {
-            border-color: #ffffff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
-        }
-        
-        .input-with-icon {
-            position: relative;
-        }
-        
-        .input-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #8e8e93;
-        }
-        
-        .results {
-            background: linear-gradient(135deg, #111111 0%, #000000 100%);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.6s ease;
-            border: 1px solid #222222;
-        }
-        
-        .results.animate {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .results h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: #ffffff;
-        }
-        
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid #222222;
-        }
-        
-        .result-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .result-label {
-            color: #cccccc;
-        }
-        
-        .result-value {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #ffffff;
-        }
-        
-        .highlight {
-            background-color: rgba(255,255,255,0.05);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            border: 1px solid #222222;
-        }
-        
-        /* Login Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .modal-content {
-            background-color: #111111;
-            padding: 2rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            animation: modalAppear 0.3s ease-out;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid #222222;
-        }
-        
-        .compact-form {
-            max-height: 300px;
-            overflow-y: auto;
-            padding-right: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .compact-form::-webkit-scrollbar {
-            width: 5px;
-        }
-        
-        .compact-form::-webkit-scrollbar-track {
-            background: #111111;
-            border-radius: 10px;
-        }
-        
-        .compact-form::-webkit-scrollbar-thumb {
-            background: #222222;
-            border-radius: 10px;
-        }
-        
-        .compact-form::-webkit-scrollbar-thumb:hover {
-            background: #333333;
-        }
-        
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .modal-header h2 {
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-        
-        .close-modal {
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #8e8e93;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: #ffffff;
-        }
-        
-        .tabs {
-            display: flex;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #222222;
-        }
-        
-        .tab {
-            padding: 0.8rem 1.2rem;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #8e8e93;
-        }
-        
-        .tab.active {
-            border-bottom: 3px solid #ffffff;
-            color: #ffffff;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #000000;
-            color: white;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid #222222;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-        
-        .footer-column h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            color: #ffffff;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-            color: #8e8e93;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #8e8e93;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #ffffff;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #222222;
-            color: #8e8e93;
-            font-size: 0.9rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: #111111;
-            border-radius: 50%;
-            color: white;
-            transition: background-color 0.3s, transform 0.3s;
-            border: 1px solid #222222;
-        }
-        
-        .social-links a:hover {
-            background-color: #222222;
-            transform: translateY(-3px);
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from { 
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .calculator-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .partners-track {
-                animation: scroll 30s linear infinite;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: rgba(0,0,0,0.98);
-                flex-direction: column;
-                padding: 1rem 0;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-                animation: fadeInDown 0.3s ease;
-                border-top: 1px solid #222222;
-                border-bottom: 1px solid #222222;
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                padding: 0.8rem 0;
-            }
-            
-            .auth-buttons {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .dashboard-header {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-            
-            .partners-scroll::before,
-            .partners-scroll::after {
-                width: 50px;
-            }
-            
-            .partners-track {
-                animation: scroll 25s linear infinite;
-                gap: 2rem;
-            }
-            
-            .partner-item {
-                min-width: 150px;
-                padding: 1rem;
-            }
-            
-            .modal-content {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+  <!-- Open Graph -->
+  <meta property="og:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta property="og:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
+  <meta property="og:url" content="https://www.jaywebs.site" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
+  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
+  <meta name="twitter:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Tangerine:wght@400;700&family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black: #000000;
+      --dark-gray: #111111;
+      --medium-gray: #333333;
+      --light-gray: #666666;
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --accent: #00bfff;
+      --transition: all 0.3s ease;
+      --primary-font: 'Montserrat', sans-serif;
+      --heading-font: 'Cinzel', serif;
+      --accent-font: 'Playfair Display', serif;
+      --elegant-font: 'Cormorant Garamond', serif;
+      --script-font: 'Dancing Script', cursive;
+      --luxury-font: 'Abril Fatface', cursive;
+    }
+
+    body {
+      font-family: var(--primary-font);
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    a {
+      color: var(--white);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 5%;
+      background: var(--dark-gray);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 2px solid var(--white);
+      transition: transform 0.4s ease;
+      transform: translateY(0);
+    }
+
+    header.hidden {
+      transform: translateY(-100%);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--white);
+      transition: var(--transition);
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.12);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      font-family: var(--accent-font);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 8rem 1rem 6rem;
+      background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      margin-top: 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.02)"/></svg>');
+      background-size: cover;
+    }
+
+    .hero h1 {
+      font-family: var(--luxury-font);
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-family: var(--script-font);
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--off-white);
+    }
+
+    .btn {
+      background-color: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: var(--accent-font);
+    }
+
+    .btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
+    }
+
+    /* Section Padding */
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-family: var(--luxury-font);
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--white);
+      position: relative;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, var(--white), var(--light-gray));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* About Section */
+    .about p {
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--off-white);
+      line-height: 1.7;
+      text-align: center;
+      font-family: var(--elegant-font);
+    }
+
+    .about .italic {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin: 2rem 0;
+      font-family: var(--accent-font);
+    }
+
+    /* Owner Card */
+    .owner-card {
+      max-width: 700px;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin: 0 auto;
+      color: var(--white);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .owner-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .owner-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .owner-card h4 {
+      font-family: var(--accent-font);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--light-gray);
+      font-style: italic;
+    }
+
+    .owner-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--off-white);
+      font-family: var(--elegant-font);
+    }
+
+    /* Portfolio Section */
+    .portfolio-swiper {
+      position: relative;
+      padding: 0 2rem;
+    }
+
+    .portfolio-card {
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      filter: grayscale(100%);
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover img {
+      filter: grayscale(0%);
+    }
+
+    .portfolio-card h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      font-family: var(--heading-font);
+    }
+
+    .portfolio-card p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--light-gray);
+      flex-grow: 1;
+      font-family: var(--elegant-font);
+      font-style: italic;
+    }
+
+    /* Swiper buttons */
+    .swiper-button-prev, .swiper-button-next {
+      color: var(--white);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      color: var(--white);
+      background: var(--dark-gray);
+    }
+
+    .testimonial {
+      background: var(--medium-gray);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .testimonial-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      border: 2px solid var(--white);
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .testimonial blockquote {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+      color: var(--off-white);
+      line-height: 1.7;
+      font-family: var(--accent-font);
+      font-weight: 400;
+    }
+
+    .testimonial cite {
+      font-weight: 700;
+      color: var(--white);
+      font-style: normal;
+      font-family: var(--heading-font);
+    }
+
+    .testimonials-pagination .swiper-pagination-bullet {
+      background: var(--white);
+      opacity: 0.7;
+    }
+
+    .testimonials-pagination .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
+    /* Pricing Section */
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .pricing-box {
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-box:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .pricing-box h3 {
+      font-family: var(--luxury-font);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .pricing-box .price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+      font-family: var(--accent-font);
+      font-style: italic;
+    }
+
+    .pricing-box p {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+      color: var(--light-gray);
+      font-family: var(--elegant-font);
+    }
+
+    .pricing-box .btn {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    /* Stats Section */
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+      flex: 1;
+    }
+
+    .stat:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-number {
+      font-family: var(--luxury-font);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: var(--light-gray);
+      font-weight: 500;
+      font-family: var(--accent-font);
+      font-style: italic;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.02);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      color: var(--white);
+      font-weight: 600;
+      padding: 1.5rem;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: var(--transition);
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--accent-font);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .faq-question.active::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-question.active,
+    .faq-question:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.5rem;
+      background: var(--medium-gray);
+      color: var(--off-white);
+      border-radius: 0 0 12px 12px;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-family: var(--elegant-font);
+      font-style: italic;
+    }
+
+    /* Quote Calculator */
+    .calculator-container {
+      max-width: 500px;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .calculator-container h2 {
+      margin-bottom: 2rem;
+      font-family: var(--heading-font);
+    }
+
+    .calculator-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .calculator-container label {
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-family: var(--accent-font);
+    }
+
+    .calculator-container select {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      color: var(--white);
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: var(--primary-font);
+    }
+
+    .calculator-container input[type="checkbox"] {
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .features label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 0;
+      font-family: var(--elegant-font);
+    }
+
+    #downloadQuote {
+      background-color: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      font-family: var(--accent-font);
+    }
+
+    #downloadQuote:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--medium-gray);
+      color: var(--white);
+      font-family: var(--accent-font);
+      font-style: italic;
+    }
+
+    /* Booking Section */
+    .booking-container {
+      max-width: 600px;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      color: var(--white);
+    }
+
+    .booking-container h2 {
+      margin-bottom: 2rem;
+      font-family: var(--heading-font);
+      text-align: center;
+    }
+
+    .booking-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .booking-container label {
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-family: var(--accent-font);
+    }
+
+    .booking-container input,
+    .booking-container select,
+    .booking-container textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 2px solid var(--white);
+      background: var(--dark-gray);
+      color: var(--white);
+      font-size: 1rem;
+      font-family: var(--primary-font);
+    }
+
+    .booking-container textarea {
+      min-height: 120px;
+      resize: vertical;
+      font-family: var(--elegant-font);
+    }
+
+    .booking-container button {
+      background-color: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      font-family: var(--accent-font);
+    }
+
+    .booking-container button:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+      color: var(--black);
+    }
+
+    /* Form Validation Styles */
+    .form-group {
+      position: relative;
+    }
+
+    .error-message {
+      color: #ff6b6b;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    input.error, select.error, textarea.error {
+      border-color: #ff6b6b;
+    }
+
+    .success-message {
+      background-color: rgba(46, 204, 113, 0.1);
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    /* Contact Section */
+    #contact {
+      text-align: center;
+      padding-bottom: 4rem;
+    }
+
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-icons a {
+      font-size: 2rem;
+      color: var(--white);
+      transition: var(--transition);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-gray);
+      border: 2px solid var(--white);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px 18px;
+      font-size: 28px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c3e;
+      transform: scale(1.1);
+    }
+
+    /* Sticky Contact Button */
+    .sticky-contact-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background: var(--white);
+      color: var(--black);
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 9999;
+      transition: var(--transition);
+      font-family: var(--accent-font);
+    }
+
+    .sticky-contact-btn i {
+      font-size: 1.2rem;
+    }
+
+    .sticky-contact-btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-gray);
+      color: var(--white);
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 2px solid var(--white);
+    }
+
+    footer p {
+      font-family: var(--elegant-font);
+      font-style: italic;
+    }
+
+    /* Loading Spinner */
+    .loading-spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      margin: 20px auto;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--accent);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero p {
+        font-size: 1.8rem;
+      }
+
+      .stats-container {
+        gap: 2rem;
+      }
+
+      .stat {
+        padding: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--dark-gray);
+        padding: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero {
+        padding: 6rem 1rem 4rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .stats-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .pricing-box {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .social-icons {
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .owner-card,
+      .calculator-container,
+      .booking-container {
+        padding: 1.5rem;
+      }
+
+      .logo img {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="mainHeader">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <!-- Circular logo with exact black background match -->
-                    <img src="https://i.postimg.cc/dtS0nhFX/IMG-20251201-WA0006.jpg" alt="SA Fund Recovery Logo" class="logo-image">
-                </a>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#partners">Our Partners</a></li>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="auth-buttons">
-                    <button class="btn btn-outline" id="loginBtn">Client Login</button>
-                    <button class="btn" id="registerBtn">Open Account</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Professional Fund Recovery & Financial Protection</h1>
-                <p>SA Fund Recovery specializes in helping South African individuals and businesses recover funds lost to online scams, fraudulent investments, and financial misconduct.</p>
-                <div class="hero-buttons">
-                    <button class="btn" id="heroLoginBtn">Client Portal</button>
-                    <button class="btn btn-outline">Learn More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Auto-scrolling Partners Section - WHITE BACKGROUND -->
-    <section class="partners-scroll">
-        <div class="partners-track">
-            <!-- These will be duplicated for seamless scrolling -->
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
-                </div>
-                <div class="partner-name">Visa</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://retail-today.com/wp-content/uploads/2020/03/forter-696x464.jpg" alt="Forter">
-                </div>
-                <div class="partner-name">Forter</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/OIP.25OfNASAAxDBGoTE2wyhrQHaD_?w=292&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Riskified">
-                </div>
-                <div class="partner-name">Riskified</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://datadome.co/wp-content/uploads/2022/01/DataDome-Logo.jpg" alt="DataDome">
-                </div>
-                <div class="partner-name">DataDome</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/OIP.9lqsjv206VOfR9hC-UjE2gHaDp?w=307&h=172&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="SEON">
-                </div>
-                <div class="partner-name">SEON</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://mms.businesswire.com/media/20171024005894/en/603962/21/NamogooLogo.jpg" alt="Namogoo">
-                </div>
-                <div class="partner-name">Namogoo</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://www.wefightfraud.org/wp-content/uploads/2020/05/Wff-icons-WFF-BLACK-TEXT-1.png" alt="We Fight Fraud">
-                </div>
-                <div class="partner-name">We Fight Fraud</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/R.c79e0391b0dceb1515a43d8327610e2a?rik=uvK%2fTeHCbCpoXQ&pid=ImgRaw&r=0" alt="SAFPS">
-                </div>
-                <div class="partner-name">SAFPS</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://images.squarespace-cdn.com/content/v1/67c01676ab8ced3e8108b266/bce3c2a8-1580-44c0-826a-54ecb2e6ad5b/Tech-Against-Scams-Coalition-logo-2-v2.png?format=1500w" alt="Tech Against Scams">
-                </div>
-                <div class="partner-name">Tech Against Scams</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.1MJWstmHQAmVh22F4BR8fQAAAA?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Verifraud">
-                </div>
-                <div class="partner-name">Verifraud</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png" alt="FBI">
-                </div>
-                <div class="partner-name">FBI</div>
-            </div>
-            
-            <!-- Duplicated for seamless scrolling -->
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
-                </div>
-                <div class="partner-name">Visa</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://retail-today.com/wp-content/uploads/2020/03/forter-696x464.jpg" alt="Forter">
-                </div>
-                <div class="partner-name">Forter</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/OIP.25OfNASAAxDBGoTE2wyhrQHaD_?w=292&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="Riskified">
-                </div>
-                <div class="partner-name">Riskified</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://datadome.co/wp-content/uploads/2022/01/DataDome-Logo.jpg" alt="DataDome">
-                </div>
-                <div class="partner-name">DataDome</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/OIP.9lqsjv206VOfR9hC-UjE2gHaDp?w=307&h=172&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1" alt="SEON">
-                </div>
-                <div class="partner-name">SEON</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://mms.businesswire.com/media/20171024005894/en/603962/21/NamogooLogo.jpg" alt="Namogoo">
-                </div>
-                <div class="partner-name">Namogoo</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://www.wefightfraud.org/wp-content/uploads/2020/05/Wff-icons-WFF-BLACK-TEXT-1.png" alt="We Fight Fraud">
-                </div>
-                <div class="partner-name">We Fight Fraud</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://th.bing.com/th/id/R.c79e0391b0dceb1515a43d8327610e2a?rik=uvK%2fTeHCbCpoXQ&pid=ImgRaw&r=0" alt="SAFPS">
-                </div>
-                <div class="partner-name">SAFPS</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://images.squarespace-cdn.com/content/v1/67c01676ab8ced3e8108b266/bce3c2a8-1580-44c0-826a-54ecb2e6ad5b/Tech-Against-Scams-Coalition-logo-2-v2.png?format=1500w" alt="Tech Against Scams">
-                </div>
-                <div class="partner-name">Tech Against Scams</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.1MJWstmHQAmVh22F4BR8fQAAAA?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Verifraud">
-                </div>
-                <div class="partner-name">Verifraud</div>
-            </div>
-            <div class="partner-item">
-                <div class="partner-logo-scroll">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png" alt="FBI">
-                </div>
-                <div class="partner-name">FBI</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Grid Section - WHITE BACKGROUND -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Global Security Partners</h2>
-                <p>We collaborate with industry leaders in fraud prevention and financial security to ensure the highest level of protection for our clients.</p>
-            </div>
-           
-        </div>
-    </section>
-
-    <!-- Dashboard (Visible after login) -->
-    <section class="dashboard" id="dashboard">
-        <div class="container">
-            <div class="dashboard-header">
-                <div class="user-welcome">
-                    <h2>Welcome back, <span id="userName">Pieter van der Merwe</span></h2>
-                    <p>Here's your financial recovery overview</p>
-                </div>
-                <div class="user-actions">
-                    <button class="btn btn-outline" id="logoutBtn">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </button>
-                </div>
-            </div>
-            
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-chart-line"></i> Investment Summary</h3>
-                    <p>Initial Investment</p>
-                    <div class="amount">R <span id="initialAmount">250,000</span></div>
-                    <p>Current Portfolio Value</p>
-                    <div class="amount profit">R <span id="currentAmount">610,500</span></div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 144%" id="progressBar"></div>
-                    </div>
-                    <p><span id="growthPercent">144</span>% Growth | +R <span id="profitAmount">360,500</span></p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-value" id="avgMonthly">18%</div>
-                            <div class="stat-label">Avg. Monthly</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value" id="months">12</div>
-                            <div class="stat-label">Months</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">R <span id="monthlyProfit">45,000</span></div>
-                            <div class="stat-label">Monthly Profit</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-hand-holding-usd"></i> Withdrawal Details</h3>
-                    <p>Available for Withdrawal</p>
-                    <div class="amount">R <span id="availableAmount">360,500</span></div>
-                    <p>Withdrawal Fee (25%)</p>
-                    <div class="amount fee">R <span id="feeAmount">90,125</span></div>
-                    <p>Net Withdrawal Amount</p>
-                    <div class="amount profit">R <span id="netAmount">270,375</span></div>
-                    <button class="btn" style="margin-top: 1.5rem; width: 100%;" id="withdrawalBtn">
-                        <i class="fas fa-download"></i> Request Withdrawal
-                    </button>
-                    <p style="font-size: 0.85rem; color: var(--gray); margin-top: 1rem;">
-                        <i class="fas fa-info-circle"></i> Withdrawal processing takes 5-7 business days
-                    </p>
-                </div>
-                
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-exclamation-triangle"></i> Recovery Status</h3>
-                    <p>Case Status: <strong style="color: var(--warning);">Under Investigation</strong></p>
-                    <p>Estimated Recovery: <strong>85% of lost funds</strong></p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 65%"></div>
-                    </div>
-                    <p>Recovery Progress: 65% Complete</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-value">24</div>
-                            <div class="stat-label">Days Active</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">3</div>
-                            <div class="stat-label">Documents</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value">85%</div>
-                            <div class="stat-label">Success Rate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="dashboard-card">
-                <h3><i class="fas fa-history"></i> Recent Activity</h3>
-                <div class="result-item">
-                    <span>Initial Investment</span>
-                    <span class="loss">-R <span id="activityInitial">250,000.00</span></span>
-                </div>
-                <div class="result-item">
-                    <span>Monthly Profit (March)</span>
-                    <span class="profit">+R <span id="activityProfit1">45,000.00</span></span>
-                </div>
-                <div class="result-item">
-                    <span>Monthly Profit (April)</span>
-                    <span class="profit">+R <span id="activityProfit2">42,500.00</span></span>
-                </div>
-                <div class="result-item">
-                    <span>Account Maintenance Fee</span>
-                    <span class="fee">-R <span id="activityFee">2,500.00</span></span>
-                </div>
-                <div class="result-item">
-                    <span><strong>Available Balance</strong></span>
-                    <span class="profit"><strong>R <span id="activityBalance">360,500.00</span></strong></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Calculator Section -->
-    <section class="calculator" id="calculator">
-        <div class="container">
-            <div class="section-header">
-                <h2>Investment Profit Calculator</h2>
-                <p>Estimate your potential returns and understand withdrawal fees before investing</p>
-            </div>
-            
-            <div class="calculator-container">
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="initialInvestment">Initial Investment Amount (R)</label>
-                        <div class="input-with-icon">
-                            <input type="number" id="initialInvestment" class="form-control" min="0" step="1000" value="250000" oninput="validateInput(this)">
-                            <span class="input-icon">R</span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="investmentPeriod">Investment Period (Months)</label>
-                        <div class="input-with-icon">
-                            <input type="number" id="investmentPeriod" class="form-control" min="1" max="60" value="12" oninput="validateInput(this)">
-                            <span class="input-icon"><i class="far fa-calendar-alt"></i></span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="monthlyProfit">Monthly Profit Percentage (%)</label>
-                        <div class="input-with-icon">
-                            <input type="number" id="monthlyProfit" class="form-control" min="1" max="100" value="15" oninput="validateInput(this)">
-                            <span class="input-icon">%</span>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="withdrawalFee">Withdrawal Fee Percentage (%)</label>
-                        <div class="input-with-icon">
-                            <input type="number" id="withdrawalFee" class="form-control" min="0" max="100" value="25" oninput="validateInput(this)">
-                            <span class="input-icon">%</span>
-                        </div>
-                    </div>
-                    
-                    <button class="btn" id="calculateBtn" style="width: 100%;">
-                        <i class="fas fa-calculator"></i> Calculate Profit & Fees
-                    </button>
-                </div>
-                
-                <div class="results" id="results">
-                    <h3>Your Investment Analysis</h3>
-                    <div class="result-item">
-                        <span class="result-label">Initial Investment:</span>
-                        <span class="result-value">R <span id="resultInitial">250,000</span></span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Total Profit Generated:</span>
-                        <span class="result-value">R <span id="resultProfit">360,500</span></span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Current Portfolio Value:</span>
-                        <span class="result-value">R <span id="resultTotal">610,500</span></span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Withdrawal Fee (<span id="resultFeePercent">25</span>%):</span>
-                        <span class="result-value">R <span id="resultFee">90,125</span></span>
-                    </div>
-                    <div class="highlight">
-                        <div class="result-item">
-                            <span class="result-label">Net Withdrawal Amount:</span>
-                            <span class="result-value" style="font-size: 1.3rem;">R <span id="resultNet">270,375</span></span>
-                        </div>
-                    </div>
-                    <p style="margin-top: 1.5rem; color: #cccccc; font-size: 0.9rem;">
-                        <i class="fas fa-info-circle"></i> These calculations are estimates. Actual returns may vary based on market conditions.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Client Portal Access</h2>
-                <span class="close-modal">&times;</span>
-            </div>
-            
-            <div class="tabs">
-                <div class="tab active" data-tab="login">Login</div>
-                <div class="tab" data-tab="register">Register</div>
-            </div>
-            
-            <div class="tab-content active" id="login-tab">
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="loginEmail">Email Address</label>
-                        <input type="email" id="loginEmail" class="form-control" required placeholder="Enter your email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="loginPassword">Password</label>
-                        <input type="password" id="loginPassword" class="form-control" required placeholder="Enter your password">
-                    </div>
-                    
-                    <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <input type="checkbox" id="rememberMe">
-                            <label for="rememberMe" style="display: inline; margin-left: 5px; color: #cccccc;">Remember me</label>
-                        </div>
-                        <a href="#" style="color: #ffffff; text-decoration: none; font-size: 0.9rem;">Forgot password?</a>
-                    </div>
-                    
-                    <button type="submit" class="btn" style="width: 100%;">
-                        <i class="fas fa-sign-in-alt"></i> Login to Account
-                    </button>
-                </form>
-            </div>
-            
-            <div class="tab-content" id="register-tab">
-                <div class="compact-form">
-                    <form id="registerForm">
-                        <div class="form-group">
-                            <label for="registerName">Full Name</label>
-                            <input type="text" id="registerName" class="form-control" required placeholder="Enter your full name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="registerEmail">Email Address</label>
-                            <input type="email" id="registerEmail" class="form-control" required placeholder="Enter your email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="registerPhone">Phone Number</label>
-                            <input type="tel" id="registerPhone" class="form-control" required placeholder="Enter your phone number">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="registerPassword">Password</label>
-                            <input type="password" id="registerPassword" class="form-control" required placeholder="Create a password">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="registerConfirm">Confirm Password</label>
-                            <input type="password" id="registerConfirm" class="form-control" required placeholder="Confirm your password">
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="checkbox" id="agreeTerms" required>
-                            <label for="agreeTerms" style="display: inline; margin-left: 5px; font-size: 0.85rem; color: #cccccc;">I agree to the <a href="#" style="color: #ffffff;">Terms of Service</a> and <a href="#" style="color: #ffffff;">Privacy Policy</a></label>
-                        </div>
-                    </form>
-                </div>
-                <button type="submit" form="registerForm" class="btn" style="width: 100%;">
-                    <i class="fas fa-user-plus"></i> Create Account
-                </button>
-            </div>
-        </div>
+  <header id="mainHeader">
+    <div class="logo">
+      <a href="#home">
+        <img src="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" alt="JayWebs Logo">
+      </a>
     </div>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>SA Fund Recovery</h3>
-                    <p style="color: #8e8e93;">Professional fund recovery services with a proven track record of success in helping South African clients recover lost investments.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Investment Recovery</a></li>
-                        <li><a href="#">Cryptocurrency Scams</a></li>
-                        <li><a href="#">Forex & Trading Fraud</a></li>
-                        <li><a href="#">Bank Transfer Recovery</a></li>
-                        <li><a href="#">Legal Consultation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 5026 Sandton City, Johannesburg, SA</li>
-                        <li><i class="fas fa-phone"></i> +27 60 5064 784</li>
-                        <li><i class="fas fa-envelope"></i> safundrecovery@gmail.com</li>
-                        <li><i class="far fa-clock"></i> Mon-Fri: 9AM-6PM SAST</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 SA Fund Recovery.</p>
-            </div>
-        </div>
-    </footer>
+    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <script>
-        // User database stored in localStorage
-        let users = JSON.parse(localStorage.getItem('users')) || {};
-        
-        // DOM Elements
-        const loginBtn = document.getElementById('loginBtn');
-        const registerBtn = document.getElementById('registerBtn');
-        const heroLoginBtn = document.getElementById('heroLoginBtn');
-        const logoutBtn = document.getElementById('logoutBtn');
-        const withdrawalBtn = document.getElementById('withdrawalBtn');
-        const loginModal = document.getElementById('loginModal');
-        const closeModal = document.querySelector('.close-modal');
-        const tabs = document.querySelectorAll('.tab');
-        const tabContents = document.querySelectorAll('.tab-content');
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
-        const dashboard = document.getElementById('dashboard');
-        const calculateBtn = document.getElementById('calculateBtn');
-        const results = document.getElementById('results');
-        const header = document.getElementById('mainHeader');
-        
-        // Scroll variables for header behavior
-        let lastScrollTop = 0;
-        const scrollThreshold = 100;
-        
-        // Generate random investment data for new users
-        function generateUserData() {
-            const initialInvestment = Math.floor(Math.random() * 200000) + 50000; // R50,000 - R250,000
-            const months = Math.floor(Math.random() * 24) + 6; // 6-30 months
-            const monthlyProfitPercent = Math.floor(Math.random() * 10) + 10; // 10-20%
-            const totalProfit = initialInvestment * (monthlyProfitPercent / 100) * months;
-            const currentValue = initialInvestment + totalProfit;
-            const growthPercent = Math.round((totalProfit / initialInvestment) * 100);
-            
-            return {
-                initialInvestment,
-                months,
-                monthlyProfitPercent,
-                totalProfit,
-                currentValue,
-                growthPercent,
-                monthlyProfit: Math.round(totalProfit / months)
-            };
-        }
-        
-        // Format currency for South African display
-        function formatCurrency(num) {
-            return num.toLocaleString('en-ZA', {minimumFractionDigits: 0, maximumFractionDigits: 0});
-        }
-        
-        // Update dashboard with user data
-        function updateDashboard(userData) {
-            document.getElementById('initialAmount').textContent = formatCurrency(userData.initialInvestment);
-            document.getElementById('currentAmount').textContent = formatCurrency(userData.currentValue);
-            document.getElementById('profitAmount').textContent = formatCurrency(userData.totalProfit);
-            document.getElementById('growthPercent').textContent = userData.growthPercent;
-            document.getElementById('progressBar').style.width = userData.growthPercent + '%';
-            document.getElementById('avgMonthly').textContent = userData.monthlyProfitPercent + '%';
-            document.getElementById('months').textContent = userData.months;
-            document.getElementById('monthlyProfit').textContent = formatCurrency(userData.monthlyProfit);
-            
-            document.getElementById('availableAmount').textContent = formatCurrency(userData.totalProfit);
-            const feeAmount = userData.totalProfit * 0.25;
-            document.getElementById('feeAmount').textContent = formatCurrency(feeAmount);
-            document.getElementById('netAmount').textContent = formatCurrency(userData.totalProfit - feeAmount);
-            
-            document.getElementById('activityInitial').textContent = formatCurrency(userData.initialInvestment) + '.00';
-            document.getElementById('activityProfit1').textContent = formatCurrency(userData.monthlyProfit) + '.00';
-            document.getElementById('activityProfit2').textContent = formatCurrency(userData.monthlyProfit - 2500) + '.00';
-            document.getElementById('activityFee').textContent = '2,500.00';
-            document.getElementById('activityBalance').textContent = formatCurrency(userData.totalProfit) + '.00';
-        }
-        
-        // Input validation function to prevent annoying messages
-        function validateInput(input) {
-            // Remove any non-numeric characters except decimal point
-            input.value = input.value.replace(/[^0-9.]/g, '');
-            
-            // Ensure only one decimal point
-            if ((input.value.match(/\./g) || []).length > 1) {
-                input.value = input.value.slice(0, -1);
-            }
-            
-            // Check if value is empty or invalid
-            if (input.value === '' || isNaN(parseFloat(input.value))) {
-                input.value = input.min || 0;
-            }
-            
-            // Ensure value is within min and max bounds
-            const value = parseFloat(input.value);
-            const min = parseFloat(input.min);
-            const max = parseFloat(input.max);
-            
-            if (value < min) {
-                input.value = min;
-            } else if (value > max) {
-                input.value = max;
-            }
-        }
-        
-        // Scroll animation function
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.partner-card, .dashboard-card, .calculator-form, .results');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('animate');
-                }
-            });
-        }
-        
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Client Feedback</a></li>
+        <li><a href="#pricing">Services</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote-calculator">Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1 data-aos="fade-up">Futuristic Web Design South Africa</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Fuel Your Brand. Power Your Presence.</p>
+    <button class="btn" data-aos="fade-up" data-aos-delay="400" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <h2 class="section-title gradient-text" data-aos="fade-up">About JayWebs</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.
+        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.
+        We believe in innovation, attention to detail, and delivering beyond expectations.
+      </p>
+
+      <p class="italic" data-aos="fade-up" data-aos-delay="300">
+        "Where digital dreams become stunning realities"
+      </p>
+
+      <div class="owner-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>Meet the Visionary</h3>
+        <h4>Jaden Nkuna</h4>
+        <p>
+          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.
+          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Masterpieces</h2>
+    <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="E-Commerce Platform" />
+          <h3>E-Commerce Platform</h3>
+          <p>Modern online store with seamless user experience and secure payment integration.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.pinimg.com/originals/8b/ed/e9/8bede95dac22b5c02162ffb4ed644ce9.jpg" alt="Corporate Website" />
+          <h3>Corporate Website</h3>
+          <p>Professional online store  website with brand storytelling and lead generation features.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://i.pinimg.com/originals/31/e0/1e/31e01e6ecf772a824b849eb75756b2eb.jpg" />
+          <h3>Portfolio Showcase</h3>
+          <p>Creative portfolio website for artists and designers to showcase their work.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" />
+          <h3>Restaurant Website</h3>
+          <p>Beautiful restaurant website with online menu and reservation system.</p>
+        </div>
+        <div class="swiper-slide portfolio-card">
+          <img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/617fffdd8c69ee8ae8434616_qs4TzbMjvhu7ts2RxQyzlzJoHHcBYOQJHkyDro4Z-eIWCeqo7UFjjTi_6xJFIuaO8X8oXIcqELE5Eb9YM2gA0xRyoM0w2cYCkv7Bmm0GO8zkpemCd77_1fU3JeI0teEP0MZIcDZ6.jpeg" />
+          <h3>Real Estate Portal</h3>
+          <p>Property listing website with advanced search and filtering capabilities.</p>
+        </div>
+      </div>
+      <div class="portfolio-prev swiper-button-prev"></div>
+      <div class="portfolio-next swiper-button-next"></div>
+    </div>
+  </section>
+
+  <section class="testimonials section-padding" id="testimonials">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Client Love Stories</h2>
+    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+1" alt="Mr. Ndlovu" class="testimonial-photo"/>
+          <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
+          <cite>– Mr. Ndlovu</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+2" alt="Mpho D." class="testimonial-photo"/>
+          <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
+          <cite>– Mpho D.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+3" alt="Sarah K." class="testimonial-photo"/>
+          <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
+          <cite>– Sarah K.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+4" alt="David T." class="testimonial-photo"/>
+          <blockquote>"The website exceeded my expectations. Great communication throughout the process."</blockquote>
+          <cite>– David T.</cite>
+        </div>
+        <div class="swiper-slide testimonial">
+          <img src="https://placehold.co/100x100/333/white?text=Client+5" alt="Lisa M." class="testimonial-photo"/>
+          <blockquote>"Fast turnaround and excellent support. My business looks professional online now."</blockquote>
+          <cite>– Lisa M.</cite>
+        </div>
+      </div>
+      <div class="testimonials-pagination swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Signature Services</h2>
+    <div class="container">
+      <div class="pricing-container">
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="200">
+          <h3>Basic Plan</h3>
+          <div class="price">R2,099</div>
+          <p>1 Page Design</p>
+          <p>Responsive Layout</p>
+          <p>Basic SEO</p>
+          <p>Contact Form</p>
+          <button class="btn">Select Plan</button>
+        </div>
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="400">
+          <h3>Standard Plan</h3>
+          <div class="price">R3,499</div>
+          <p>3 Pages</p>
+          <p>Contact Form & SEO</p>
+          <p>Social Media Integration</p>
+          <p>1 Month Support</p>
+          <button class="btn">Select Plan</button>
+        </div>
+        <div class="pricing-box" data-aos="fade-up" data-aos-delay="600">
+          <h3>Premium Plan</h3>
+          <div class="price">R6,999</div>
+          <p>Full Website + Blog</p>
+          <p>E-commerce Functionality</p>
+          <p>Advanced SEO</p>
+          <p>Ongoing Support</p>
+          <button class="btn">Select Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="section-padding">
+    <div class="container">
+      <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
+      <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
+        <form id="booking-form" netlify>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error-message" id="name-error">Please enter your full name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message" id="email-error">Please enter a valid email address</div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div class="error-message" id="phone-error">Please enter a valid phone number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="basic">Basic Plan (R2,099)</option>
+              <option value="standard">Standard Plan (R3,499)</option>
+              <option value="premium">Premium Plan (R6,999)</option>
+              <option value="custom">Custom Solution</option>
+            </select>
+            <div class="error-message" id="service-error">Please select a service</div>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+            <div class="error-message" id="date-error">Please select a valid date</div>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time" required>
+              <option value="">Select a time</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+            </select>
+            <div class="error-message" id="time-error">Please select a time</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Vision</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project dreams..."></textarea>
+          </div>
+
+          <div class="loading-spinner" id="booking-spinner"></div>
+          <div class="success-message" id="booking-success">
+            Thank you for your booking! We will contact you shortly to confirm your consultation.
+          </div>
+
+          <button type="submit" id="booking-submit">Begin Your Journey</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Our Digital Footprint</h2>
+    <div class="stats-container">
+      <div class="stat" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Websites Built</div>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="400">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="600">
+        <div class="stat-number" data-target="99">0</div>
+        <div class="stat-label">Satisfaction %</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+        <button class="faq-question">How long does a website build take?</button>
+        <div class="faq-answer">
+          Typically, between 2-4 weeks depending on complexity and features. We work closely with you to ensure timely delivery without compromising quality.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <button class="faq-question">Do you offer support after launch?</button>
+        <div class="faq-answer">
+          Yes, we provide ongoing support packages for maintenance, updates, and technical assistance. Our support plans are tailored to your specific needs.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+        <button class="faq-question">Can I update my website content myself?</button>
+        <div class="faq-answer">
+          Absolutely! We provide a simple, user-friendly content management system (CMS) that allows you to easily update text, images, and other content without technical knowledge.
+        </div>
+      </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+        <button class="faq-question">Do you provide hosting services?</button>
+        <div class="faq-answer">
+          Yes, we offer reliable hosting solutions with 99.9% uptime guarantee, regular backups, and security monitoring. We can also help migrate your existing website to our servers.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote-calculator" class="calculator-container section-padding">
+    <h2 data-aos="fade-up">Instant Quote Calculator</h2>
+
+    <form id="quote-form" onsubmit="return false;" data-aos="fade-up" data-aos-delay="200">
+      <div class="form-group">
+        <label for="type">Website Type</label>
+        <select id="type" name="type">
+          <option value="2099">Basic Website (R2,099)</option>
+          <option value="3499">Business Website (R3,499)</option>
+          <option value="6999">E-Commerce Website (R6,999)</option>
+        </select>
+      </div>
+
+      <label for="features">Additional Features</label>
+      <div class="features" id="features">
+        <label><input type="checkbox" value="500" /> SEO Optimization (+R500)</label>
+        <label><input type="checkbox" value="200" /> Live Chat (+R200)</label>
+        <label><input type="checkbox" value="400" /> Blog Setup (+R400)</label>
+        <label><input type="checkbox" value="700" /> Booking System (+R700)</label>
+      </div>
+
+      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
+
+      <div class="result" id="result">Estimated Quote: R0</div>
+    </form>
+  </section>
+
+  <section id="contact" class="section-padding">
+    <h2 class="section-title gradient-text" data-aos="fade-up">Let's Create Magic Together</h2>
+    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27760944650" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 JayWebs. All rights reserved. | <em>Futuristic Web Design South Africa</em></p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="#booking" class="sticky-contact-btn" aria-label="Book a Consultation">
+    <i class="fas fa-calendar-alt"></i> Book Now
+  </a>
+
+  <!-- External Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Main Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS (Animate On Scroll)
+      if (window.AOS) {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100
         });
-        
-        // Show login modal
-        function showLoginModal() {
-            loginModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        loginBtn.addEventListener('click', showLoginModal);
-        heroLoginBtn.addEventListener('click', showLoginModal);
-        registerBtn.addEventListener('click', showLoginModal);
-        
-        // Close modal
-        function closeLoginModal() {
-            loginModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        closeModal.addEventListener('click', closeLoginModal);
-        
-        // Tab switching
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                const tabId = this.getAttribute('data-tab');
-                
-                // Update active tab
-                tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Show active tab content
-                tabContents.forEach(content => {
-                    content.classList.remove('active');
-                    if (content.id === `${tabId}-tab`) {
-                        content.classList.add('active');
-                    }
-                });
-            });
-        });
-        
-        // Login form submission
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            // Check if user exists
-            if (users[email] && users[email].password === password) {
-                // Login successful
-                alert('Login successful! Redirecting to your dashboard.');
-                closeLoginModal();
-                dashboard.style.display = 'block';
-                
-                // Update username
-                document.getElementById('userName').textContent = users[email].name;
-                
-                // Update dashboard with user data
-                updateDashboard(users[email].data);
-                
-                // Scroll to dashboard
-                window.scrollTo({
-                    top: dashboard.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            } else {
-                alert('Invalid email or password. Please try again.');
+      }
+
+      // Initialize Swiper for Portfolio with autoplay
+      let portfolioSwiper;
+      try {
+        portfolioSwiper = new Swiper('.portfolio-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.portfolio-next',
+            prevEl: '.portfolio-prev',
+          },
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+          },
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
             }
+          }
         });
-        
-        // Register form submission
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            const confirm = document.getElementById('registerConfirm').value;
-            
-            // Simple validation
-            if (name && email && password && confirm) {
-                if (password !== confirm) {
-                    alert('Passwords do not match.');
-                    return;
-                }
-                
-                // Check if user already exists
-                if (users[email]) {
-                    alert('An account with this email already exists. Please log in instead.');
-                    return;
-                }
-                
-                // Create new user with random data
-                users[email] = {
-                    name: name,
-                    password: password,
-                    data: generateUserData()
-                };
-                
-                // Save to localStorage
-                localStorage.setItem('users', JSON.stringify(users));
-                
-                // Registration successful
-                alert('Registration successful! Your account has been created.');
-                closeLoginModal();
-                
-                // Switch to login tab for next time
-                tabs[0].click();
-                
-                // Clear the form
-                registerForm.reset();
-            } else {
-                alert('Please fill in all fields.');
+      } catch (e) {
+        console.warn('Portfolio swiper init failed:', e);
+      }
+
+      // Initialize Swiper for Testimonials with autoplay
+      let testimonialsSwiper;
+      try {
+        testimonialsSwiper = new Swiper('.testimonials-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          pagination: {
+            el: '.testimonials-pagination',
+            clickable: true,
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
             }
+          }
         });
-        
-        // Logout functionality
-        logoutBtn.addEventListener('click', function() {
-            dashboard.style.display = 'none';
-            alert('You have been logged out successfully.');
+      } catch (e) {
+        console.warn('Testimonials swiper init failed:', e);
+      }
+
+      // Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mainNav = document.getElementById('mainNav');
+
+      if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', () => {
+          mainNav.classList.toggle('active');
+          const icon = mobileMenuToggle.querySelector('i');
+          if (mainNav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      }
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const isActive = question.classList.contains('active');
+
+          // Close all answers
+          document.querySelectorAll('.faq-answer').forEach(ans => {
+            ans.style.display = 'none';
+          });
+          document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('active');
+          });
+
+          // Open clicked answer if it wasn't active
+          if (!isActive) {
+            answer.style.display = 'block';
+            question.classList.add('active');
+          }
+        });
+      });
+
+      // Quote Calculator
+      const quoteForm = document.getElementById('quote-form');
+      const typeSelect = document.getElementById('type');
+      const featureCheckboxes = document.querySelectorAll('.features input[type="checkbox"]');
+      const resultDiv = document.getElementById('result');
+
+      function calculateQuote() {
+        let total = parseInt(typeSelect.value) || 0;
+
+        featureCheckboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            total += parseInt(checkbox.value) || 0;
+          }
+        });
+
+        resultDiv.textContent = `Estimated Quote: R${total}`;
+      }
+
+      if (typeSelect) {
+        typeSelect.addEventListener('change', calculateQuote);
+      }
+      featureCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', calculateQuote);
+      });
+
+      // Initialize with default value
+      calculateQuote();
+
+      // Stats Counter Animation
+      const stats = document.querySelectorAll('.stat-number');
+
+      function animateStats() {
+        stats.forEach(stat => {
+          const target = parseInt(stat.getAttribute('data-target')) || 0;
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current);
+          }, 16);
+        });
+      }
+
+      // Intersection Observer for stats animation
+      const statsSection = document.getElementById('stats');
+      if (statsSection && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateStats();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+      } else {
+        // Fallback
+        animateStats();
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
             });
+
+            // Close mobile menu if open
+            if (mainNav.classList.contains('active')) {
+              mainNav.classList.remove('active');
+              mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+              mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            }
+          }
         });
-        
-        // Withdrawal request
-        withdrawalBtn.addEventListener('click', function() {
-            alert('Withdrawal request submitted successfully. Funds will be processed within 5-7 business days.');
+      });
+
+      // Download Quote as PDF
+      const downloadBtn = document.getElementById('downloadQuote');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+          try {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const quote = resultDiv ? resultDiv.textContent : 'Estimated Quote: R0';
+            const name = "JayWebs Quote";
+
+            doc.setFontSize(20);
+            doc.text(name, 20, 30);
+            doc.setFontSize(16);
+            doc.text(quote, 20, 50);
+            doc.text("Thank you for your interest in JayWebs!", 20, 70);
+            doc.text("We'll contact you shortly to discuss your project.", 20, 85);
+
+            doc.save('jaywebs-quote.pdf');
+          } catch (err) {
+            console.error('PDF generation failed', err);
+            alert('Unable to generate PDF in this browser.');
+          }
         });
+      }
+
+      // Pause autoplay on hover for better UX
+      document.querySelectorAll('.portfolio-swiper, .testimonials-swiper').forEach(swiperContainer => {
+        swiperContainer.addEventListener('mouseenter', function() {
+          // stop the matching swiper instance if present
+          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
+            portfolioSwiper.autoplay.stop();
+          }
+          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
+            testimonialsSwiper.autoplay.stop();
+          }
+        });
+
+        swiperContainer.addEventListener('mouseleave', function() {
+          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
+            portfolioSwiper.autoplay.start();
+          }
+          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
+            testimonialsSwiper.autoplay.start();
+          }
+        });
+      });
+
+      // Booking Form Functionality with Validation
+      const bookingForm = document.getElementById('booking-form');
+      const dateInput = document.getElementById('date');
+      const bookingSpinner = document.getElementById('booking-spinner');
+      const bookingSuccess = document.getElementById('booking-success');
+      const bookingSubmit = document.getElementById('booking-submit');
+
+      // Set minimum date to today
+      if (dateInput) {
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        dateInput.setAttribute('min', formattedDate);
+      }
+
+      // Form validation functions
+      function validateName() {
+        const nameInput = document.getElementById('name');
+        const nameError = document.getElementById('name-error');
+        if (nameInput.value.trim() === '') {
+          nameInput.classList.add('error');
+          nameError.style.display = 'block';
+          return false;
+        } else {
+          nameInput.classList.remove('error');
+          nameError.style.display = 'none';
+          return true;
+        }
+      }
+
+      function validateEmail() {
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        // Profit calculator
-        calculateBtn.addEventListener('click', function() {
-            const initial = parseFloat(document.getElementById('initialInvestment').value) || 0;
-            const period = parseInt(document.getElementById('investmentPeriod').value) || 1;
-            const profitPercent = parseFloat(document.getElementById('monthlyProfit').value) || 1;
-            const feePercent = parseFloat(document.getElementById('withdrawalFee').value) || 0;
-            
-            // Calculate profit
-            const profit = initial * (profitPercent / 100) * period;
-            const total = initial + profit;
-            const fee = profit * (feePercent / 100);
-            const net = total - fee;
-            
-            // Update results
-            document.getElementById('resultInitial').textContent = formatCurrency(initial);
-            document.getElementById('resultProfit').textContent = formatCurrency(profit);
-            document.getElementById('resultTotal').textContent = formatCurrency(total);
-            document.getElementById('resultFeePercent').textContent = feePercent;
-            document.getElementById('resultFee').textContent = formatCurrency(fee);
-            document.getElementById('resultNet').textContent = formatCurrency(net);
-            
-            // Show results with animation
-            results.style.opacity = '0';
-            results.style.transform = 'translateY(10px)';
-            results.style.display = 'block';
-            
+        if (!emailRegex.test(emailInput.value.trim())) {
+          emailInput.classList.add('error');
+          emailError.style.display = 'block';
+          return false;
+        } else {
+          emailInput.classList.remove('error');
+          emailError.style.display = 'none';
+          return true;
+        }
+      }
+
+      function validatePhone() {
+        const phoneInput = document.getElementById('phone');
+        const phoneError = document.getElementById('phone-error');
+        // Basic phone validation - can be enhanced for specific formats
+        if (phoneInput.value.trim() === '' || phoneInput.value.trim().length < 8) {
+          phoneInput.classList.add('error');
+          phoneError.style.display = 'block';
+          return false;
+        } else {
+          phoneInput.classList.remove('error');
+          phoneError.style.display = 'none';
+          return true;
+        }
+      }
+
+      function validateService() {
+        const serviceInput = document.getElementById('service');
+        const serviceError = document.getElementById('service-error');
+        if (serviceInput.value === '') {
+          serviceInput.classList.add('error');
+          serviceError.style.display = 'block';
+          return false;
+        } else {
+          serviceInput.classList.remove('error');
+          serviceError.style.display = 'none';
+          return true;
+        }
+      }
+
+      function validateDate() {
+        const dateInput = document.getElementById('date');
+        const dateError = document.getElementById('date-error');
+        if (dateInput.value === '') {
+          dateInput.classList.add('error');
+          dateError.style.display = 'block';
+          return false;
+        } else {
+          dateInput.classList.remove('error');
+          dateError.style.display = 'none';
+          return true;
+        }
+      }
+
+      function validateTime() {
+        const timeInput = document.getElementById('time');
+        const timeError = document.getElementById('time-error');
+        if (timeInput.value === '') {
+          timeInput.classList.add('error');
+          timeError.style.display = 'block';
+          return false;
+        } else {
+          timeInput.classList.remove('error');
+          timeError.style.display = 'none';
+          return true;
+        }
+      }
+
+      // Add event listeners for real-time validation
+      document.getElementById('name').addEventListener('blur', validateName);
+      document.getElementById('email').addEventListener('blur', validateEmail);
+      document.getElementById('phone').addEventListener('blur', validatePhone);
+      document.getElementById('service').addEventListener('change', validateService);
+      document.getElementById('date').addEventListener('change', validateDate);
+      document.getElementById('time').addEventListener('change', validateTime);
+
+      // Handle form submission
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Validate all fields
+          const isNameValid = validateName();
+          const isEmailValid = validateEmail();
+          const isPhoneValid = validatePhone();
+          const isServiceValid = validateService();
+          const isDateValid = validateDate();
+          const isTimeValid = validateTime();
+
+          // If all valid, submit the form
+          if (isNameValid && isEmailValid && isPhoneValid && isServiceValid && isDateValid && isTimeValid) {
+            // Show loading spinner
+            bookingSpinner.style.display = 'block';
+            bookingSubmit.disabled = true;
+
+            // Simulate form submission (replace with actual submission)
             setTimeout(() => {
-                results.style.transition = 'all 0.5s ease';
-                results.style.opacity = '1';
-                results.style.transform = 'translateY(0)';
-            }, 10);
+              // Hide spinner and show success message
+              bookingSpinner.style.display = 'none';
+              bookingSuccess.style.display = 'block';
+              
+              // Reset form
+              bookingForm.reset();
+              
+              // Reset date min attribute
+              if (dateInput) {
+                const today = new Date();
+                const formattedDate = today.toISOString().split('T')[0];
+                dateInput.setAttribute('min', formattedDate);
+              }
+              
+              // Re-enable submit button
+              bookingSubmit.disabled = false;
+              
+              // Hide success message after 5 seconds
+              setTimeout(() => {
+                bookingSuccess.style.display = 'none';
+              }, 5000);
+            }, 1500);
+          }
         });
-        
-        // Initialize calculator on page load
-        window.addEventListener('load', function() {
-            calculateBtn.click();
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target === loginModal) {
-                closeLoginModal();
-            }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('nav ul').classList.remove('show');
-                }
-            });
-        });
-        
-        // Smart header behavior - hide on scroll down, show on scroll up
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-                // Scrolling down
-                header.classList.add('hidden');
-            } else {
-                // Scrolling up
-                header.classList.remove('hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-            
-            // Trigger scroll animations
-            animateOnScroll();
-        });
-        
-        // Initial animation trigger
-        window.addEventListener('load', animateOnScroll);
-    </script>
+      }
+
+      // Scroll-aware header functionality
+      const header = document.getElementById('mainHeader');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        // Don't hide header on mobile when menu is open
+        if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+          return;
+        }
+
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          // Scrolling down - hide header
+          header.classList.add('hidden');
+        } else {
+          // Scrolling up - show header
+          header.classList.remove('hidden');
+        }
+
+        lastScrollY = window.scrollY;
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+          mainNav.classList.remove('active');
+          mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+          mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
