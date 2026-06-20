@@ -1,1813 +1,910 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JayWebs | Futuristic Web Design </title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="JayWebs - Futuristic web design & development services in South Africa. Build a powerful online presence with our premium websites." />
-  <meta name="keywords" content="web design, South Africa, futuristic websites, premium web development, JayWebs" />
-  <meta name="author" content="JayWebs" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="JayWebs | Futuristic Web Design " />
-  <meta property="og:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta property="og:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
-  <meta property="og:url" content="https://www.jaywebs.site" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JayWebs | Futuristic Web Design South Africa" />
-  <meta name="twitter:description" content="Build your brand and power your presence with JayWebs. Luxury, tech, and performance combined." />
-  <meta name="twitter:image" content="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Poiret+One&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Parisienne&family=Tangerine:wght@400;700&family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a0b">
+  <title>JayGallery - Photo Gallery</title>
   <style>
-    /* Reset & Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg-dark: #0a0a0b;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --clay-base: #18181b;
+      --clay-shadow: rgba(0, 0, 0, 0.9);
+      --clay-inset-light: rgba(255, 255, 255, 0.04);
+      --clay-inset-dark: rgba(0, 0, 0, 0.6);
     }
 
-    :root {
-      --black: #000000;
-      --dark-gray: #111111;
-      --medium-gray: #333333;
-      --light-gray: #666666;
-      --white: #ffffff;
-      --off-white: #f5f5f5;
-      --accent: #00bfff;
-      --transition: all 0.3s ease;
-      --primary-font: 'Montserrat', sans-serif;
-      --heading-font: 'Cinzel', serif;
-      --accent-font: 'Playfair Display', serif;
-      --elegant-font: 'Cormorant Garamond', serif;
-      --script-font: 'Dancing Script', cursive;
-      --luxury-font: 'Abril Fatface', cursive;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
-      font-family: var(--primary-font);
-      background-color: var(--black);
-      color: var(--white);
-      line-height: 1.6;
-      font-size: 16px;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       overflow-x: hidden;
-      transition: var(--transition);
+      line-height: 1.5;
+      min-height: 100vh;
     }
+
+    .grid-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    h1, h2, h3 { font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; }
 
     a {
-      color: var(--white);
+      color: var(--text-main);
       text-decoration: none;
-      transition: var(--transition);
+      transition: color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
     }
+    a:hover { color: var(--text-muted); }
 
-    a:hover,
-    a:focus {
-      color: var(--accent);
-    }
-
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
+    .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 1rem 5%;
-      background: var(--dark-gray);
+      align-items: center;
+      padding: 1.5rem 3rem;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      border-bottom: 2px solid var(--white);
-      transition: transform 0.4s ease;
-      transform: translateY(0);
-    }
-
-    header.hidden {
-      transform: translateY(-100%);
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(10,10,11,0.95), rgba(10,10,11,0.8));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .logo {
       display: flex;
       align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      white-space: nowrap;
     }
+    .logo svg { flex-shrink: 0; }
 
-    .logo img {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--white);
-      transition: var(--transition);
-    }
-
-    .logo:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 191, 255, 0.12);
-    }
-
-    nav ul {
-      list-style: none;
+    .nav-links {
       display: flex;
-      gap: 2rem;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--clay-base);
+      padding: 0.5rem 1rem 0.5rem 1.5rem;
+      border-radius: 40px;
+      box-shadow: 4px 4px 10px var(--clay-shadow),
+        inset 1px 1px 2px var(--clay-inset-light),
+        inset -1px -1px 2px var(--clay-inset-dark);
+      border: 1px solid rgba(255,255,255,0.02);
     }
-
-    nav ul li a {
-      font-family: var(--accent-font);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 5px 0;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Mobile Menu */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 8rem 1rem 6rem;
-      background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-      margin-top: 80px;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.02)"/></svg>');
-      background-size: cover;
-    }
-
-    .hero h1 {
-      font-family: var(--luxury-font);
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      position: relative;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .hero p {
-      font-family: var(--script-font);
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--off-white);
-    }
+    .nav-links a { font-size: 0.85rem; white-space: nowrap; }
 
     .btn {
-      background-color: var(--white);
-      color: var(--black);
-      border: none;
-      padding: 0.75rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 700;
+      padding: 0.6rem 1.2rem;
       border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-family: var(--accent-font);
-    }
-
-    .btn:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
-      color: var(--black);
-    }
-
-    /* Section Padding */
-    .section-padding {
-      padding: 5rem 0;
-    }
-
-    /* Section Titles */
-    .section-title {
-      font-family: var(--luxury-font);
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: var(--white);
-      position: relative;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .gradient-text {
-      background: linear-gradient(45deg, var(--white), var(--light-gray));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* About Section */
-    .about p {
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.125rem;
-      font-weight: 400;
-      color: var(--off-white);
-      line-height: 1.7;
-      text-align: center;
-      font-family: var(--elegant-font);
-    }
-
-    .about .italic {
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--white);
-      margin: 2rem 0;
-      font-family: var(--accent-font);
-    }
-
-    /* Owner Card */
-    .owner-card {
-      max-width: 700px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      padding: 2.5rem;
-      border-radius: 12px;
-      margin: 0 auto;
-      color: var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      transition: var(--transition);
-      text-align: center;
-    }
-
-    .owner-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
-    }
-
-    .owner-card h3 {
-      font-family: var(--heading-font);
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .owner-card h4 {
-      font-family: var(--accent-font);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: var(--light-gray);
-      font-style: italic;
-    }
-
-    .owner-card p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--off-white);
-      font-family: var(--elegant-font);
-    }
-
-    /* Portfolio Section */
-    .portfolio-swiper {
-      position: relative;
-      padding: 0 2rem;
-    }
-
-    .portfolio-card {
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      color: var(--white);
-      text-align: center;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
-    }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      filter: grayscale(100%);
-      transition: var(--transition);
-    }
-
-    .portfolio-card:hover img {
-      filter: grayscale(0%);
-    }
-
-    .portfolio-card h3 {
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      font-family: var(--heading-font);
-    }
-
-    .portfolio-card p {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--light-gray);
-      flex-grow: 1;
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Swiper buttons */
-    .swiper-button-prev, .swiper-button-next {
-      color: var(--white);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      color: var(--white);
-      background: var(--dark-gray);
-    }
-
-    .testimonial {
-      background: var(--medium-gray);
-      border-radius: 12px;
-      padding: 2.5rem;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
-    }
-
-    .testimonial-photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
-      border: 2px solid var(--white);
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
-
-    .testimonial blockquote {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-      color: var(--off-white);
-      line-height: 1.7;
-      font-family: var(--accent-font);
-      font-weight: 400;
-    }
-
-    .testimonial cite {
-      font-weight: 700;
-      color: var(--white);
-      font-style: normal;
-      font-family: var(--heading-font);
-    }
-
-    .testimonials-pagination .swiper-pagination-bullet {
-      background: var(--white);
-      opacity: 0.7;
-    }
-
-    .testimonials-pagination .swiper-pagination-bullet-active {
-      opacity: 1;
-    }
-
-    /* Pricing Section */
-    .pricing-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .pricing-box {
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      color: var(--white);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pricing-box:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
-    }
-
-    .pricing-box h3 {
-      font-family: var(--luxury-font);
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .pricing-box .price {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      color: var(--white);
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    .pricing-box p {
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
       font-weight: 500;
-      color: var(--light-gray);
-      font-family: var(--elegant-font);
-    }
-
-    .pricing-box .btn {
-      margin-top: auto;
-      width: 100%;
-    }
-
-    /* Stats Section */
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 2rem;
-      border-radius: 12px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      transition: var(--transition);
-      flex: 1;
-    }
-
-    .stat:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.06);
-    }
-
-    .stat-number {
-      font-family: var(--luxury-font);
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: var(--light-gray);
-      font-weight: 500;
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    /* FAQ Section */
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.02);
-    }
-
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      color: var(--white);
-      font-weight: 600;
-      padding: 1.5rem;
       cursor: pointer;
-      border-radius: 12px;
-      transition: var(--transition);
-      font-size: 1.1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--accent-font);
-    }
-
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      transition: var(--transition);
-    }
-
-    .faq-question.active::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
-
-    .faq-question.active,
-    .faq-question:hover {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 1.5rem;
-      background: var(--medium-gray);
-      color: var(--off-white);
-      border-radius: 0 0 12px 12px;
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Quote Calculator */
-    .calculator-container {
-      max-width: 500px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .calculator-container h2 {
-      margin-bottom: 2rem;
-      font-family: var(--heading-font);
-    }
-
-    .calculator-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .calculator-container label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      display: block;
-      font-family: var(--accent-font);
-    }
-
-    .calculator-container select {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 2px solid var(--white);
-      background: var(--dark-gray);
-      color: var(--white);
-      font-size: 1rem;
-      cursor: pointer;
-      font-family: var(--primary-font);
-    }
-
-    .calculator-container input[type="checkbox"] {
-      cursor: pointer;
-      margin-right: 0.5rem;
-    }
-
-    .features {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .features label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 500;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-bottom: 0;
-      font-family: var(--elegant-font);
-    }
-
-    #downloadQuote {
-      background-color: var(--white);
-      color: var(--black);
       border: none;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1rem;
-      font-family: var(--accent-font);
+      color: var(--bg-dark);
+      background: var(--text-main);
+      transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+      font-size: 0.85rem;
+      font-family: inherit;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    #downloadQuote:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
-      color: var(--black);
+    .chunky-btn {
+      box-shadow: 0px 4px 0px rgba(161,161,170,0.4),
+        0px 6px 10px rgba(0,0,0,0.4),
+        inset 0px -2px 5px rgba(0,0,0,0.1),
+        inset 0px 2px 5px rgba(255,255,255,0.8);
+    }
+    .chunky-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0px 1px 0px rgba(161,161,170,0.4),
+        0px 2px 5px rgba(0,0,0,0.4),
+        inset 0px -1px 2px rgba(0,0,0,0.1);
     }
 
-    .result {
-      margin-top: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      padding: 1rem;
-      border-radius: 8px;
-      background: var(--medium-gray);
-      color: var(--white);
-      font-family: var(--accent-font);
-      font-style: italic;
-    }
-
-    /* Booking Section */
-    .booking-container {
-      max-width: 600px;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-      border-radius: 12px;
-      padding: 2.5rem;
-      margin: 0 auto;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
-      color: var(--white);
-    }
-
-    .booking-container h2 {
-      margin-bottom: 2rem;
-      font-family: var(--heading-font);
-      text-align: center;
-    }
-
-    .booking-container form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .booking-container label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      display: block;
-      font-family: var(--accent-font);
-    }
-
-    .booking-container input,
-    .booking-container select,
-    .booking-container textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 2px solid var(--white);
-      background: var(--dark-gray);
-      color: var(--white);
-      font-size: 1rem;
-      font-family: var(--primary-font);
-    }
-
-    .booking-container textarea {
-      min-height: 120px;
-      resize: vertical;
-      font-family: var(--elegant-font);
-    }
-
-    .booking-container button {
-      background-color: var(--white);
-      color: var(--black);
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: var(--transition);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1rem;
-      font-family: var(--accent-font);
-    }
-
-    .booking-container button:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
-      color: var(--black);
-    }
-
-    /* Form Validation Styles */
-    .form-group {
-      position: relative;
-    }
-
-    .error-message {
-      color: #ff6b6b;
-      font-size: 0.875rem;
-      margin-top: 0.25rem;
+    .menu-btn {
+      background: var(--clay-base);
+      color: var(--text-main);
+      box-shadow: 0px 4px 0px #09090a, 0px 6px 10px rgba(0,0,0,0.6),
+        inset 1px 1px 2px var(--clay-inset-light);
+      border: 1px solid rgba(255,255,255,0.05);
       display: none;
-    }
-
-    input.error, select.error, textarea.error {
-      border-color: #ff6b6b;
-    }
-
-    .success-message {
-      background-color: rgba(46, 204, 113, 0.1);
-      border: 1px solid #2ecc71;
-      color: #2ecc71;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      display: none;
-    }
-
-    /* Contact Section */
-    #contact {
-      text-align: center;
-      padding-bottom: 4rem;
-    }
-
-    .social-icons {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .social-icons a {
-      font-size: 2rem;
-      color: var(--white);
-      transition: var(--transition);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--dark-gray);
-      border: 2px solid var(--white);
-    }
-
-    .social-icons a:hover {
-      color: var(--accent);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 191, 255, 0.08);
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px 18px;
-      font-size: 28px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      z-index: 10000;
-      transition: var(--transition);
-    }
-
-    .whatsapp-float:hover {
-      background-color: #128c3e;
-      transform: scale(1.1);
-    }
-
-    /* Sticky Contact Button */
-    .sticky-contact-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 20px;
-      background: var(--white);
-      color: var(--black);
-      padding: 12px 18px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      display: flex;
       align-items: center;
       gap: 8px;
-      z-index: 9999;
-      transition: var(--transition);
-      font-family: var(--accent-font);
     }
 
-    .sticky-contact-btn i {
-      font-size: 1.2rem;
-    }
-
-    .sticky-contact-btn:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark-gray);
-      color: var(--white);
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid var(--white);
-    }
-
-    footer p {
-      font-family: var(--elegant-font);
-      font-style: italic;
-    }
-
-    /* Loading Spinner */
-    .loading-spinner {
+    #resetBtn {
+      background: transparent;
+      color: var(--text-muted);
+      box-shadow: none;
+      border: 1px solid rgba(255,255,255,0.1);
       display: none;
-      width: 40px;
-      height: 40px;
-      margin: 20px auto;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: var(--accent);
-      animation: spin 1s ease-in-out infinite;
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .hero {
+      padding: 12rem 2rem 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 3.2rem;
-      }
+    .chunky-badge {
+      background: var(--clay-base);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 4px 4px 8px var(--clay-shadow),
+        inset 2px 2px 4px var(--clay-inset-light),
+        inset -2px -2px 4px var(--clay-inset-dark);
+    }
 
-      .hero p {
-        font-size: 1.8rem;
-      }
+    .hero h1 { font-size: clamp(2rem, 5vw, 4.5rem); max-width: 800px; padding: 0 1rem; }
+    .hero p { color: var(--text-muted); max-width: 500px; padding: 0 1rem; font-size: clamp(0.9rem, 2vw, 1rem); }
 
-      .stats-container {
-        gap: 2rem;
-      }
+    .gallery-container { position: relative; height: 300vh; width: 100%; }
 
-      .stat {
-        padding: 1.5rem;
-      }
+    .scene {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1200px;
+      overflow: hidden;
+    }
 
-      .stat-number {
-        font-size: 2.8rem;
-      }
+    .sphere {
+      position: relative;
+      width: 0; height: 0;
+      transform-style: preserve-3d;
+    }
+
+    .clay-card {
+      position: absolute;
+      width: 160px; height: 220px;
+      left: -80px; top: -110px;
+      background: var(--clay-base);
+      border-radius: 16px;
+      padding: 8px;
+      transform-style: preserve-3d;
+      backface-visibility: visible;
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: 8px 8px 16px var(--clay-shadow),
+        -4px -4px 10px rgba(255,255,255,0.02),
+        inset 3px 3px 6px var(--clay-inset-light),
+        inset -3px -3px 6px var(--clay-inset-dark);
+      transition: filter 0.4s ease;
+    }
+
+    .clay-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: grayscale(80%) brightness(0.6);
+      transition: all 0.4s ease;
+      box-shadow: inset 0px 0px 10px rgba(0,0,0,0.8);
+    }
+
+    .clay-card.active-card { filter: drop-shadow(0 0 20px rgba(255,255,255,0.15)); }
+    .clay-card.active-card img { filter: grayscale(0%) brightness(1); }
+
+    .floating-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      z-index: 10;
+      margin-left: 10%;
+      pointer-events: none;
+    }
+    .floating-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; text-shadow: 0 4px 10px rgba(0,0,0,0.8); }
+    .floating-text p { color: var(--text-muted); font-size: clamp(0.8rem, 1.5vw, 0.9rem); line-height: 1.6; }
+
+    .network-lines {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .journey-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #111113 0%, var(--bg-dark) 70%);
+      padding: 2rem;
+    }
+
+    .journey-content {
+      text-align: center;
+      z-index: 2;
+      background: rgba(10,10,11,0.6);
+      padding: clamp(2rem, 5vw, 3rem);
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      max-width: 90%;
+    }
+    .journey-content h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; }
+    .journey-content p { color: var(--text-muted); margin-bottom: 2rem; font-size: clamp(0.9rem, 2vw, 1rem); }
+
+    .large-btn {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 2.5rem);
+      border-radius: 40px;
+    }
+
+    .constellation {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+
+    .constellation-card {
+      position: absolute;
+      width: 100px; height: 140px;
+      opacity: 0.4;
+    }
+
+    .upload-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .upload-modal.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--clay-base);
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border-radius: 24px;
+      max-width: 600px;
+      width: 90%;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 8px 8px 16px var(--clay-shadow),
+        inset 3px 3px 6px var(--clay-inset-light),
+        inset -3px -3px 6px var(--clay-inset-dark);
+      position: relative;
+      margin: 2rem auto;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      line-height: 1;
+      padding: 0.5rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .close-modal:hover { color: var(--text-main); }
+
+    .modal-content h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.5rem; }
+    .modal-content>p { color: var(--text-muted); margin-bottom: 2rem; font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
+
+    .upload-methods { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+    .upload-option h3 {
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    textarea {
+      width: 100%; height: 100px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 16px;
+      resize: vertical;
+    }
+    textarea:focus { outline: none; border-color: rgba(255,255,255,0.2); }
+
+    .upload-divider { text-align: center; position: relative; }
+    .upload-divider span {
+      background: var(--clay-base);
+      padding: 0 1rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+      font-size: 0.85rem;
+    }
+    .upload-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    #imageUpload { display: none; }
+
+    .upload-label {
+      display: inline-block;
+      cursor: pointer;
+      color: var(--bg-dark);
+      background: var(--text-main);
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .upload-label:active { transform: scale(0.95); }
+
+    .uploaded-files { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); word-break: break-all; }
+    .upload-note { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      background: #22c55e;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      z-index: 2000;
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: slideUp 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+      to { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+    }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,11,0.98);
+      z-index: 99;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .mobile-nav-overlay.active { display: flex; }
+    .mobile-nav-overlay a { font-size: 1.5rem; font-weight: 500; }
+
+    @media (max-width: 1024px) {
+      .navbar { padding: 1.2rem 2rem; }
+      .hero { padding: 10rem 1.5rem 3rem; }
+      .floating-text { margin-left: 5%; width: 250px; }
+      .clay-card { width: 140px; height: 190px; left: -70px; top: -95px; }
     }
 
     @media (max-width: 768px) {
-      header {
-        padding: 1rem;
+      .nav-links { display: none; }
+      .menu-btn { display: flex; }
+      .navbar { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1rem 2rem; }
+      .hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+      .floating-text {
+        top: auto; bottom: 5%; left: 50%;
+        transform: translateX(-50%);
+        text-align: center; margin-left: 0;
+        padding: 1rem; width: 90%;
+        background: rgba(10,10,11,0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.05);
       }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      nav {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--dark-gray);
-        padding: 1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        z-index: 999;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .hero {
-        padding: 6rem 1rem 4rem;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 2.2rem;
-      }
-
-      .stats-container {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .pricing-box {
-        width: 100%;
-        max-width: 350px;
-      }
-
-      .social-icons {
-        gap: 1rem;
-      }
-
-      .social-icons a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
+      .floating-text h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+      .floating-text p { font-size: 0.8rem; }
+      .gallery-container { height: 250vh; }
+      .journey-content { padding: 2rem 1.5rem; max-width: 95%; }
+      .constellation-card { width: 70px; height: 100px; }
+      .clay-card { width: 110px; height: 150px; left: -55px; top: -75px; }
     }
 
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+    @media (max-width: 600px) {
+      .navbar { padding: 0.8rem 1rem; }
+      .logo { font-size: 1rem; gap: 6px; }
+      .logo svg { width: 20px; height: 20px; }
+      .hero { padding: 7rem 1rem 1.5rem; gap: 1rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: 0.85rem; }
+      .chunky-badge { font-size: 0.7rem; padding: 0.4rem 0.8rem; }
+      .floating-text { bottom: 3%; padding: 0.8rem; border-radius: 12px; }
+      .floating-text h2 { font-size: 1.1rem; }
+      .floating-text p { font-size: 0.75rem; line-height: 1.4; }
+      .clay-card { width: 90px; height: 125px; left: -45px; top: -62px; border-radius: 12px; padding: 5px; }
+      .clay-card img { border-radius: 8px; }
+      .modal-content { padding: 1.5rem; border-radius: 16px; }
+      .modal-content h2 { font-size: 1.3rem; }
+      .journey-content h2 { font-size: 1.8rem; }
+      .btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+    }
 
-      .hero p {
-        font-size: 1.3rem;
-      }
+    @media (max-width: 480px) {
+      .navbar { padding: 0.7rem 0.8rem; }
+      .logo { font-size: 0.9rem; gap: 4px; }
+      .hero { padding: 6rem 0.8rem 1rem; gap: 0.8rem; }
+      .hero h1 { font-size: 1.4rem; }
+      .hero p { font-size: 0.8rem; max-width: 100%; }
+      .gallery-container { height: 200vh; }
+      .floating-text { bottom: 2%; padding: 0.6rem; width: 95%; }
+      .floating-text h2 { font-size: 1rem; }
+      .floating-text p { font-size: 0.7rem; }
+      .journey-section { min-height: 80vh; padding: 1rem; }
+      .journey-content { padding: 1.5rem 1rem; }
+      .journey-content h2 { font-size: 1.5rem; }
+      .journey-content p { font-size: 0.8rem; margin-bottom: 1.5rem; }
+      .constellation-card { width: 55px; height: 80px; }
+      .upload-label { padding: 0.6rem 1rem; font-size: 0.8rem; }
+      .toast { font-size: 0.8rem; padding: 0.8rem 1.5rem; bottom: 1rem; }
+      .clay-card { width: 75px; height: 105px; left: -37px; top: -52px; }
+    }
 
-      .section-title {
-        font-size: 1.8rem;
-      }
+    @media (max-width: 350px) {
+      .logo { font-size: 0.8rem; }
+      .hero h1 { font-size: 1.2rem; }
+      .hero p { font-size: 0.7rem; }
+      .btn { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+      .clay-card { width: 60px; height: 85px; left: -30px; top: -42px; }
+    }
 
-      .owner-card,
-      .calculator-container,
-      .booking-container {
-        padding: 1.5rem;
-      }
+    @media (max-width: 900px) and (orientation: landscape) {
+      .hero { padding: 5rem 1rem 1rem; }
+      .hero h1 { font-size: 1.5rem; }
+      .gallery-container { height: 350vh; }
+      .floating-text { bottom: 5%; }
+    }
 
-      .logo img {
-        height: 60px;
-        width: 60px;
-      }
+    @media (hover: none) and (pointer: coarse) {
+      .btn, .close-modal, .upload-label { min-height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; }
+      a:hover { color: var(--text-main); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chunky-btn { transition: none; }
+      .chunky-btn:active { transform: none; }
+      .clay-card, .clay-card img { transition: none; }
     }
   </style>
 </head>
 <body>
-  <header id="mainHeader">
+  <div class="grid-overlay"></div>
+
+  <nav class="navbar">
     <div class="logo">
-      <a href="#home">
-        <img src="https://i.postimg.cc/V6rN4LsT/IMG-20251027-WA0015.jpg" alt="JayWebs Logo">
-      </a>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 6v6l4 2"></path>
+      </svg>
+      JayGallery
     </div>
+    <div class="nav-links">
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <a href="#" class="btn chunky-btn" id="uploadBtn">Upload Photos</a>
+      <a href="#" class="btn chunky-btn" id="resetBtn">Reset</a>
+    </div>
+    <button class="btn chunky-btn menu-btn">Menu <span>=</span></button>
+  </nav>
 
-    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
-      <i class="fas fa-bars"></i>
-    </button>
+  <div class="upload-modal" id="uploadModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Upload Your Photos</h2>
+      <p>Add your own images to replace the demo photos</p>
+      <div class="upload-methods">
+        <div class="upload-option">
+          <h3>Paste Image URLs</h3>
+          <textarea id="imageUrls" placeholder="Paste image URLs, one per line..."></textarea>
+        </div>
+        <div class="upload-divider"><span>or</span></div>
+        <div class="upload-option">
+          <h3>Upload From Device</h3>
+          <input type="file" id="imageUpload" multiple accept="image/*">
+          <label for="imageUpload" class="upload-label">Choose Files</label>
+          <div class="uploaded-files" id="uploadedFiles"></div>
+        </div>
+      </div>
+      <button class="btn chunky-btn large-btn" id="applyImages">Apply to Gallery</button>
+      <p class="upload-note">Minimum 10 images recommended</p>
+    </div>
+  </div>
 
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#testimonials">Client Feedback</a></li>
-        <li><a href="#pricing">Services</a></li>
-        <li><a href="#booking">Book Now</a></li>
-        <li><a href="#stats">Impact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#quote-calculator">Quote</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="hero">
+    <div class="badge chunky-badge">✦ Photo Gallery</div>
+    <h1>Your Photos, Beautifully Displayed</h1>
+    <p>Upload your pictures and watch them come alive in this interactive 3D gallery.</p>
   </header>
 
-  <section class="hero" id="home">
-    <h1 data-aos="fade-up">Futuristic Web Design South Africa</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Fuel Your Brand. Power Your Presence.</p>
-    <button class="btn" data-aos="fade-up" data-aos-delay="400" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+  <section class="gallery-container">
+    <div class="floating-text left-text">
+      <h2 id="dynamic-title">Running Through Reflection</h2>
+      <p id="dynamic-desc">One photo was taken on a rainy day at a running track. It is a tape of water covered the surface...</p>
+    </div>
+    <div class="scene">
+      <div class="sphere" id="sphere"></div>
+    </div>
+    <svg class="network-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0,50 Q25,30 50,50 T100,50" stroke="rgba(255,255,255,0.05)" stroke-width="0.2" fill="none" />
+      <path d="M20,0 L80,100" stroke="rgba(255,255,255,0.03)" stroke-width="0.2" fill="none" />
+    </svg>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section class="about section-padding" id="about">
-    <div class="container">
-      <h2 class="section-title gradient-text" data-aos="fade-up">About JayWebs</h2>
-      <p data-aos="fade-up" data-aos-delay="200">
-        JayWebs is a premium web design and development agency based in South Africa, specializing in creating luxurious, high-performing, and user-friendly websites.
-        Our mission is to bring your digital vision to life with cutting-edge design, flawless functionality, and results-driven strategies.
-        We believe in innovation, attention to detail, and delivering beyond expectations.
-      </p>
-
-      <p class="italic" data-aos="fade-up" data-aos-delay="300">
-        "Where digital dreams become stunning realities"
-      </p>
-
-      <div class="owner-card" data-aos="fade-up" data-aos-delay="400">
-        <h3>Meet the Visionary</h3>
-        <h4>Jaden Nkuna</h4>
-        <p>
-          Jaden is the creative force behind JayWebs, with years of experience in web design, branding, and digital marketing.
-          His passion for excellence and eye for detail ensure that every JayWebs project stands out as a masterpiece in the online world.
-        </p>
-      </div>
+  <section class="journey-section">
+    <div class="constellation" id="constellation"></div>
+    <div class="journey-content">
+      <h2>Make It Your Own</h2>
+      <p>Upload your photos and create your own stunning gallery.</p>
+      <a href="#" class="btn chunky-btn large-btn" id="ctaUpload">Upload Your Photos</a>
     </div>
   </section>
 
-  <section id="portfolio" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Masterpieces</h2>
-    <div class="swiper portfolio-swiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.postimg.cc/wxtptG79/20251026-223015.jpg" alt="E-Commerce Platform" />
-          <h3>E-Commerce Platform</h3>
-          <p>Modern online store with seamless user experience and secure payment integration.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.pinimg.com/originals/8b/ed/e9/8bede95dac22b5c02162ffb4ed644ce9.jpg" alt="Corporate Website" />
-          <h3>Corporate Website</h3>
-          <p>Professional online store  website with brand storytelling and lead generation features.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://i.pinimg.com/originals/31/e0/1e/31e01e6ecf772a824b849eb75756b2eb.jpg" />
-          <h3>Portfolio Showcase</h3>
-          <p>Creative portfolio website for artists and designers to showcase their work.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://themewagon.com/wp-content/uploads/2021/10/feane-1.png" />
-          <h3>Restaurant Website</h3>
-          <p>Beautiful restaurant website with online menu and reservation system.</p>
-        </div>
-        <div class="swiper-slide portfolio-card">
-          <img src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/617fffdd8c69ee8ae8434616_qs4TzbMjvhu7ts2RxQyzlzJoHHcBYOQJHkyDro4Z-eIWCeqo7UFjjTi_6xJFIuaO8X8oXIcqELE5Eb9YM2gA0xRyoM0w2cYCkv7Bmm0GO8zkpemCd77_1fU3JeI0teEP0MZIcDZ6.jpeg" />
-          <h3>Real Estate Portal</h3>
-          <p>Property listing website with advanced search and filtering capabilities.</p>
-        </div>
-      </div>
-      <div class="portfolio-prev swiper-button-prev"></div>
-      <div class="portfolio-next swiper-button-next"></div>
-    </div>
-  </section>
-
-  <section class="testimonials section-padding" id="testimonials">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Client Love Stories</h2>
-    <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+1" alt="Mr. Ndlovu" class="testimonial-photo"/>
-          <blockquote>"JayWebs built my business site fast and beautiful. Highly recommended!"</blockquote>
-          <cite>– Mr. Ndlovu</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+2" alt="Mpho D." class="testimonial-photo"/>
-          <blockquote>"Professional and affordable. My sales increased within a month."</blockquote>
-          <cite>– Mpho D.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+3" alt="Sarah K." class="testimonial-photo"/>
-          <blockquote>"Exceptional service and attention to detail. Will definitely work with them again."</blockquote>
-          <cite>– Sarah K.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+4" alt="David T." class="testimonial-photo"/>
-          <blockquote>"The website exceeded my expectations. Great communication throughout the process."</blockquote>
-          <cite>– David T.</cite>
-        </div>
-        <div class="swiper-slide testimonial">
-          <img src="https://placehold.co/100x100/333/white?text=Client+5" alt="Lisa M." class="testimonial-photo"/>
-          <blockquote>"Fast turnaround and excellent support. My business looks professional online now."</blockquote>
-          <cite>– Lisa M.</cite>
-        </div>
-      </div>
-      <div class="testimonials-pagination swiper-pagination"></div>
-    </div>
-  </section>
-
-  <section id="pricing" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Signature Services</h2>
-    <div class="container">
-      <div class="pricing-container">
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="200">
-          <h3>Basic Plan</h3>
-          <div class="price">R2,099</div>
-          <p>1 Page Design</p>
-          <p>Responsive Layout</p>
-          <p>Basic SEO</p>
-          <p>Contact Form</p>
-          <button class="btn">Select Plan</button>
-        </div>
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="400">
-          <h3>Standard Plan</h3>
-          <div class="price">R3,499</div>
-          <p>3 Pages</p>
-          <p>Contact Form & SEO</p>
-          <p>Social Media Integration</p>
-          <p>1 Month Support</p>
-          <button class="btn">Select Plan</button>
-        </div>
-        <div class="pricing-box" data-aos="fade-up" data-aos-delay="600">
-          <h3>Premium Plan</h3>
-          <div class="price">R6,999</div>
-          <p>Full Website + Blog</p>
-          <p>E-commerce Functionality</p>
-          <p>Advanced SEO</p>
-          <p>Ongoing Support</p>
-          <button class="btn">Select Plan</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING SECTION -->
-  <section id="booking" class="section-padding">
-    <div class="container">
-      <h2 class="section-title gradient-text" data-aos="fade-up">Book Your Digital Transformation</h2>
-      <div class="booking-container" data-aos="fade-up" data-aos-delay="200">
-        <form id="booking-form" netlify>
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-            <div class="error-message" id="name-error">Please enter your full name</div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-            <div class="error-message" id="email-error">Please enter a valid email address</div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-            <div class="error-message" id="phone-error">Please enter a valid phone number</div>
-          </div>
-
-          <div class="form-group">
-            <label for="service">Service Interested In</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option value="basic">Basic Plan (R2,099)</option>
-              <option value="standard">Standard Plan (R3,499)</option>
-              <option value="premium">Premium Plan (R6,999)</option>
-              <option value="custom">Custom Solution</option>
-            </select>
-            <div class="error-message" id="service-error">Please select a service</div>
-          </div>
-
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" name="date" required>
-            <div class="error-message" id="date-error">Please select a valid date</div>
-          </div>
-
-          <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <select id="time" name="time" required>
-              <option value="">Select a time</option>
-              <option value="09:00">09:00 AM</option>
-              <option value="10:00">10:00 AM</option>
-              <option value="11:00">11:00 AM</option>
-              <option value="12:00">12:00 PM</option>
-              <option value="13:00">01:00 PM</option>
-              <option value="14:00">02:00 PM</option>
-              <option value="15:00">03:00 PM</option>
-              <option value="16:00">04:00 PM</option>
-            </select>
-            <div class="error-message" id="time-error">Please select a time</div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Your Vision</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project dreams..."></textarea>
-          </div>
-
-          <div class="loading-spinner" id="booking-spinner"></div>
-          <div class="success-message" id="booking-success">
-            Thank you for your booking! We will contact you shortly to confirm your consultation.
-          </div>
-
-          <button type="submit" id="booking-submit">Begin Your Journey</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="stats" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Our Digital Footprint</h2>
-    <div class="stats-container">
-      <div class="stat" data-aos="fade-up" data-aos-delay="200">
-        <div class="stat-number" data-target="15">0</div>
-        <div class="stat-label">Websites Built</div>
-      </div>
-      <div class="stat" data-aos="fade-up" data-aos-delay="400">
-        <div class="stat-number" data-target="12">0</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-      <div class="stat" data-aos="fade-up" data-aos-delay="600">
-        <div class="stat-number" data-target="99">0</div>
-        <div class="stat-label">Satisfaction %</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Frequently Asked Questions</h2>
-    <div class="faq-container">
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-        <button class="faq-question">How long does a website build take?</button>
-        <div class="faq-answer">
-          Typically, between 2-4 weeks depending on complexity and features. We work closely with you to ensure timely delivery without compromising quality.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-        <button class="faq-question">Do you offer support after launch?</button>
-        <div class="faq-answer">
-          Yes, we provide ongoing support packages for maintenance, updates, and technical assistance. Our support plans are tailored to your specific needs.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-        <button class="faq-question">Can I update my website content myself?</button>
-        <div class="faq-answer">
-          Absolutely! We provide a simple, user-friendly content management system (CMS) that allows you to easily update text, images, and other content without technical knowledge.
-        </div>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-        <button class="faq-question">Do you provide hosting services?</button>
-        <div class="faq-answer">
-          Yes, we offer reliable hosting solutions with 99.9% uptime guarantee, regular backups, and security monitoring. We can also help migrate your existing website to our servers.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="quote-calculator" class="calculator-container section-padding">
-    <h2 data-aos="fade-up">Instant Quote Calculator</h2>
-
-    <form id="quote-form" onsubmit="return false;" data-aos="fade-up" data-aos-delay="200">
-      <div class="form-group">
-        <label for="type">Website Type</label>
-        <select id="type" name="type">
-          <option value="2099">Basic Website (R2,099)</option>
-          <option value="3499">Business Website (R3,499)</option>
-          <option value="6999">E-Commerce Website (R6,999)</option>
-        </select>
-      </div>
-
-      <label for="features">Additional Features</label>
-      <div class="features" id="features">
-        <label><input type="checkbox" value="500" /> SEO Optimization (+R500)</label>
-        <label><input type="checkbox" value="200" /> Live Chat (+R200)</label>
-        <label><input type="checkbox" value="400" /> Blog Setup (+R400)</label>
-        <label><input type="checkbox" value="700" /> Booking System (+R700)</label>
-      </div>
-
-      <button id="downloadQuote" type="button">Download Quote (PDF)</button>
-
-      <div class="result" id="result">Estimated Quote: R0</div>
-    </form>
-  </section>
-
-  <section id="contact" class="section-padding">
-    <h2 class="section-title gradient-text" data-aos="fade-up">Let's Create Magic Together</h2>
-    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
-      <a href="https://www.facebook.com/profile.php?id=61577908416134" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/@jaywebs10" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/jaywebs10" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/27663372783" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 JayWebs. All rights reserved. | <em>Futuristic Web Design South Africa</em></p>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/27760944650" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="#booking" class="sticky-contact-btn" aria-label="Book a Consultation">
-    <i class="fas fa-calendar-alt"></i> Book Now
-  </a>
-
-  <!-- External Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-  <!-- Main Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize AOS (Animate On Scroll)
-      if (window.AOS) {
-        AOS.init({
-          duration: 1000,
-          once: true,
-          offset: 100
-        });
+    gsap.registerPlugin(ScrollTrigger);
+
+    const defaultImages = [
+      "https://i.postimg.cc/50HXgdQb/file-00000000b01071f899cf126c08d3fae9.png",
+      "https://i.postimg.cc/fL4NG6qp/file-00000000b32c71f48e4b5bb1a379c5cd.png",
+      "https://i.postimg.cc/Yqx1DFCF/IMG-20260524-115652-817.webp",
+      "https://i.postimg.cc/02pLWP36/IMG-20260523-WA0373.jpg",
+      "https://i.postimg.cc/YqfsN8Lc/IMG-20260523-WA0397.jpg",
+      "https://i.postimg.cc/85hSNtqd/IMG-20260523-WA0578.jpg",
+      "https://i.postimg.cc/HndCxbg3/IMG-20260523-WA0442(1).jpg",
+      "https://i.postimg.cc/vBWsb3pD/IMG-20260523-WA0459.jpg",
+      "https://i.postimg.cc/YSsrrtt9/file-000000003fc071fdac52365bc2fce5fd.png",
+      "https://i.postimg.cc/vmgRvfdm/grocafoto-1c2d80a6-3.jpg",
+      "https://i.postimg.cc/HxgS7yWT/grocafoto-1c2d80a6-6.jpg"
+    ];
+
+    const defaultTextContent = [
+      { title: "Running Through Reflection", desc: "One photo was taken on a rainy day at a running track. It is a tape of water covered the surface, and as the runner sped by, their silhouette reflected in the water." },
+      { title: "Elegance in Boldness", desc: "This photo was captured in a controlled studio environment, emphasizing strong features and deep contrast." },
+      { title: "Dynamic Moments", desc: "Capturing the pure essence of speed and raw emotion in a split-second frame." },
+      { title: "Abstract Movement", desc: "The flow of time expressed visually through long exposures and deliberate camera movement." }
+    ];
+
+    let currentImages = [...defaultImages];
+    let currentTextContent = [...defaultTextContent];
+    let uploadedFiles = [];
+
+    function showToast(msg) {
+      const old = document.querySelector('.toast');
+      if (old) old.remove();
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 3000);
+    }
+
+    function loadSavedImages() {
+      const saved = localStorage.getItem('userGalleryImages');
+      const savedText = localStorage.getItem('userGalleryText');
+      if (saved) {
+        try {
+          currentImages = JSON.parse(saved);
+          document.getElementById('resetBtn').style.display = 'inline-block';
+        } catch(e) {}
       }
-
-      // Initialize Swiper for Portfolio with autoplay
-      let portfolioSwiper;
-      try {
-        portfolioSwiper = new Swiper('.portfolio-swiper', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          navigation: {
-            nextEl: '.portfolio-next',
-            prevEl: '.portfolio-prev',
-          },
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-          },
-          loop: true,
-          breakpoints: {
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            }
-          }
-        });
-      } catch (e) {
-        console.warn('Portfolio swiper init failed:', e);
+      if (savedText) {
+        try { currentTextContent = JSON.parse(savedText); } catch(e) {}
       }
+    }
 
-      // Initialize Swiper for Testimonials with autoplay
-      let testimonialsSwiper;
-      try {
-        testimonialsSwiper = new Swiper('.testimonials-swiper', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          pagination: {
-            el: '.testimonials-pagination',
-            clickable: true,
-          },
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-          },
-          loop: true,
-          breakpoints: {
-            768: {
-              slidesPerView: 2,
-            }
-          }
-        });
-      } catch (e) {
-        console.warn('Testimonials swiper init failed:', e);
-      }
+    function saveImages(imgs, txt) {
+      localStorage.setItem('userGalleryImages', JSON.stringify(imgs));
+      if (txt) localStorage.setItem('userGalleryText', JSON.stringify(txt));
+      document.getElementById('resetBtn').style.display = 'inline-block';
+    }
 
-      // Mobile Menu Toggle
-      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-      const mainNav = document.getElementById('mainNav');
+    function resetToDefault() {
+      localStorage.removeItem('userGalleryImages');
+      localStorage.removeItem('userGalleryText');
+      currentImages = [...defaultImages];
+      currentTextContent = [...defaultTextContent];
+      document.getElementById('resetBtn').style.display = 'none';
+      buildGallery();
+      showToast('Gallery reset to default photos');
+    }
 
-      if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', () => {
-          mainNav.classList.toggle('active');
-          const icon = mobileMenuToggle.querySelector('i');
-          if (mainNav.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      }
+    function getRadius() {
+      const w = window.innerWidth;
+      if (w <= 350) return 140;
+      if (w <= 480) return 170;
+      if (w <= 600) return 200;
+      if (w <= 768) return 250;
+      if (w <= 1024) return 320;
+      return 380;
+    }
 
-      // FAQ Accordion
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-          const answer = question.nextElementSibling;
-          const isActive = question.classList.contains('active');
+    function buildGallery() {
+      const sphere = document.getElementById("sphere");
+      if (!sphere) return;
+      sphere.innerHTML = '';
 
-          // Close all answers
-          document.querySelectorAll('.faq-answer').forEach(ans => {
-            ans.style.display = 'none';
-          });
-          document.querySelectorAll('.faq-question').forEach(q => {
-            q.classList.remove('active');
-          });
+      let items = [];
+      while (items.length < 24) items = [...items, ...currentImages];
+      items = items.slice(0, 24);
+      const radius = getRadius();
 
-          // Open clicked answer if it wasn't active
-          if (!isActive) {
-            answer.style.display = 'block';
-            question.classList.add('active');
-          }
-        });
+      items.forEach((src, i) => {
+        const card = document.createElement("div");
+        card.classList.add("clay-card");
+        const img = document.createElement("img");
+        img.src = src;
+        img.onerror = function() { this.src = defaultImages[0]; };
+        card.appendChild(img);
+
+        const phi = Math.acos(1 - (2 * (i + 0.5)) / items.length);
+        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+        const x = radius * Math.cos(theta) * Math.sin(phi);
+        const y = radius * Math.sin(theta) * Math.sin(phi);
+        const z = radius * Math.cos(phi);
+        const rotY = Math.atan2(x, z) * (180 / Math.PI);
+        const rotX = Math.asin(-y / radius) * (180 / Math.PI);
+
+        card.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+        card.dataset.index = i;
+        sphere.appendChild(card);
       });
 
-      // Quote Calculator
-      const quoteForm = document.getElementById('quote-form');
-      const typeSelect = document.getElementById('type');
-      const featureCheckboxes = document.querySelectorAll('.features input[type="checkbox"]');
-      const resultDiv = document.getElementById('result');
+      buildConstellation();
+      setupScrollAnimation();
+    }
 
-      function calculateQuote() {
-        let total = parseInt(typeSelect.value) || 0;
+    function buildConstellation() {
+      const con = document.getElementById("constellation");
+      if (!con) return;
+      con.innerHTML = '';
+      const positions = [
+        { top: "10%", left: "15%" }, { top: "20%", left: "80%" },
+        { top: "60%", left: "10%" }, { top: "75%", left: "85%" },
+        { top: "85%", left: "30%" }, { top: "15%", left: "50%" }
+      ];
+      positions.forEach((pos, i) => {
+        const card = document.createElement("div");
+        card.classList.add("clay-card", "constellation-card");
+        card.style.top = pos.top;
+        card.style.left = pos.left;
+        const rot = (Math.random() - 0.5) * 40;
+        card.style.transform = `rotate(${rot}deg) scale(0.8)`;
+        const img = document.createElement("img");
+        img.src = currentImages[i % currentImages.length];
+        card.appendChild(img);
+        con.appendChild(card);
+      });
+    }
 
-        featureCheckboxes.forEach(checkbox => {
-          if (checkbox.checked) {
-            total += parseInt(checkbox.value) || 0;
-          }
-        });
+    function setupScrollAnimation() {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      const sphere = document.getElementById("sphere");
+      if (!sphere) return;
 
-        resultDiv.textContent = `Estimated Quote: R${total}`;
-      }
-
-      if (typeSelect) {
-        typeSelect.addEventListener('change', calculateQuote);
-      }
-      featureCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', calculateQuote);
+      gsap.to(sphere, {
+        rotateY: 360 * 2,
+        rotateX: 45,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".gallery-container",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          onUpdate: (self) => updateActiveCard(self.progress)
+        }
       });
 
-      // Initialize with default value
-      calculateQuote();
-
-      // Stats Counter Animation
-      const stats = document.querySelectorAll('.stat-number');
-
-      function animateStats() {
-        stats.forEach(stat => {
-          const target = parseInt(stat.getAttribute('data-target')) || 0;
-          const duration = 2000;
-          const step = target / (duration / 16);
-          let current = 0;
-
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current);
-          }, 16);
-        });
-      }
-
-      // Intersection Observer for stats animation
-      const statsSection = document.getElementById('stats');
-      if (statsSection && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-
-        observer.observe(statsSection);
-      } else {
-        // Fallback
-        animateStats();
-      }
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-
-            // Close mobile menu if open
-            if (mainNav.classList.contains('active')) {
-              mainNav.classList.remove('active');
-              mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-              mobileMenuToggle.querySelector('i').classList.add('fa-bars');
-            }
-          }
-        });
-      });
-
-      // Download Quote as PDF
-      const downloadBtn = document.getElementById('downloadQuote');
-      if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
-          try {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            const quote = resultDiv ? resultDiv.textContent : 'Estimated Quote: R0';
-            const name = "JayWebs Quote";
-
-            doc.setFontSize(20);
-            doc.text(name, 20, 30);
-            doc.setFontSize(16);
-            doc.text(quote, 20, 50);
-            doc.text("Thank you for your interest in JayWebs!", 20, 70);
-            doc.text("We'll contact you shortly to discuss your project.", 20, 85);
-
-            doc.save('jaywebs-quote.pdf');
-          } catch (err) {
-            console.error('PDF generation failed', err);
-            alert('Unable to generate PDF in this browser.');
-          }
-        });
-      }
-
-      // Pause autoplay on hover for better UX
-      document.querySelectorAll('.portfolio-swiper, .testimonials-swiper').forEach(swiperContainer => {
-        swiperContainer.addEventListener('mouseenter', function() {
-          // stop the matching swiper instance if present
-          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
-            portfolioSwiper.autoplay.stop();
-          }
-          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
-            testimonialsSwiper.autoplay.stop();
-          }
-        });
-
-        swiperContainer.addEventListener('mouseleave', function() {
-          if (this.classList.contains('portfolio-swiper') && portfolioSwiper && portfolioSwiper.autoplay) {
-            portfolioSwiper.autoplay.start();
-          }
-          if (this.classList.contains('testimonials-swiper') && testimonialsSwiper && testimonialsSwiper.autoplay) {
-            testimonialsSwiper.autoplay.start();
-          }
-        });
-      });
-
-      // Booking Form Functionality with Validation
-      const bookingForm = document.getElementById('booking-form');
-      const dateInput = document.getElementById('date');
-      const bookingSpinner = document.getElementById('booking-spinner');
-      const bookingSuccess = document.getElementById('booking-success');
-      const bookingSubmit = document.getElementById('booking-submit');
-
-      // Set minimum date to today
-      if (dateInput) {
-        const today = new Date();
-        const formattedDate = today.toISOString().split('T')[0];
-        dateInput.setAttribute('min', formattedDate);
-      }
-
-      // Form validation functions
-      function validateName() {
-        const nameInput = document.getElementById('name');
-        const nameError = document.getElementById('name-error');
-        if (nameInput.value.trim() === '') {
-          nameInput.classList.add('error');
-          nameError.style.display = 'block';
-          return false;
-        } else {
-          nameInput.classList.remove('error');
-          nameError.style.display = 'none';
-          return true;
-        }
-      }
-
-      function validateEmail() {
-        const emailInput = document.getElementById('email');
-        const emailError = document.getElementById('email-error');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        if (!emailRegex.test(emailInput.value.trim())) {
-          emailInput.classList.add('error');
-          emailError.style.display = 'block';
-          return false;
-        } else {
-          emailInput.classList.remove('error');
-          emailError.style.display = 'none';
-          return true;
-        }
-      }
-
-      function validatePhone() {
-        const phoneInput = document.getElementById('phone');
-        const phoneError = document.getElementById('phone-error');
-        // Basic phone validation - can be enhanced for specific formats
-        if (phoneInput.value.trim() === '' || phoneInput.value.trim().length < 8) {
-          phoneInput.classList.add('error');
-          phoneError.style.display = 'block';
-          return false;
-        } else {
-          phoneInput.classList.remove('error');
-          phoneError.style.display = 'none';
-          return true;
-        }
-      }
-
-      function validateService() {
-        const serviceInput = document.getElementById('service');
-        const serviceError = document.getElementById('service-error');
-        if (serviceInput.value === '') {
-          serviceInput.classList.add('error');
-          serviceError.style.display = 'block';
-          return false;
-        } else {
-          serviceInput.classList.remove('error');
-          serviceError.style.display = 'none';
-          return true;
-        }
-      }
-
-      function validateDate() {
-        const dateInput = document.getElementById('date');
-        const dateError = document.getElementById('date-error');
-        if (dateInput.value === '') {
-          dateInput.classList.add('error');
-          dateError.style.display = 'block';
-          return false;
-        } else {
-          dateInput.classList.remove('error');
-          dateError.style.display = 'none';
-          return true;
-        }
-      }
-
-      function validateTime() {
-        const timeInput = document.getElementById('time');
-        const timeError = document.getElementById('time-error');
-        if (timeInput.value === '') {
-          timeInput.classList.add('error');
-          timeError.style.display = 'block';
-          return false;
-        } else {
-          timeInput.classList.remove('error');
-          timeError.style.display = 'none';
-          return true;
-        }
-      }
-
-      // Add event listeners for real-time validation
-      document.getElementById('name').addEventListener('blur', validateName);
-      document.getElementById('email').addEventListener('blur', validateEmail);
-      document.getElementById('phone').addEventListener('blur', validatePhone);
-      document.getElementById('service').addEventListener('change', validateService);
-      document.getElementById('date').addEventListener('change', validateDate);
-      document.getElementById('time').addEventListener('change', validateTime);
-
-      // Handle form submission
-      if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          // Validate all fields
-          const isNameValid = validateName();
-          const isEmailValid = validateEmail();
-          const isPhoneValid = validatePhone();
-          const isServiceValid = validateService();
-          const isDateValid = validateDate();
-          const isTimeValid = validateTime();
-
-          // If all valid, submit the form
-          if (isNameValid && isEmailValid && isPhoneValid && isServiceValid && isDateValid && isTimeValid) {
-            // Show loading spinner
-            bookingSpinner.style.display = 'block';
-            bookingSubmit.disabled = true;
-
-            // Simulate form submission (replace with actual submission)
-            setTimeout(() => {
-              // Hide spinner and show success message
-              bookingSpinner.style.display = 'none';
-              bookingSuccess.style.display = 'block';
-              
-              // Reset form
-              bookingForm.reset();
-              
-              // Reset date min attribute
-              if (dateInput) {
-                const today = new Date();
-                const formattedDate = today.toISOString().split('T')[0];
-                dateInput.setAttribute('min', formattedDate);
-              }
-              
-              // Re-enable submit button
-              bookingSubmit.disabled = false;
-              
-              // Hide success message after 5 seconds
-              setTimeout(() => {
-                bookingSuccess.style.display = 'none';
-              }, 5000);
-            }, 1500);
-          }
-        });
-      }
-
-      // Scroll-aware header functionality
-      const header = document.getElementById('mainHeader');
-      let lastScrollY = window.scrollY;
-
-      window.addEventListener('scroll', () => {
-        // Don't hide header on mobile when menu is open
-        if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
-          return;
-        }
-
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          // Scrolling down - hide header
-          header.classList.add('hidden');
-        } else {
-          // Scrolling up - show header
-          header.classList.remove('hidden');
-        }
-
-        lastScrollY = window.scrollY;
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target) && mainNav.classList.contains('active')) {
-          mainNav.classList.remove('active');
-          mobileMenuToggle.querySelector('i').classList.remove('fa-times');
-          mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+      gsap.to(".constellation-card", {
+        y: -100,
+        ease: "none",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".journey-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
         }
       });
+    }
+
+    function updateActiveCard(progress) {
+      const titleEl = document.getElementById("dynamic-title");
+      const descEl = document.getElementById("dynamic-desc");
+      if (!titleEl || !descEl) return;
+
+      const idx = Math.floor(progress * currentTextContent.length) % currentTextContent.length;
+      if (titleEl.innerText !== currentTextContent[idx].title) {
+        gsap.to([titleEl, descEl], {
+          opacity: 0,
+          duration: 0.2,
+          onComplete: () => {
+            titleEl.innerText = currentTextContent[idx].title;
+            descEl.innerText = currentTextContent[idx].desc;
+            gsap.to([titleEl, descEl], { opacity: 1, duration: 0.2 });
+          }
+        });
+      }
+
+      const cards = document.querySelectorAll(".clay-card:not(.constellation-card)");
+      const focus = Math.floor(progress * 24);
+      cards.forEach((card, i) => {
+        card.classList.toggle("active-card", Math.abs(i - focus) < 2);
+      });
+    }
+
+    // Upload
+    function initUpload() {
+      const modal = document.getElementById('uploadModal');
+      const openBtns = [document.getElementById('uploadBtn'), document.getElementById('ctaUpload')];
+      const closeBtn = document.querySelector('.close-modal');
+      const resetBtn = document.getElementById('resetBtn');
+      const fileInput = document.getElementById('imageUpload');
+      const filesDiv = document.getElementById('uploadedFiles');
+      const applyBtn = document.getElementById('applyImages');
+      const urlArea = document.getElementById('imageUrls');
+
+      function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        uploadedFiles = [];
+        filesDiv.innerHTML = '';
+        urlArea.value = '';
+        fileInput.value = '';
+      }
+
+      openBtns.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+      resetBtn.addEventListener('click', e => {
+        e.preventDefault();
+        if (confirm('Reset gallery to default photos?')) resetToDefault();
+      });
+
+      fileInput.addEventListener('change', e => {
+        uploadedFiles = Array.from(e.target.files);
+        filesDiv.innerHTML = uploadedFiles.length + ' file(s): ' + uploadedFiles.map(f => f.name).join(', ');
+      });
+
+      applyBtn.addEventListener('click', async () => {
+        const urls = urlArea.value.trim().split('\n').filter(u => u.trim());
+        let newImages = [...urls.map(u => u.trim())];
+
+        if (uploadedFiles.length > 0) {
+          const promises = uploadedFiles.map(f => new Promise(res => {
+            const r = new FileReader();
+            r.onload = e => res(e.target.result);
+            r.readAsDataURL(f);
+          }));
+          const dataUrls = await Promise.all(promises);
+          newImages = [...newImages, ...dataUrls];
+        }
+
+        if (newImages.length === 0) { showToast('Please add at least one image'); return; }
+
+        currentImages = newImages;
+        currentTextContent = [
+          { title: "My Photo Gallery", desc: "Your personal collection of memories beautifully displayed in 3D." },
+          { title: "Cherished Moments", desc: "Every picture tells a story. These are yours." },
+          { title: "Share With Others", desc: "Your gallery is saved locally. Send the link to friends and family." },
+          { title: "Update Anytime", desc: "Come back and upload new photos whenever you want to refresh your gallery." }
+        ];
+        saveImages(currentImages, currentTextContent);
+        buildGallery();
+        closeModal();
+        showToast('Your photos are now live in the gallery!');
+      });
+    }
+
+    // Mobile menu
+    function initMobileMenu() {
+      const menuBtn = document.querySelector('.menu-btn');
+      const overlay = document.createElement('div');
+      overlay.className = 'mobile-nav-overlay';
+      overlay.innerHTML = `
+        <a href="#">Gallery</a>
+        <a href="#">About</a>
+        <a href="#" class="btn chunky-btn" id="mobileUploadBtn">Upload Photos</a>
+        <a href="#" class="btn chunky-btn" id="mobileResetBtn" style="display:none;">Reset</a>
+      `;
+      document.body.appendChild(overlay);
+
+      menuBtn.addEventListener('click', () => overlay.classList.toggle('active'));
+      overlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => overlay.classList.remove('active'));
+      });
+
+      document.getElementById('mobileUploadBtn').addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById('uploadModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      document.getElementById('mobileResetBtn').addEventListener('click', e => {
+        e.preventDefault();
+        if (confirm('Reset gallery to default photos?')) {
+          resetToDefault();
+          document.getElementById('mobileResetBtn').style.display = 'none';
+        }
+      });
+
+      // Sync reset button
+      const observer = new MutationObserver(() => {
+        document.getElementById('mobileResetBtn').style.display = document.getElementById('resetBtn').style.display;
+      });
+      observer.observe(document.getElementById('resetBtn'), { attributes: true, attributeFilter: ['style'] });
+    }
+
+    function init() {
+      loadSavedImages();
+      buildGallery();
+      initUpload();
+      initMobileMenu();
+    }
+
+    init();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(buildGallery, 250);
     });
   </script>
 </body>
